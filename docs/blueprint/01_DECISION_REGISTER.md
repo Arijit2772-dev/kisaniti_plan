@@ -82,3 +82,15 @@ Details: [Patiala research](../research/2026-10-15_Patiala_Storage_Risk_and_Unkn
 **Why:** Desk research shows MSP makes mandi prices nearly identical for those crops in Patiala; prices vary for basmati and for off-season held wheat. See [Patiala research](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).<br>
 **Not decided:** exact MSP_SCHEDULE contract fields, procurement-window dates per season, whether held wheat can also sell to agencies at MSP outside the window, forecast horizons for basmati/held wheat, and real-FPO crop mix.<br>
 **Constraints kept:** MSP is a policy price, not an observed mandi price; it must not be added to forecasting training data as observations or counted as forecast accuracy. Missing MSP for a season gives "unavailable", never zero.
+
+## CHAT-21 — SMS fallback for farmers without WhatsApp, 15 October 2026
+
+**Classification:** DESIGN DECISION — explicit user decision (resolves OI-23).<br>
+**Decision:** WhatsApp stays the primary farmer channel (CHAT-16). A farmer whose record says they have no WhatsApp gets the same approved instruction as a normal SMS on their mobile number, in their recorded language. SMS uses the same approved assignment facts, recipient checks, permission/opt-out rules, idempotency and delivery tracking as WhatsApp, through the provider-independent CommunicationService.<br>
+**Constraints found:** Commercial SMS in India must go through TRAI's DLT system: the sending business (Indian entity with PAN etc.) registers an entity ID, a 6-character sender header and every message template; non-matching messages are blocked ([Plivo DLT guide](https://plivo.com/docs/messaging/concepts/dlt-registration-process), [Telerivet guide](https://www.telerivet.com/blog/india-sms-compliance-trai-dlt-registration-and-tcccpr-guide); vendor sources, re-check at setup). Punjabi/Hindi SMS use Unicode, so fewer characters fit per SMS part and cost rises; templates must be short.<br>
+**Open:** SMS provider choice, DLT registration owner (the FPO), template wording/approval, cost, delivery-report reliability. A staff phone call remains the manual last resort and is recorded as such.
+
+## CHAT-22 — price ranges required for longer forecasts, 15 October 2026
+
+**Classification:** DESIGN DECISION — user accepted recommendation (resolves OI-02).<br>
+**Decision:** Any price forecast used for horizons longer than 7 days must include a prediction range (at least 80% and 95% intervals, or quantiles), not only a single number. The range is shown to the manager in plain words, and when the range is too wide to support a hold/sell choice the advice says "no reliable signal". Interval quality is evaluated in EXP-04; a model whose ranges are badly calibrated is not promoted for those horizons.

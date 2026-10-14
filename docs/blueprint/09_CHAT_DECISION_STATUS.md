@@ -24,6 +24,8 @@
 | CHAT-18 | ENGINEERING LEAN — proposal, 15 October | Experimental in-grain water-activity storage policy STORAGE-DEMO-0.1 for paddy/wheat | Bench settling time, salt calibration, one-time mandi moisture comparison; user acceptance |
 | CHAT-19 | ENGINEERING LEAN — proposal, 15 October | Patiala desk-research DEMO assumptions for all 21 unknowns; MSP finding recorded as conflict PATIALA-MSP-2026-10-15 (demo scope resolved by CHAT-20) | Demo crop-focus decision; confirmation by one FPO CEO + arhtiya |
 | CHAT-20 | DESIGN DECISION — user decision, 15 October | Demo focus: held wheat + basmati paddy for forecasting/mandi choice; MSP paddy/wheat via fixed-price MSP_SCHEDULE source (no forecast model) | MSP_SCHEDULE contract, season windows, basmati/held-wheat horizons, real crop mix |
+| CHAT-21 | DESIGN DECISION — user decision, 15 October | SMS on the farmer's mobile, in their language, when they have no WhatsApp; same approval/permission/delivery rules | SMS provider, TRAI DLT entity/header/template registration by the FPO, cost |
+| CHAT-22 | DESIGN DECISION — user accepted, 15 October | Forecasts beyond 7 days must carry 80%/95% ranges; "no reliable signal" when too wide | Interval method chosen by EXP-04 |
 
 See [current Layer 5](../communication/KisanNiti_Layer_5_Current.md) and [WhatsApp/multilingual specification](../communication/WHATSAPP_MULTILINGUAL.md); earlier optional/generic-channel language is superseded. Storage approximation and Patiala answers: [research note](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
 

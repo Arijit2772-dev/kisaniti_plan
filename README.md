@@ -20,6 +20,8 @@ KisanNiti helps an FPO manager choose which selected farmer lots to send to whic
 | [Quality and verification](docs/QUALITY_AND_VERIFICATION.md) | How data, code, integration and research correctness are proven |
 | [Design alternatives](docs/research/DESIGN_ALTERNATIVES.md) | Every major choice vs its alternatives, for the paper |
 | [UI/UX plan](docs/design/UI_UX_PLAN.md) | Manager app screens and principles; visual style waits for user ideas |
+| [User actions](docs/USER_ACTIONS.md) | What only the project owner can do: decisions, accounts, people, hardware |
+| [Patiala FPO profile](docs/research/PATIALA_FPO_PROFILE_APPROX.md) | Approximate Patiala FPO and the 300-member demo persona |
 | [Open issues](docs/OPEN_ISSUES.md) | 22 issues that can cause later problems, with severity, owner and what "real-world ready" requires |
 | [Research and experiment plan](docs/research/RESEARCH_AND_EXPERIMENT_PLAN.md) | EXP-00…14: options compared per layer, metrics, scenarios, decision rules |
 | [Paper outline](docs/paper/KisanNiti_Paper_Outline.md) | Research-paper skeleton linked to the experiments; no results yet |

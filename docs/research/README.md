@@ -7,3 +7,6 @@ Phase 0 includes no downloaded papers and no invented bibliography entries. ML, 
 ## Index
 
 - [Patiala storage-risk approximation and likely answers to the 21 unknowns (15 Oct 2026)](2026-10-15_Patiala_Storage_Risk_and_Unknowns.md) — supports CHAT-18/19, PATIALA-E01, conflict PATIALA-MSP-2026-10-15.
+- [Approximate Patiala FPO profile and demo persona](PATIALA_FPO_PROFILE_APPROX.md)
+- [Research and experiment plan](RESEARCH_AND_EXPERIMENT_PLAN.md)
+- [Design alternatives](DESIGN_ALTERNATIVES.md)

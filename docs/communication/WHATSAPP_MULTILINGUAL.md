@@ -4,6 +4,8 @@
 
 ## 1. Requirement and scope
 
+> **Update 15 Oct 2026 (CHAT-21):** farmers without WhatsApp receive the same instruction as a normal SMS on their mobile, in their recorded language, via the same CommunicationService rules. Commercial SMS needs TRAI DLT registration (entity, sender header, templates). See the [decision register](../blueprint/01_DECISION_REGISTER.md).
+
 **DESIGN DECISION — explicitly required by the user:** WhatsApp is the primary farmer communication channel in Layer 5. Farmer-facing operational messages must support each recipient's recorded preferred language. The manager application remains the review/administration interface.
 
 A simulated delivery adapter is for development, automated tests and offline demonstrations. It is not a substitute for the required live WhatsApp capability, and simulator-only success cannot satisfy live communication acceptance. The earlier August architecture mentioned WhatsApp; the Layer 5 handoff under-specified it and omitted multilingual delivery. That omission is corrected here without pretending the implementation exists.
@@ -89,3 +91,13 @@ Unit and contract checks cover template selection/field preservation. Integratio
 ## 8. Completion and open setup
 
 The WhatsApp channel and multilingual requirement are selected product scope. The initial language set and direct Meta adapter are recommendations. Account ownership/sender configuration, credentials, exact supported locales, template text/language review/provider approval, costs, live test recipients and permission capture still need completion. Keep these as setup/evidence gates, not reasons to present a simulator-only product as finished.
+
+## 9. SMS fallback acceptance tests (CHAT-21) — all NOT_RUN
+
+| ID | Scenario | Required observation |
+|---|---|---|
+| SMS01 | Farmer recorded as "no WhatsApp" with a valid mobile and SMS permission | Same approved instruction sent by SMS in the recorded language; same instruction identity, no duplicate WhatsApp attempt |
+| SMS02 | Punjabi/Hindi instruction longer than one Unicode SMS part | Message stays within the approved DLT template; quantity/date/mandi unchanged; part count and cost recorded |
+| SMS03 | DLT template missing/rejected or sender header not registered | Visible blocked state; no unregistered send; staff-call fallback suggested |
+| SMS04 | Farmer has WhatsApp but delivery fails | No automatic switch to SMS unless the farmer's record allows SMS fallback; decision recorded |
+| SMS05 | Duplicate/late SMS delivery reports | One logical delivery state; no duplicate business effect |
