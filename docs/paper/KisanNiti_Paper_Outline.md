@@ -14,7 +14,7 @@
 4. **Low-cost storage-risk monitoring:** an ESP32 + SHT30 in-grain water-activity rule, with bench calibration and honest limits. [EXP-06, EXP-13]
 5. **End-to-end evaluation:** a historical simulation against simple farmer practice, with negative results reported. [EXP-07, EXP-10]
 
-Design-choice justifications: [design alternatives](../research/DESIGN_ALTERNATIVES.md). Quality rules: [quality and verification](../QUALITY_AND_VERIFICATION.md).
+Target publisher: Springer — see [Springer publication plan](SPRINGER_PUBLICATION_PLAN.md) for venues, declarations and the peer-comparison method. Design-choice justifications: [design alternatives](../research/DESIGN_ALTERNATIVES.md). Quality rules: [quality and verification](../QUALITY_AND_VERIFICATION.md).
 
 ## Sections
 

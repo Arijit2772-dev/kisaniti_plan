@@ -24,7 +24,7 @@
 | Item | Value | Label |
 |---|---|---|
 | Members | 300 farmers in 20 villages | DEMO CHOICE (scheme minimum) |
-| Members with WhatsApp | 85%; the rest SMS only (exercises CHAT-21) | DEMO CHOICE |
+| Members with WhatsApp | 100% assumed (CHAT-23); a few fixture farmers have an invalid number to test the "cannot reach" path | DEMO CHOICE |
 | Preferred language | Punjabi 80%, Hindi 10%, English 10% | DEMO CHOICE |
 | Land per farmer | Spread from about 1 to 10 ha | ESTIMATE (verify against Punjab agriculture census before using in the paper) |
 | Lots per season | Every member: MSP wheat or paddy lot (fixed-price path). About 30% hold some wheat after harvest; about 30% grow basmati | DEMO CHOICE |
@@ -38,7 +38,7 @@ A second fictional FPO (smaller, e.g. 150 members) is kept only to test tenant i
 
 ## 3. Note for the fixture decision
 
-CHAT-02 selected **5 FPOs × 200 members** as the normal load fixture. The scheme minimum in the plains is **300**, so a realistic persona needs at least 300 members. **Recommendation:** keep CHAT-02 as a pure load test, and use this 300-member persona for all demo, workflow and paper scenarios. The user should confirm this in the contract-freeze task. Until then nothing is changed.
+CHAT-02 selected **5 FPOs × 200 members** as the normal load fixture. The scheme minimum in the plains is **300**, so a realistic persona needs at least 300 members. **Recommendation:** keep CHAT-02 as a pure load test, and use this 300-member persona for all demo, workflow and paper scenarios. **Confirmed by the user on 15 Oct 2026 (CHAT-25).**
 
 ## 4. What only a real FPO can confirm
 
@@ -49,5 +49,5 @@ Use one conversation (see architecture §66 and [OPEN_ISSUES](../OPEN_ISSUES.md)
 - whether the FPO markets basmati collectively;
 - who approves decisions;
 - who would record sales;
-- WhatsApp vs SMS use;
+- how many members really use WhatsApp;
 - willingness to try advice.

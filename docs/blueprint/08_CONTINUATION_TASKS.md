@@ -32,7 +32,7 @@ See [OPEN_ISSUES](../OPEN_ISSUES.md): authorise the coding gate (OI-10); registe
 
 ## Research track
 
-Run experiments EXP-00…14 from the [research plan](../research/RESEARCH_AND_EXPERIMENT_PLAN.md) alongside the work packages (EXP-01 right after data access; EXP-08 after the optimizer oracle). Results feed the [paper outline](../paper/KisanNiti_Paper_Outline.md). New design work from OI-01/02/06 (hold/sell advisory, required intervals, privacy contract) belongs in the contract-freeze task.
+Run experiments EXP-00…14 from the [research plan](../research/RESEARCH_AND_EXPERIMENT_PLAN.md) alongside the work packages (EXP-01 right after data access; EXP-08 after the optimizer oracle). Results feed the [paper outline](../paper/KisanNiti_Paper_Outline.md). Specs now exist for the hold/sell advisory ([HOLD_SELL_ADVISORY](../design/HOLD_SELL_ADVISORY.md), CHAT-24) and privacy ([PRIVACY_CONTRACT](../design/PRIVACY_CONTRACT.md), CHAT-26); required ranges are CHAT-22. Freeze their exact fields in W01 together with MSP_SCHEDULE.
 
 ## Subsequent small work packages
 

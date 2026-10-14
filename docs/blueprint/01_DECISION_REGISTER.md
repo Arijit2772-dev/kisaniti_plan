@@ -94,3 +94,18 @@ Details: [Patiala research](../research/2026-10-15_Patiala_Storage_Risk_and_Unkn
 
 **Classification:** DESIGN DECISION — user accepted recommendation (resolves OI-02).<br>
 **Decision:** Any price forecast used for horizons longer than 7 days must include a prediction range (at least 80% and 95% intervals, or quantiles), not only a single number. The range is shown to the manager in plain words, and when the range is too wide to support a hold/sell choice the advice says "no reliable signal". Interval quality is evaluated in EXP-04; a model whose ranges are badly calibrated is not promoted for those horizons.
+
+## CHAT-23 — WhatsApp-only assumption; SMS fallback withdrawn, 15 October 2026
+
+**Classification:** DESIGN DECISION — explicit user decision; **supersedes CHAT-21** (kept above as history).<br>
+**User words:** "if that is problem in India assume WhatsApp only everyone has".<br>
+**Decision:** The demo and current scope assume every member farmer has WhatsApp. No SMS channel is built. A farmer with no usable WhatsApp destination produces a visible "cannot reach" issue for staff follow-up (phone call recorded manually), never a silent skip.<br>
+**Why:** Commercial SMS in India needs TRAI DLT registration by a registered business, which a student demo cannot do.<br>
+**Risk kept visible:** real WhatsApp coverage among members is an assumption (paper limitation; FPO conversation question). The CommunicationService stays provider-independent so an SMS adapter can be added later without redesign.
+
+## CHAT-24 / CHAT-25 / CHAT-26 — approvals of A1–A3, 15 October 2026
+
+**Classification:** DESIGN DECISION — user approved the recommendations ("okk u doing it plan accordingly").<br>
+- **CHAT-24:** Add the **hold-or-sell advisory** to Layer 3 for held wheat and basmati — spec: [HOLD_SELL_ADVISORY](../design/HOLD_SELL_ADVISORY.md). Resolves OI-01 at design level.
+- **CHAT-25:** Use the **300-member Patiala persona** for demo, workflow and paper scenarios; keep 5 × 200 (CHAT-02) only as a load test — [FPO profile](../research/PATIALA_FPO_PROFILE_APPROX.md).
+- **CHAT-26:** A **privacy contract** (India DPDP Act 2023 / Rules 2025) is required before coding; Aadhaar numbers are never stored — spec: [PRIVACY_CONTRACT](../design/PRIVACY_CONTRACT.md). Resolves OI-06 at design level; legal review still needed before a real pilot.

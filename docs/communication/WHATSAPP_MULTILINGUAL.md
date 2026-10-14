@@ -4,7 +4,7 @@
 
 ## 1. Requirement and scope
 
-> **Update 15 Oct 2026 (CHAT-21):** farmers without WhatsApp receive the same instruction as a normal SMS on their mobile, in their recorded language, via the same CommunicationService rules. Commercial SMS needs TRAI DLT registration (entity, sender header, templates). See the [decision register](../blueprint/01_DECISION_REGISTER.md).
+> **Superseded by CHAT-23 (WhatsApp only, SMS withdrawn) — kept as history.** Earlier update 15 Oct 2026 (CHAT-21): farmers without WhatsApp receive the same instruction as a normal SMS on their mobile, in their recorded language, via the same CommunicationService rules. Commercial SMS needs TRAI DLT registration (entity, sender header, templates). See the [decision register](../blueprint/01_DECISION_REGISTER.md).
 
 **DESIGN DECISION — explicitly required by the user:** WhatsApp is the primary farmer communication channel in Layer 5. Farmer-facing operational messages must support each recipient's recorded preferred language. The manager application remains the review/administration interface.
 
@@ -92,7 +92,7 @@ Unit and contract checks cover template selection/field preservation. Integratio
 
 The WhatsApp channel and multilingual requirement are selected product scope. The initial language set and direct Meta adapter are recommendations. Account ownership/sender configuration, credentials, exact supported locales, template text/language review/provider approval, costs, live test recipients and permission capture still need completion. Keep these as setup/evidence gates, not reasons to present a simulator-only product as finished.
 
-## 9. SMS fallback acceptance tests (CHAT-21) — all NOT_RUN
+## 9. SMS fallback acceptance tests (CHAT-21) — WITHDRAWN by CHAT-23 (kept as history; do not implement)
 
 | ID | Scenario | Required observation |
 |---|---|---|
@@ -101,3 +101,9 @@ The WhatsApp channel and multilingual requirement are selected product scope. Th
 | SMS03 | DLT template missing/rejected or sender header not registered | Visible blocked state; no unregistered send; staff-call fallback suggested |
 | SMS04 | Farmer has WhatsApp but delivery fails | No automatic switch to SMS unless the farmer's record allows SMS fallback; decision recorded |
 | SMS05 | Duplicate/late SMS delivery reports | One logical delivery state; no duplicate business effect |
+
+## 10. Unreachable farmer (CHAT-23)
+
+| ID | Scenario | Required observation |
+|---|---|---|
+| WA13 | Farmer has no verified WhatsApp destination, or WhatsApp reports the number cannot receive messages | Visible "cannot reach" issue for staff; manual phone call can be recorded as a separate, staff-entered contact event; never shown as delivered |
