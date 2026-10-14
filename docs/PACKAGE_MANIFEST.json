@@ -1,0 +1,293 @@
+{
+  "packaged_on": "2026-10-15",
+  "destination": "/Users/arijitsingh/Documents/kisaniti",
+  "source_repository": "/Users/arijitsingh/Documents/sem_7/kisaniti",
+  "source_conversation_outputs": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs",
+  "copied_files": [
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/.gitignore",
+      "destination": "docs/history/repository-before-handoff/.gitignore",
+      "sha256": "887d573566ef0ae2c9787b0fbc79d0a4d7e803b87364eb7a9d92fa66796da789",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/AGENTS.md",
+      "destination": "docs/history/repository-before-handoff/AGENTS.md",
+      "sha256": "78570a7ca09dcb1713e30396de9e413b5c3ce1708229a764e616b565ecf6f992",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/README.md",
+      "destination": "docs/history/repository-before-handoff/README.md",
+      "sha256": "c369d6cbe14fa0b9454f68f702964952d6defc88f0302547ee7d09588f2ec171",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md",
+      "destination": "docs/history/repository-before-handoff/docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md",
+      "sha256": "85a09a5351aaec8f3923a84a57c23661434855c1a9427955b16edeaf0cba3e86",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/00_BLUEPRINT_STATUS.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/00_BLUEPRINT_STATUS.md",
+      "sha256": "0be6762605a10e5651c60345d72be01d1b2b82ac3707aa1bb80e7157f4bc186b",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/01_DECISION_REGISTER.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/01_DECISION_REGISTER.md",
+      "sha256": "6625aae893d4079a98ebb9b63fa773c8a61a04e0552088f8bf6335439262e287",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md",
+      "sha256": "b6708c25da9b2c78e8d7a0a7a874fe6e340693907bf155094ac75d822e5df71a",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/03_EVIDENCE_REGISTER.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/03_EVIDENCE_REGISTER.md",
+      "sha256": "b03ec3eba84b93659bd8a776d71ba188cecde0c9bc7791ed4d354658cc814ecb",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/04_CONFLICT_REGISTER.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/04_CONFLICT_REGISTER.md",
+      "sha256": "f7f90b51eeda5ea1b76aaf2bd7cbd0ed4f4f087c1304c18aed234017ba2807bd",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/05_REJECTED_REVISED_DECISIONS.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/05_REJECTED_REVISED_DECISIONS.md",
+      "sha256": "83fefe8c7a7b2554387ab85aa5cc27ca5036cac7bd06e568c278dbcc21d256cb",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/06_IMPLEMENTATION_TASK_TEMPLATE.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/06_IMPLEMENTATION_TASK_TEMPLATE.md",
+      "sha256": "32f1603d4cf28e8b843343f2dc4eaddd3974a0da748244e38e6f7caa5be922a2",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/07_ARCHITECTURE_IMPLEMENTATION_CONSTRAINTS.md",
+      "destination": "docs/history/repository-before-handoff/docs/blueprint/07_ARCHITECTURE_IMPLEMENTATION_CONSTRAINTS.md",
+      "sha256": "2409cd30998d490af3c32585ea20800d75a01bc0fc65bbb0128b192da7e8eb3d",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/research/README.md",
+      "destination": "docs/history/repository-before-handoff/docs/research/README.md",
+      "sha256": "180ad6d0004d4ed5aa7ee537fece46d9644c3728d4ddb1915552c41c93b21c06",
+      "kind": "historical_repository_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md",
+      "destination": "docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md",
+      "sha256": "85a09a5351aaec8f3923a84a57c23661434855c1a9427955b16edeaf0cba3e86",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/00_BLUEPRINT_STATUS.md",
+      "destination": "docs/blueprint/00_BLUEPRINT_STATUS.md",
+      "sha256": "0be6762605a10e5651c60345d72be01d1b2b82ac3707aa1bb80e7157f4bc186b",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/01_DECISION_REGISTER.md",
+      "destination": "docs/blueprint/01_DECISION_REGISTER.md",
+      "sha256": "6625aae893d4079a98ebb9b63fa773c8a61a04e0552088f8bf6335439262e287",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md",
+      "destination": "docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md",
+      "sha256": "b6708c25da9b2c78e8d7a0a7a874fe6e340693907bf155094ac75d822e5df71a",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/03_EVIDENCE_REGISTER.md",
+      "destination": "docs/blueprint/03_EVIDENCE_REGISTER.md",
+      "sha256": "b03ec3eba84b93659bd8a776d71ba188cecde0c9bc7791ed4d354658cc814ecb",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/04_CONFLICT_REGISTER.md",
+      "destination": "docs/blueprint/04_CONFLICT_REGISTER.md",
+      "sha256": "f7f90b51eeda5ea1b76aaf2bd7cbd0ed4f4f087c1304c18aed234017ba2807bd",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/05_REJECTED_REVISED_DECISIONS.md",
+      "destination": "docs/blueprint/05_REJECTED_REVISED_DECISIONS.md",
+      "sha256": "83fefe8c7a7b2554387ab85aa5cc27ca5036cac7bd06e568c278dbcc21d256cb",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/06_IMPLEMENTATION_TASK_TEMPLATE.md",
+      "destination": "docs/blueprint/06_IMPLEMENTATION_TASK_TEMPLATE.md",
+      "sha256": "32f1603d4cf28e8b843343f2dc4eaddd3974a0da748244e38e6f7caa5be922a2",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/blueprint/07_ARCHITECTURE_IMPLEMENTATION_CONSTRAINTS.md",
+      "destination": "docs/blueprint/07_ARCHITECTURE_IMPLEMENTATION_CONSTRAINTS.md",
+      "sha256": "2409cd30998d490af3c32585ea20800d75a01bc0fc65bbb0128b192da7e8eb3d",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/docs/research/README.md",
+      "destination": "docs/research/README.md",
+      "sha256": "180ad6d0004d4ed5aa7ee537fece46d9644c3728d4ddb1915552c41c93b21c06",
+      "kind": "baseline_reference"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Circuit/KisanNiti_Circuit.kicad_sch",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Circuit/KisanNiti_Circuit.kicad_sch",
+      "sha256": "7651fe145a0506221cb2eb055584bddd766dcec9f9ba37b8ddf78448774b7c57",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Circuit/KisanNiti_Wiring.png",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Circuit/KisanNiti_Wiring.png",
+      "sha256": "30e98d5c81fa871d6285c9b7ba5f5d0901376cc14586432218f1ab6fce13a172",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Circuit/KisanNiti_Wiring.svg",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Circuit/KisanNiti_Wiring.svg",
+      "sha256": "5a5928c5bd86acc484cb6f46d5be3760dbd5a5101a7d1fb2ef014185b0da0105",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Design_Index.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Design_Index.md",
+      "sha256": "1a19c797e96fae843e00794661f9ddc5e93efd4fd49247fcbf3635e0a1544a2e",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Integration_Testing_and_Hardware_Guide.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Integration_Testing_and_Hardware_Guide.md",
+      "sha256": "baed90f5286dc82d5efb9a64e8ab2d9893b908230475e6ea4991d0693e5cbbc7",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_1_Review_Draft.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_1_Review_Draft.md",
+      "sha256": "a2c372a5916f0b885f5789af8debfb8078446d86968c3a3f6720296e9b8ab68c",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_1_Specification_v0_2.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_1_Specification_v0_2.md",
+      "sha256": "5df7cc409bb95efb69ffc7658657b7e021b3037001e29733efc9130bab2552ab",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_1_Working_Baseline.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_1_Working_Baseline.md",
+      "sha256": "9c338198281f3794969f7cf11030182378c1030edb66a7fb544fdf6f1c6d97ca",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_2_Review_Proposal.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_2_Review_Proposal.md",
+      "sha256": "775776861375d74a4125f5cf7dbd34e812487066aac6c205b016c29fb34533d4",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_3_Review_Proposal.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_3_Review_Proposal.md",
+      "sha256": "e8cc7801662129eca3a6f64eaa4ae3035295ab0688690bdba4f86fb5ddac15d4",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_4_Document_Checks.json",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_4_Document_Checks.json",
+      "sha256": "99239d0a99e5f404f57c2a4a0f0a12d8233205279aca5fca61b44240896b04d8",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_4_Review_Proposal.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_4_Review_Proposal.md",
+      "sha256": "c899addf6a97b8d2bee9f6baf0e93851a460b1ac01267c271d0cd980bccec6f7",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_5_Document_Checks.json",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_5_Document_Checks.json",
+      "sha256": "f63460d0d0aef185ab9a2df46f256a6a3b3b4a391cd7b8756bebf33de7768a84",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layer_5_Review_Proposal.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layer_5_Review_Proposal.md",
+      "sha256": "ca010ce1089b0ee5b8e696beca42bdd764dfd01e9b8e3285dfc17f2d592f1b10",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layers_1_to_3_Acceptance.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Acceptance.md",
+      "sha256": "7a7a6e9b2e78d09fac98a4189774af14b2a73c9cfc0feb391310d13cada7ad52",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layers_1_to_3_Document_Checks.json",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Document_Checks.json",
+      "sha256": "9bf253547b862211a235954ed4668e06bba94a12c42160d893c24f39e063e66c",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layers_1_to_3_Handoff.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Handoff.md",
+      "sha256": "7e6c7f70f6d092fcd51a99e3a82aa71afe1b79c505351b721fbb4a672b585981",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/Codex/2026-10-13/do-x20/outputs/KisanNiti_Layers_1_to_3_Review_Record.md",
+      "destination": "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Review_Record.md",
+      "sha256": "a73f281c2be501df8bae5449a38e4f09a8edddf85df74155f9534c396cd5f0a8",
+      "kind": "conversation_deliverable_snapshot"
+    },
+    {
+      "source": "/Users/arijitsingh/Documents/sem_7/kisaniti/.gitignore",
+      "destination": ".gitignore",
+      "sha256": "887d573566ef0ae2c9787b0fbc79d0a4d7e803b87364eb7a9d92fa66796da789",
+      "kind": "baseline_ignore_rules"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10 (3).md",
+      "reason": "SHA-256 identical to authoritative architecture; duplicate omitted"
+    },
+    {
+      "path": ".git, .DS_Store, scratch application, secrets, downloaded runtimes",
+      "reason": "Not required accepted design deliverables; original repository untouched"
+    }
+  ],
+  "modified_copies": [
+    "docs/blueprint/00_BLUEPRINT_STATUS.md",
+    "docs/blueprint/01_DECISION_REGISTER.md",
+    "docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md",
+    "docs/blueprint/03_EVIDENCE_REGISTER.md",
+    "docs/blueprint/04_CONFLICT_REGISTER.md",
+    "docs/blueprint/05_REJECTED_REVISED_DECISIONS.md",
+    "docs/blueprint/07_ARCHITECTURE_IMPLEMENTATION_CONSTRAINTS.md"
+  ],
+  "original_repository_modified": false,
+  "application_implementation": "NOT_STARTED",
+  "application_tests": "NOT_RUN",
+  "post_packaging_updates": [
+    {
+      "date": "2026-10-15",
+      "reason": "Explicit user requirement for WhatsApp and multilingual farmer communication",
+      "current_layer_5": "docs/communication/KisanNiti_Layer_5_Current.md",
+      "requirements": "docs/communication/WHATSAPP_MULTILINGUAL.md",
+      "verification": "docs/communication/VERIFICATION.json",
+      "historical_conversation_snapshots_modified": false,
+      "application_implemented": false
+    }
+  ]
+}

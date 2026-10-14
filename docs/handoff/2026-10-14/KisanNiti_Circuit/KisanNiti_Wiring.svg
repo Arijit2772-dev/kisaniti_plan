@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920" role="img" aria-labelledby="title desc">
+<title id="title">KisanNiti automatic grain-condition monitor — circuit connections</title>
+<desc id="desc">SHT30 VCC to ESP32 3V3, GND to GND, SDA to GPIO21, and SCL to GPIO22. One 4.7 kiloohm resistor from SDA to 3V3 and one from SCL to 3V3. USB powers the ESP32, with the sensor tip in demonstration grain and electronics outside.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#182d35}.wire{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.pin{font-size:22px;font-weight:bold}.small{font-size:18px;fill:#465e67}.title{font-size:31px;font-weight:bold}</style></defs>
+<rect width="1400" height="920" fill="white"/>
+<text x="55" y="51" font-size="14" letter-spacing="2" fill="#17694e">KISANNITI · COLLEGE PROTOTYPE · CIRCUIT REVISION 1</text>
+<text x="55" y="99" class="title">ESP32 + SHT30: automatic temperature and humidity</text>
+<text x="55" y="133" class="small">Electrical connections — use printed GPIO labels, not the position of pins in this drawing.</text>
+
+<rect x="70" y="190" width="335" height="370" rx="12" fill="#f3f7f5" stroke="#315549" stroke-width="2"/>
+<text x="95" y="229" class="pin">U1 · ESP32-WROOM-32</text>
+<text x="95" y="260" class="small">Development board with USB-C</text>
+<text x="316" y="307" class="pin">3V3</text>
+<text x="270" y="397" class="pin">GPIO21</text>
+<text x="270" y="467" class="pin">GPIO22</text>
+<text x="313" y="527" class="pin">GND</text>
+
+<rect x="1000" y="190" width="330" height="370" rx="12" fill="#fff9ee" stroke="#937c54" stroke-width="2"/>
+<text x="1027" y="229" class="pin">U2 · SHT30 probe</text>
+<text x="1027" y="260" class="small">I²C · breathable sensing tip</text>
+<text x="1027" y="307" class="pin">VCC / power</text>
+<text x="1027" y="397" class="pin">SDA / data</text>
+<text x="1027" y="467" class="pin">SCL / clock</text>
+<text x="1027" y="527" class="pin">GND / ground</text>
+
+<path class="wire" stroke="#bd3737" d="M405 300H1000"/>
+<path class="wire" stroke="#187b51" d="M405 390H1000"/>
+<path class="wire" stroke="#276ba5" d="M405 460H1000"/>
+<path class="wire" stroke="#29383e" d="M405 520H1000"/>
+
+<path class="wire" stroke="#187b51" d="M570 300V317L560 323L580 331L560 339L580 347L560 355L570 361V390"/>
+<path class="wire" stroke="#276ba5" d="M790 300V317L780 323L800 331L780 339L800 347L780 355L790 361V380Q805 390 790 400V460"/>
+<circle cx="570" cy="300" r="6" fill="#bd3737"/><circle cx="790" cy="300" r="6" fill="#bd3737"/>
+<circle cx="570" cy="390" r="6" fill="#187b51"/><circle cx="790" cy="460" r="6" fill="#276ba5"/>
+<text x="600" y="331" font-size="18" font-weight="bold">R1</text><text x="600" y="356" class="small">4.7 kΩ</text>
+<text x="820" y="331" font-size="18" font-weight="bold">R2</text><text x="820" y="356" class="small">4.7 kΩ</text>
+<text x="461" y="283" class="small">3.3 V supply rail</text>
+<text x="470" y="552" font-size="16" fill="#465e67">● Junction = joined · curved crossing = not joined</text>
+
+<rect x="70" y="590" width="335" height="66" rx="9" fill="#f7f9fb" stroke="#9aadb4"/>
+<text x="90" y="617" font-size="19" font-weight="bold">USB-C: power / programming</text>
+<text x="90" y="642" font-size="16">Laptop OR 5 V USB adapter → board</text>
+<path d="M230 590V560" stroke="#29383e" stroke-width="4"/>
+<text x="458" y="611" font-size="19" font-weight="bold">Data leaves the ESP32 wirelessly:</text>
+<text x="458" y="640" class="small">2.4 GHz Wi-Fi → phone hotspot → backend</text>
+<text x="1018" y="608" font-size="18" font-weight="bold">Only the probe enters</text>
+<text x="1018" y="635" class="small">the demonstration grain.</text>
+
+<rect x="55" y="695" width="1290" height="166" rx="12" fill="#f6f8f7" stroke="#d4ded8"/>
+<text x="78" y="730" font-size="21" font-weight="bold">Assembly notes</text>
+<text x="78" y="762" class="small">1. Disconnect USB before wiring. Both resistors go to 3V3 — do not connect the sensor signals to 5 V.</text>
+<text x="78" y="793" class="small">2. Keep the supplied probe cable unextended. Keep the board, breadboards and power connections outside the bag.</text>
+<text x="78" y="824" class="small">3. Verify the delivered probe’s pin labels. Wire colours in this drawing identify signals, not guaranteed cable colours.</text>
+<text x="55" y="894" font-size="17" fill="#465e67">Scope: automatic storage-condition / risk monitoring. No handheld moisture meter. No direct grain-moisture measurement.</text>
+</svg>

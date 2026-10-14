@@ -1,0 +1,84 @@
+# Decision Register
+
+> **15 October 2026 continuation:** [CHAT-01–CHAT-15](09_CHAT_DECISION_STATUS.md) classify later conversation choices and proposals. Apply the [limited architecture amendments](../architecture/2026-10-15_Conversation_Amendments.md); no production UNKNOWN is closed by the package. Original Phase 0 register text follows as history.
+
+This register records future explicit decisions without replacing the [architecture source of truth](../architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md). It contains no newly invented product or architectural decisions at Phase 0.
+
+Existing architecture decisions remain indexed by their headings and classifications in the source. A future entry must preserve the architecture labels exactly: `CONFIRMED`, `DESIGN DECISION`, `ENGINEERING LEAN`, or `UNKNOWN`.
+
+Do not use this register to resolve an `UNKNOWN` without approved evidence, to revive a revised/rejected idea, or to silently override the architecture. Record conflicts first in [`04_CONFLICT_REGISTER.md`](04_CONFLICT_REGISTER.md).
+
+## Decision entry template
+
+```text
+Decision ID:
+Area:
+Classification:
+Status:
+
+Question:
+
+Decision:
+
+Why this decision is needed:
+
+Architecture constraints:
+
+Evidence:
+
+Alternatives considered:
+
+Why selected:
+
+Why alternatives were rejected/deferred:
+
+Failure modes:
+
+Debugging implications:
+
+Testing implications:
+
+Security implications:
+
+Performance implications:
+
+Extensibility implications:
+
+Affected modules/contracts:
+
+Open questions:
+
+Revisit trigger:
+
+Sources:
+
+Date:
+```
+
+## Entry acceptance checks
+
+- The question and decision are explicit and small enough to audit.
+- Classification and status are not conflated.
+- Evidence is recorded in [`03_EVIDENCE_REGISTER.md`](03_EVIDENCE_REGISTER.md) where applicable.
+- Affected `UNKNOWN` entries are linked but not deleted; their resolution and status are updated audibly.
+- Conflicts and superseded positions are preserved rather than overwritten.
+
+## CHAT-16 / CHAT-17 — WhatsApp and multilingual clarification, 15 October 2026
+
+User explicitly requires WhatsApp farmer messages in multiple languages (DESIGN DECISION). Recommended initial Punjabi/Hindi/English set and deterministic reviewed templates are ENGINEERING LEAN. See [current decision status](09_CHAT_DECISION_STATUS.md) and [communication specification](../communication/WHATSAPP_MULTILINGUAL.md). Platform setup, language review and delivery remain untested; no production unknown is closed merely by naming WhatsApp.
+
+## CHAT-18 / CHAT-19 — storage approximation and Patiala demo assumptions, 15 October 2026
+
+CHAT-18 (ENGINEERING LEAN — proposal): STORAGE-DEMO-0.1 estimates mould/insect-favourable conditions from in-grain SHT30 readings: aw = 24 h median RH/100; LOW < 0.65, MEDIUM 0.65–0.70, HIGH ≥ 0.70; −1 level below 10 °C; LOW→MEDIUM at ≥ 25 °C with aw ≥ 0.60; insect flag advisory only; 6 h settling; 2-point/48 h hysteresis; ambient placement → UNKNOWN. Same rule for paddy and wheat; no moisture % displayed. Experimental, DEMO scope, pending bench/salt/one-time moisture checks.
+
+CHAT-19 (ENGINEERING LEAN — proposal): Patiala DEMO assumptions for CORE-001…009 and PILOT-001…012 as listed in the research note, Part C. All 21 unknowns remain OPEN.
+
+Details: [Patiala research](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
+
+## CHAT-20 — demo crop focus and MSP fixed-price path, 15 October 2026
+
+**Classification:** DESIGN DECISION — explicit user decision (resolves conflict PATIALA-MSP-2026-10-15 for the demo).<br>
+**Decision:** The demo's price-forecasting and mandi-choice scenarios use (1) wheat held on the farm for later sale and (2) basmati paddy (variety is part of the series identity, e.g. 1121/1509). MSP-procured non-basmati paddy and wheat use a fixed-price path: price = notified MSP for the commodity/grade and procurement season, from a versioned MSP_SCHEDULE source with provenance; no forecasting model runs for them. They still use stock, storage, transport, fairness and approval logic.<br>
+**Why:** Desk research shows MSP makes mandi prices nearly identical for those crops in Patiala; prices vary for basmati and for off-season held wheat. See [Patiala research](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).<br>
+**Not decided:** exact MSP_SCHEDULE contract fields, procurement-window dates per season, whether held wheat can also sell to agencies at MSP outside the window, forecast horizons for basmati/held wheat, and real-FPO crop mix.<br>
+**Constraints kept:** MSP is a policy price, not an observed mandi price; it must not be added to forecasting training data as observations or counted as forecast accuracy. Missing MSP for a season gives "unavailable", never zero.

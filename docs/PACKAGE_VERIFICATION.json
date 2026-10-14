@@ -1,0 +1,164 @@
+{
+  "packaged_on": "2026-10-15",
+  "scope": "Transfer integrity, local documentation links and handoff structure; not software/application tests",
+  "overall": "PASS",
+  "checks": [
+    {
+      "name": "Exact copies and original-source preservation",
+      "passed": true,
+      "exact_copies_checked": 35,
+      "source_files_checked": 42,
+      "intentionally_annotated_working_copies": 7
+    },
+    {
+      "name": "Local Markdown links",
+      "passed": true,
+      "checked": 128,
+      "broken": [],
+      "absolute_path_links": []
+    },
+    {
+      "name": "Agent entry points and all-layer continuation",
+      "passed": true,
+      "required_paths": [
+        "README.md",
+        "CLAUDE.md",
+        "AGENTS.md",
+        "docs/START_HERE.md",
+        "docs/HARDWARE_CURRENT.md",
+        "docs/architecture/2026-10-15_Conversation_Amendments.md",
+        "docs/blueprint/08_CONTINUATION_TASKS.md",
+        "docs/blueprint/09_CHAT_DECISION_STATUS.md",
+        "docs/handoff/2026-10-14/KisanNiti_Layer_5_Review_Proposal.md"
+      ]
+    },
+    {
+      "name": "KisanNiti_Layers_1_to_3_Handoff.md: D IDs",
+      "passed": true,
+      "count": 20
+    },
+    {
+      "name": "KisanNiti_Layers_1_to_3_Handoff.md: C IDs",
+      "passed": true,
+      "count": 15
+    },
+    {
+      "name": "KisanNiti_Layers_1_to_3_Handoff.md: G IDs",
+      "passed": true,
+      "count": 12
+    },
+    {
+      "name": "KisanNiti_Layers_1_to_3_Handoff.md: W IDs",
+      "passed": true,
+      "count": 13
+    },
+    {
+      "name": "KisanNiti_Layers_1_to_3_Acceptance.md: T IDs",
+      "passed": true,
+      "count": 48
+    },
+    {
+      "name": "KisanNiti_Layer_4_Review_Proposal.md: L4C IDs",
+      "passed": true,
+      "count": 6
+    },
+    {
+      "name": "KisanNiti_Layer_4_Review_Proposal.md: L4T IDs",
+      "passed": true,
+      "count": 22
+    },
+    {
+      "name": "KisanNiti_Layer_4_Review_Proposal.md: L4I IDs",
+      "passed": true,
+      "count": 6
+    },
+    {
+      "name": "KisanNiti_Layer_5_Review_Proposal.md: L5C IDs",
+      "passed": true,
+      "count": 8
+    },
+    {
+      "name": "KisanNiti_Layer_5_Review_Proposal.md: L5T IDs",
+      "passed": true,
+      "count": 24
+    },
+    {
+      "name": "Protected architecture byte equality",
+      "passed": true
+    },
+    {
+      "name": "Original blueprint coding status preserved",
+      "passed": true
+    },
+    {
+      "name": "Old source hardware not revived by current guide",
+      "passed": true
+    },
+    {
+      "name": "No source Git internals copied",
+      "passed": true
+    }
+  ],
+  "copy_errors": [],
+  "files_verified": 55,
+  "external_links_not_revalidated": 9,
+  "application_tests": "NOT_RUN",
+  "hardware_tests": "NOT_RUN",
+  "package_sha256": {
+    ".gitignore": "887d573566ef0ae2c9787b0fbc79d0a4d7e803b87364eb7a9d92fa66796da789",
+    "AGENTS.md": "b83d6ff1ef6e4bb7fd6b72efef9b82e1333fe9a905562efd66492849844b0aa4",
+    "CLAUDE.md": "12e48bf9f0790df985ada34413e087532755202980f37818d4d4614c18e5ae19",
+    "README.md": "c2b0e4dba9f6e860e31baa81a1ee9d17cb525446d54d1482375d140f630b3094",
+    "docs/HARDWARE_CURRENT.md": "aa2036710aa69caad6700af598b02440bda78e256096e4bdb721f765bb5d2300",
+    "docs/PACKAGE_MANIFEST.json": "847b5b6418285326d6941f530fbcd08ca75ffbb159984219ca5322143b78bb57",
+    "docs/START_HERE.md": "c8c1b377634ff4ff661fcc2929816653dbe55bb7cb7255ba66d938bf6bcbe829",
+    "docs/architecture/2026-10-15_Conversation_Amendments.md": "966c47271b64f24de3261b575182b89ac19a803ccc77258114acf9eec1a27469",
+    "docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md": "85a09a5351aaec8f3923a84a57c23661434855c1a9427955b16edeaf0cba3e86",
+    "docs/blueprint/00_BLUEPRINT_STATUS.md": "6bda8ab4ce0e1a822ec41ceb0e50f6f633af9f5abc78d62b53d330765d645008",
+    "docs/blueprint/01_DECISION_REGISTER.md": "c3bae474bfbbf49435e05447c1d57eb7b9594be8cdc2a3d27269a1b2c8229df4",
+    "docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md": "78fb92232b1c3145c22bbc0c73b79af4eb5ffe271e3deb84a7d6d242f4fc70ad",
+    "docs/blueprint/03_EVIDENCE_REGISTER.md": "f6bff4ed8a98876d8c80bcb679b8b920434c3f5269c824cbca8b7a4fd3faabc4",
+    "docs/blueprint/04_CONFLICT_REGISTER.md": "911c144ce4319081a0b313cb72a1dd7dde5cad5c85b8de8622507cfce9f89730",
+    "docs/blueprint/05_REJECTED_REVISED_DECISIONS.md": "e586047bdff5de1fb0ed5e580c0466f027a50193559e2fe1b86b90a37f4f61bd",
+    "docs/blueprint/06_IMPLEMENTATION_TASK_TEMPLATE.md": "32f1603d4cf28e8b843343f2dc4eaddd3974a0da748244e38e6f7caa5be922a2",
+    "docs/blueprint/07_ARCHITECTURE_IMPLEMENTATION_CONSTRAINTS.md": "bc3097cc2cd8bc7b57edfe4056485dc6d8429577bbb877a9b556596c0310c8e3",
+    "docs/blueprint/08_CONTINUATION_TASKS.md": "a52ee46feae81abdb72ca23e11271e80ec69e500ab81a50a4cc0958b4df459aa",
+    "docs/blueprint/09_CHAT_DECISION_STATUS.md": "7794bdbc02d80261a984fa2177fe8ba3ab7c71ef7e6350584d437b4c734c6560",
+    "docs/communication/KisanNiti_Layer_5_Current.md": "6e335dd95bec15628b6e474c232e4cf9d71008ba6e317a92b5df0def41b47148",
+    "docs/communication/VERIFICATION.json": "2a1b3f2f4f476eea32a76179ace51125368109f796eb7b66434adf4710befeab",
+    "docs/communication/WHATSAPP_MULTILINGUAL.md": "faa71a9874e0362bcd75b9ad340c9c0ef80ea3bdd5e529a45fd68a6a37de269b",
+    "docs/handoff/2026-10-14/KisanNiti_Circuit/KisanNiti_Circuit.kicad_sch": "7651fe145a0506221cb2eb055584bddd766dcec9f9ba37b8ddf78448774b7c57",
+    "docs/handoff/2026-10-14/KisanNiti_Circuit/KisanNiti_Wiring.png": "30e98d5c81fa871d6285c9b7ba5f5d0901376cc14586432218f1ab6fce13a172",
+    "docs/handoff/2026-10-14/KisanNiti_Circuit/KisanNiti_Wiring.svg": "5a5928c5bd86acc484cb6f46d5be3760dbd5a5101a7d1fb2ef014185b0da0105",
+    "docs/handoff/2026-10-14/KisanNiti_Design_Index.md": "1a19c797e96fae843e00794661f9ddc5e93efd4fd49247fcbf3635e0a1544a2e",
+    "docs/handoff/2026-10-14/KisanNiti_Integration_Testing_and_Hardware_Guide.md": "baed90f5286dc82d5efb9a64e8ab2d9893b908230475e6ea4991d0693e5cbbc7",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_1_Review_Draft.md": "a2c372a5916f0b885f5789af8debfb8078446d86968c3a3f6720296e9b8ab68c",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_1_Specification_v0_2.md": "5df7cc409bb95efb69ffc7658657b7e021b3037001e29733efc9130bab2552ab",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_1_Working_Baseline.md": "9c338198281f3794969f7cf11030182378c1030edb66a7fb544fdf6f1c6d97ca",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_2_Review_Proposal.md": "775776861375d74a4125f5cf7dbd34e812487066aac6c205b016c29fb34533d4",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_3_Review_Proposal.md": "e8cc7801662129eca3a6f64eaa4ae3035295ab0688690bdba4f86fb5ddac15d4",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_4_Document_Checks.json": "99239d0a99e5f404f57c2a4a0f0a12d8233205279aca5fca61b44240896b04d8",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_4_Review_Proposal.md": "c899addf6a97b8d2bee9f6baf0e93851a460b1ac01267c271d0cd980bccec6f7",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_5_Document_Checks.json": "f63460d0d0aef185ab9a2df46f256a6a3b3b4a391cd7b8756bebf33de7768a84",
+    "docs/handoff/2026-10-14/KisanNiti_Layer_5_Review_Proposal.md": "ca010ce1089b0ee5b8e696beca42bdd764dfd01e9b8e3285dfc17f2d592f1b10",
+    "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Acceptance.md": "7a7a6e9b2e78d09fac98a4189774af14b2a73c9cfc0feb391310d13cada7ad52",
+    "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Document_Checks.json": "9bf253547b862211a235954ed4668e06bba94a12c42160d893c24f39e063e66c",
+    "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Handoff.md": "7e6c7f70f6d092fcd51a99e3a82aa71afe1b79c505351b721fbb4a672b585981",
+    "docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Review_Record.md": "a73f281c2be501df8bae5449a38e4f09a8edddf85df74155f9534c396cd5f0a8",
+    "docs/handoff/2026-10-14/README.md": "f37280509ce6e0dbbaa9025c1c4d7c27b1a91887e9369fc90e4cab7ac2632d19",
+    "docs/history/repository-before-handoff/.gitignore": "887d573566ef0ae2c9787b0fbc79d0a4d7e803b87364eb7a9d92fa66796da789",
+    "docs/history/repository-before-handoff/AGENTS.md": "78570a7ca09dcb1713e30396de9e413b5c3ce1708229a764e616b565ecf6f992",
+    "docs/history/repository-before-handoff/README.md": "c369d6cbe14fa0b9454f68f702964952d6defc88f0302547ee7d09588f2ec171",
+    "docs/history/repository-before-handoff/docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md": "85a09a5351aaec8f3923a84a57c23661434855c1a9427955b16edeaf0cba3e86",
+    "docs/history/repository-before-handoff/docs/blueprint/00_BLUEPRINT_STATUS.md": "0be6762605a10e5651c60345d72be01d1b2b82ac3707aa1bb80e7157f4bc186b",
+    "docs/history/repository-before-handoff/docs/blueprint/01_DECISION_REGISTER.md": "6625aae893d4079a98ebb9b63fa773c8a61a04e0552088f8bf6335439262e287",
+    "docs/history/repository-before-handoff/docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md": "b6708c25da9b2c78e8d7a0a7a874fe6e340693907bf155094ac75d822e5df71a",
+    "docs/history/repository-before-handoff/docs/blueprint/03_EVIDENCE_REGISTER.md": "b03ec3eba84b93659bd8a776d71ba188cecde0c9bc7791ed4d354658cc814ecb",
+    "docs/history/repository-before-handoff/docs/blueprint/04_CONFLICT_REGISTER.md": "f7f90b51eeda5ea1b76aaf2bd7cbd0ed4f4f087c1304c18aed234017ba2807bd",
+    "docs/history/repository-before-handoff/docs/blueprint/05_REJECTED_REVISED_DECISIONS.md": "83fefe8c7a7b2554387ab85aa5cc27ca5036cac7bd06e568c278dbcc21d256cb",
+    "docs/history/repository-before-handoff/docs/blueprint/06_IMPLEMENTATION_TASK_TEMPLATE.md": "32f1603d4cf28e8b843343f2dc4eaddd3974a0da748244e38e6f7caa5be922a2",
+    "docs/history/repository-before-handoff/docs/blueprint/07_ARCHITECTURE_IMPLEMENTATION_CONSTRAINTS.md": "2409cd30998d490af3c32585ea20800d75a01bc0fc65bbb0128b192da7e8eb3d",
+    "docs/history/repository-before-handoff/docs/research/README.md": "180ad6d0004d4ed5aa7ee537fece46d9644c3728d4ddb1915552c41c93b21c06",
+    "docs/research/README.md": "180ad6d0004d4ed5aa7ee537fece46d9644c3728d4ddb1915552c41c93b21c06"
+  }
+}

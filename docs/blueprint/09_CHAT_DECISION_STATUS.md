@@ -1,0 +1,39 @@
+# Current chat decision status
+
+15 October 2026. Read with the original decision/unknown registers and the dated architecture amendments. “Selected” below means selected design, not implemented-and-tested. The user asked to package all requirements for another agent to refine decisions or start implementation under the applicable gates.
+
+| ID | Classification / status | What to carry forward | Still open |
+|---|---|---|---|
+| CHAT-01 | DESIGN DECISION — selected | Four source groups: organization, mandi, routes/quotes, sensors | Exact source schemas/API/numeric contracts |
+| CHAT-02 | DESIGN DECISION — selected | Dummy normal fixture: 5 FPOs, 1,000 members, 3,000 lots; stress: 50/10,000/30,000 | Generator not built; not real adoption or ML labels |
+| CHAT-03 | DESIGN DECISION — selected acquisition strategy | All available permitted national historical market observations; initial 2000-01-01 to 2026-10-12, rolling completed India dates thereafter; recent ten years first | Authorized access, actual rows/date coverage/bytes; historical window not necessarily optimal training window |
+| CHAT-04 | DESIGN DECISION — selected starting schedule | Market collection 06:00/18:00 Asia/Kolkata; seven-day correction lookback; sensor every five minutes | Provider limits, measured latency, production freshness policies |
+| CHAT-05 | DESIGN DECISION — selected | Separate route estimates from recorded quotes; fixture 200 routes/200 quotes | Actual tariff, grouping, vehicle/trip availability, payer/arranger and expense attribution |
+| CHAT-06 | DESIGN DECISION — latest hardware | ESP32-WROOM-32 + protected SHT30; no manual moisture meter; one real node initially | Physical assembly, firmware/broker/durable telemetry and field calibration |
+| CHAT-07 | CONFIRMED — user target context | Paddy/wheat bags, farm sheds, power and mobile coverage | Real-FPO custody/verification/dispatch evidence and representative monitoring coverage |
+| CHAT-08 | DESIGN DECISION — selected responsibility | Layer 2 cleans/validates all data groups; source lineage and quality/freshness/readiness distinct | Exact numeric scales/schema and empirical screening validation |
+| CHAT-09 | ENGINEERING LEAN — candidates | Baselines, XGBoost, Chronos-2 comparison; optional A3T-GCN; MILP/SCIP first prototype | Real evaluation, model promotion, production solver and benchmarks |
+| CHAT-10 | DESIGN DECISION — carried forward | Pure mathematical optimizer, exact quantities, per-farmer fairness, independent PlanValidator | Real economic guardrail/increment/calendar and objective acceptance |
+| CHAT-11 | ENGINEERING LEAN — proposal | Seven-date demo horizon, partial default, demo market-load disabled, versioned fixture policies | Exact demo policy bundle and live policies |
+| CHAT-12 | DESIGN DECISION — required capability | Layer 4 review/edit/reject/approve; approval reserves, not sells | New role model, freshness actions, exact contracts and incomplete-solver eligibility remain recommendations |
+| CHAT-13 | DESIGN DECISION — required capability | Layer 5 communicates approved assignments; actual sales update exact stock; outcomes kept separate | WhatsApp account/provider setup, consent/recording authority and correction/reconciliation workflow |
+| CHAT-14 | ENGINEERING LEAN — proposal | Simulated delivery for development only (live WhatsApp required); staff-recorded sales initially; explicit manager-selected reconciliation for conflicting reports | Actual authority/workflow acceptance; not a finalized production rule |
+| CHAT-15 | DESIGN DECISION — user requirement | Test each layer, contracts, adjacent integration, complete workflow and real hardware separately | Application/physical/evaluation tests not executed |
+| CHAT-16 | DESIGN DECISION — explicit user clarification, 15 October | WhatsApp is the required primary farmer channel; messages support recorded preferred language | Account/sender setup, template eligibility, language review and actual delivery tests |
+| CHAT-17 | ENGINEERING LEAN — recommendation | Initial Punjabi (Gurmukhi), Hindi, English; reviewed versioned templates, not per-send LLM translation | Final launch language scope, provider locale mapping and approved variants |
+| CHAT-18 | ENGINEERING LEAN — proposal, 15 October | Experimental in-grain water-activity storage policy STORAGE-DEMO-0.1 for paddy/wheat | Bench settling time, salt calibration, one-time mandi moisture comparison; user acceptance |
+| CHAT-19 | ENGINEERING LEAN — proposal, 15 October | Patiala desk-research DEMO assumptions for all 21 unknowns; MSP finding recorded as conflict PATIALA-MSP-2026-10-15 (demo scope resolved by CHAT-20) | Demo crop-focus decision; confirmation by one FPO CEO + arhtiya |
+| CHAT-20 | DESIGN DECISION — user decision, 15 October | Demo focus: held wheat + basmati paddy for forecasting/mandi choice; MSP paddy/wheat via fixed-price MSP_SCHEDULE source (no forecast model) | MSP_SCHEDULE contract, season windows, basmati/held-wheat horizons, real crop mix |
+
+See [current Layer 5](../communication/KisanNiti_Layer_5_Current.md) and [WhatsApp/multilingual specification](../communication/WHATSAPP_MULTILINGUAL.md); earlier optional/generic-channel language is superseded. Storage approximation and Patiala answers: [research note](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
+
+## Important unresolved work
+
+- Storage-risk approximation is wanted, but crop thresholds/durations/hysteresis and evidence basis have not been selected or validated. Real telemetry can feed UNKNOWN until a documented policy is ready.
+- Deterministic cleaning does not prove reported physical quantities or prices are true. Statistical flags alone do not erase genuine price spikes.
+- Schemas in the handoffs specify semantics; they are not completed JSON Schemas, migrations or running APIs.
+- Demo settings are not real-FPO evidence. Multiple source kinds may coexist in a visibly labelled DEMO; synthetic rows must not inflate real forecasting evaluation.
+- New data updates relevant derived information; it does not retrain every model or rewrite an approved plan.
+- Exact cash/quantity conventions, dates, allowed-market mappings, transport economics and outcome reconciliation must be explicit before dependent behavior is coded.
+
+Details and rationale: [Layer 1–3](../handoff/2026-10-14/KisanNiti_Layers_1_to_3_Handoff.md), [Layer 4](../handoff/2026-10-14/KisanNiti_Layer_4_Review_Proposal.md), [Layer 5 current](../communication/KisanNiti_Layer_5_Current.md) (the [v0.1 snapshot](../handoff/2026-10-14/KisanNiti_Layer_5_Review_Proposal.md) is history). Open problems: [OPEN_ISSUES](../OPEN_ISSUES.md). Changes must also be reflected in the formal registers, affected contracts and tests.

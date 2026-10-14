@@ -1,0 +1,44 @@
+{
+  "review_date": "2026-10-14",
+  "scope": "Documentation checks only; no application services executed",
+  "document": "KisanNiti_Layer_4_Review_Proposal.md",
+  "sha256": "c899addf6a97b8d2bee9f6baf0e93851a460b1ac01267c271d0cd980bccec6f7",
+  "checks": [
+    {
+      "check": "L4C identifiers",
+      "passed": true,
+      "count": 6
+    },
+    {
+      "check": "L4T identifiers",
+      "passed": true,
+      "count": 22
+    },
+    {
+      "check": "L4I identifiers",
+      "passed": true,
+      "count": 6
+    },
+    {
+      "check": "Referenced acceptance cases exist",
+      "passed": true
+    },
+    {
+      "check": "Local links resolve",
+      "passed": true,
+      "broken": []
+    },
+    {
+      "check": "Inventory example",
+      "passed": true
+    },
+    {
+      "check": "Application test status explicit",
+      "passed": true
+    }
+  ],
+  "overall": "PASS",
+  "application_tests": "NOT_RUN",
+  "full_workflow_tests": "NOT_RUN",
+  "hardware_tests": "NOT_RUN"
+}
