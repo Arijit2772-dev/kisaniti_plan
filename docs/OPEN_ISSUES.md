@@ -46,6 +46,14 @@ Nothing here closes an `UNKNOWN`. Agents: when you resolve an issue, record the 
 | OI-21 | S2 | **Research contribution not yet defined; no literature review.** | A paper needs a clear question and novelty. | Proposed contributions are in the [paper outline](paper/KisanNiti_Paper_Outline.md); a literature review is task EXP-00. | User + agent |
 | OI-22 | S3 | **One sensor represents one bag only.** | Overstating coverage misleads the manager. | Show assessment scope per lot; unmonitored lots stay UNKNOWN (already designed). | — (keep rule) |
 
+## E. Added 15 October 2026 (second review)
+
+| ID | Sev | Issue | Why it causes problems later | Recommendation | Decides / acts |
+|---|---|---|---|---|---|
+| OI-23 | S2 | **Farmers without WhatsApp/smartphone.** WhatsApp is the required primary channel (CHAT-16), but how many member farmers actually use it is unknown. | Instructions never reach some farmers; fairness of information suffers. | Record channel availability per farmer at registration. Discuss an SMS or voice-call fallback as a later option; staff phone call as the manual fallback. Do not change CHAT-16 without the user. | User decides; FPO confirms |
+| OI-24 | S3 | **Cross-repository links.** The implementation repo links to the planning folder by relative path `../kisaniti`; the GitHub repo is named `kisaniti_plan`. | Links break when browsing on GitHub or cloning with default names. | Clone both side by side with the planning repo in a folder named `kisaniti` (commands in both READMEs). | Agent (documented) |
+| OI-25 | S2 | **UI style not chosen.** | Rework if built before the user's ideas. | Follow [UI/UX plan](design/UI_UX_PLAN.md); wait for §6 input before the visual theme. | User |
+
 ## What "ready for real-world use" means here
 
 Documents cannot make the system ready for real-world use. It is ready only when **all** of these have recorded evidence:

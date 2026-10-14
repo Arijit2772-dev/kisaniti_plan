@@ -14,6 +14,8 @@
 4. **Low-cost storage-risk monitoring:** an ESP32 + SHT30 in-grain water-activity rule, with bench calibration and honest limits. [EXP-06, EXP-13]
 5. **End-to-end evaluation:** a historical simulation against simple farmer practice, with negative results reported. [EXP-07, EXP-10]
 
+Design-choice justifications: [design alternatives](../research/DESIGN_ALTERNATIVES.md). Quality rules: [quality and verification](../QUALITY_AND_VERIFICATION.md).
+
 ## Sections
 
 1. **Introduction** — Selling problem of small farmers; role of FPOs; research questions RQ1–RQ5 mirroring the contributions.

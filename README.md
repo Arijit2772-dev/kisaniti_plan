@@ -17,6 +17,9 @@ KisanNiti helps an FPO manager choose which selected farmer lots to send to whic
 | [Test plan](docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Acceptance.md) | Cross-layer acceptance; Layer 4/5 documents extend it |
 | [Hardware guide](docs/HARDWARE_CURRENT.md) | Current kit, automatic data path and physical-test limitations |
 | [Next tasks](docs/blueprint/08_CONTINUATION_TASKS.md) | How to continue refining contracts before implementation |
+| [Quality and verification](docs/QUALITY_AND_VERIFICATION.md) | How data, code, integration and research correctness are proven |
+| [Design alternatives](docs/research/DESIGN_ALTERNATIVES.md) | Every major choice vs its alternatives, for the paper |
+| [UI/UX plan](docs/design/UI_UX_PLAN.md) | Manager app screens and principles; visual style waits for user ideas |
 | [Open issues](docs/OPEN_ISSUES.md) | 22 issues that can cause later problems, with severity, owner and what "real-world ready" requires |
 | [Research and experiment plan](docs/research/RESEARCH_AND_EXPERIMENT_PLAN.md) | EXP-00…14: options compared per layer, metrics, scenarios, decision rules |
 | [Paper outline](docs/paper/KisanNiti_Paper_Outline.md) | Research-paper skeleton linked to the experiments; no results yet |
@@ -26,3 +29,15 @@ KisanNiti helps an FPO manager choose which selected farmer lots to send to whic
 **Current state:** design documents and circuit files exist. Product implementation, acquired historical dataset, model evaluation, solver benchmarks, physical hardware and end-to-end application tests are not established as complete. Test cases are specified, not executed. Read the gate before coding.
 
 The original repository at `Documents/sem_7/kisaniti` was left unchanged. This folder is the self-contained continuation copy. Historical documents may mention old paths; use this folder and its relative links. No `.git` history, secrets, downloaded runtime, unfinished scratch application or invented dataset has been imported.
+
+## Clone layout
+
+Both repositories must sit side by side so relative links work:
+
+```bash
+git clone https://github.com/Arijit2772-dev/kisaniti_plan.git kisaniti
+```
+
+```bash
+git clone https://github.com/Arijit2772-dev/kisaniti_implementation.git kisaniti_implementation
+```
