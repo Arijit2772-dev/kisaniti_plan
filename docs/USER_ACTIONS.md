@@ -9,8 +9,10 @@
 | A1 | ✅ 15 Oct (CHAT-24) Approve the **hold-or-sell advisory** as a new Layer 3 part for held wheat and basmati | Yes | Without it the demo cannot answer "sell now or wait" | [OI-01](OPEN_ISSUES.md) |
 | A2 | ✅ 15 Oct (CHAT-25) Use the **300-member Patiala persona** for demo/paper scenarios; keep 5×200 only as a load test | Yes | Scheme minimum is 300 members | [FPO profile §3](research/PATIALA_FPO_PROFILE_APPROX.md) |
 | A3 | ✅ 15 Oct (CHAT-26) Approve adding a **privacy (DPDP) contract** before coding; never store Aadhaar numbers | Yes | Legal requirement for real use | [OI-06](OPEN_ISSUES.md) |
-| A4 | **Open the coding gate** once contracts are frozen | When ready | Nothing can be built until then | [OI-10](OPEN_ISSUES.md) |
+| A4 | ✅ 21 Oct (CHAT-28) **Coding gate** opens layer by layer after contract freeze | When ready | Nothing can be built until then | [OI-10](OPEN_ISSUES.md) |
 | A5 | Share **UI design ideas** (style, colours, reference apps) | When ready | Frontend look waits for this | [UI plan §6](design/UI_UX_PLAN.md) |
+
+**Priority order now:** see [MASTER_PLAN §10](MASTER_PLAN.md) — data download first, then hardware kit, WhatsApp test number, venue.
 
 ## B. Accounts and access (only you can create these)
 

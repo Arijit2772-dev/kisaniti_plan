@@ -1,5 +1,7 @@
 # Implementation Blueprint Status
 
+> **Gate update 21 October 2026 (CHAT-28):** product coding is **OPEN LAYER BY LAYER**. A layer's product code may start only after that layer's contracts are frozen and recorded in the decision register (W01 slice). Until a layer's contracts are frozen, its product code stays prohibited. Plan: [MASTER_PLAN](../MASTER_PLAN.md). The text below is the earlier status, kept as history.
+
 > **15 October 2026 handoff:** all five layers now have written designs; see [current decision status](09_CHAT_DECISION_STATUS.md) and [continuation tasks](08_CONTINUATION_TASKS.md). This copy preserves the original implementation gate: product coding remains prohibited until explicitly advanced after affected contracts are ready. Documentation packaging is complete; implementation phases are not. The phase tracking below describes the source repository, not newly completed product work.
 
 Architecture baseline: **FROZEN SOURCE OF TRUTH**<br>

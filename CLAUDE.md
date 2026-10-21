@@ -6,6 +6,7 @@
 
 This folder contains a self-contained project design handoff requested by the user on 14–15 October 2026. The user wants another agent to understand what was decided, improve remaining decisions and proceed toward implementation without hallucinating history.
 
+0. Read the [master plan](docs/MASTER_PLAN.md) first: dual track (CHAT-28), shared `core/`, milestones.
 1. Read [AGENTS.md](AGENTS.md) and [docs/START_HERE.md](docs/START_HERE.md).
 2. Read the complete [protected architecture](docs/architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md), then [explicit conversation amendments](docs/architecture/2026-10-15_Conversation_Amendments.md).
 3. Read [blueprint status](docs/blueprint/00_BLUEPRINT_STATUS.md), [current decision status](docs/blueprint/09_CHAT_DECISION_STATUS.md) and the [unknown register](docs/blueprint/02_UNKNOWN_BLOCKER_REGISTER.md).

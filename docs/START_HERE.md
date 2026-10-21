@@ -4,6 +4,7 @@ Prepared 15 October 2026. The current workspace is this folder, not the old abso
 
 ## Reading order
 
+0. [Master plan](MASTER_PLAN.md).
 1. Root AGENTS.md and CLAUDE.md.
 2. Complete [architecture baseline](architecture/KisanNiti_Consolidated_Architecture_Handoff_2026-08-10.md), [limited amendments](architecture/2026-10-15_Conversation_Amendments.md) and [blueprint status](blueprint/00_BLUEPRINT_STATUS.md).
 3. [Current decision status](blueprint/09_CHAT_DECISION_STATUS.md), [decision register](blueprint/01_DECISION_REGISTER.md), [unknown register](blueprint/02_UNKNOWN_BLOCKER_REGISTER.md), [conflict register](blueprint/04_CONFLICT_REGISTER.md), [rejected/revised positions](blueprint/05_REJECTED_REVISED_DECISIONS.md).

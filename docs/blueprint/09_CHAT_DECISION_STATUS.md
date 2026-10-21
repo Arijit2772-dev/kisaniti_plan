@@ -31,6 +31,10 @@
 | CHAT-25 | DESIGN DECISION — user approved, 15 October | 300-member Patiala persona for demo/paper; 5×200 only for load tests | Real FPO confirmation |
 | CHAT-26 | DESIGN DECISION — user approved, 15 October | Privacy contract (DPDP), no Aadhaar stored ([spec](../design/PRIVACY_CONTRACT.md)) | Legal review before pilot |
 | CHAT-27 | DESIGN DECISION — user decision, 21 October | Research paper first: research prototypes + experiments + paper in `kisaniti_research_paper`; product gate unchanged | Decisions D1–D4 in the research plan |
+| CHAT-28 | DESIGN DECISION — user decision, 21 October | Research + product side by side; product gate opens layer by layer after that layer's contract freeze; shared `core/` package | Per-layer contract freezes |
+| CHAT-29 | DESIGN DECISION — delegated, 21 October | Hardware: real ESP32 + SHT30 in grain + Wokwi twin; DHT22/DS18B20 circuit retired | Kit purchase, calibration |
+| CHAT-30 | DESIGN DECISION — delegated, 21 October | One frontend (product Next.js) for paper screenshots | — |
+| CHAT-31 | ENGINEERING LEAN — delegated, 21 October | LaTeX Springer template unless venue/guide needs Word | Venue choice |
 
 See [current Layer 5](../communication/KisanNiti_Layer_5_Current.md) and [WhatsApp/multilingual specification](../communication/WHATSAPP_MULTILINGUAL.md); earlier optional/generic-channel language is superseded. Storage approximation and Patiala answers: [research note](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
 

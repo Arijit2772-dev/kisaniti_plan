@@ -115,3 +115,12 @@ Details: [Patiala research](../research/2026-10-15_Patiala_Storage_Risk_and_Unkn
 **Classification:** DESIGN DECISION — explicit user decision ("our main goal right now first is research paper … make different folder kisaniti_research_paper").<br>
 **Decision:** Work now goes research-first in `../kisaniti_research_paper` (GitHub `kisaniti_research_paper`, private): research prototypes of every layer, real-data experiments, comparisons and the Springer paper text, written together phase by phase (R0–R10 in its RESEARCH_PLAN.md). Research code is allowed there. The **product coding gate for `kisaniti_implementation` is unchanged** (00_BLUEPRINT_STATUS stays PROHIBITED); research code is not copied into the product without review. Earlier paper v2 work (`~/Documents/rp_kisan`) is imported as the baseline.<br>
 **Open decisions listed in the research plan:** D1 hardware story for the paper (recommended ESP32 + SHT30 with Wokwi), D2 venue, D3 prototype dashboard (recommended Streamlit), D4 manuscript format.
+
+## CHAT-28 to CHAT-31 — master plan decisions, 21 October 2026
+
+User words: "we are simultaneously doing implementation also so it would keep on doing things side by side … for the hardware u see what is the best … final software and hardware … ready to use directly". See [MASTER_PLAN](../MASTER_PLAN.md).
+
+- **CHAT-28 (DESIGN DECISION — user decision):** Research and product implementation run side by side. The product coding gate opens **layer by layer**: product code for a layer may start once that layer's contracts are frozen and recorded (W01 slice). The shared algorithm package `core/` lives in `kisaniti_implementation` and is imported by research experiments ("verified once, used twice").
+- **CHAT-29 (DESIGN DECISION — choice delegated to Claude by the user):** Hardware for paper and product is ESP32-WROOM-32 + protected SHT30 probe inside the grain, built for real, plus a Wokwi digital twin running the same firmware. The paper v2 DHT22 + 2×DS18B20 circuit is retired (history only). Rationale in MASTER_PLAN §5.
+- **CHAT-30 (DESIGN DECISION — delegated):** One frontend — the product Next.js app — supplies the paper screenshots; no separate Streamlit prototype.
+- **CHAT-31 (ENGINEERING LEAN — delegated, venue-dependent):** Manuscript in LaTeX with the Springer template unless the venue or guide requires Word.
