@@ -30,6 +30,7 @@
 | CHAT-24 | DESIGN DECISION — user approved, 15 October | Hold-or-sell advisory for held wheat and basmati ([spec](../design/HOLD_SELL_ADVISORY.md)) | Cost parameters; EXP-07 results |
 | CHAT-25 | DESIGN DECISION — user approved, 15 October | 300-member Patiala persona for demo/paper; 5×200 only for load tests | Real FPO confirmation |
 | CHAT-26 | DESIGN DECISION — user approved, 15 October | Privacy contract (DPDP), no Aadhaar stored ([spec](../design/PRIVACY_CONTRACT.md)) | Legal review before pilot |
+| CHAT-27 | DESIGN DECISION — user decision, 21 October | Research paper first: research prototypes + experiments + paper in `kisaniti_research_paper`; product gate unchanged | Decisions D1–D4 in the research plan |
 
 See [current Layer 5](../communication/KisanNiti_Layer_5_Current.md) and [WhatsApp/multilingual specification](../communication/WHATSAPP_MULTILINGUAL.md); earlier optional/generic-channel language is superseded. Storage approximation and Patiala answers: [research note](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
 

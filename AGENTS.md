@@ -1,6 +1,6 @@
 # KisanNiti — instructions for all agents
 
-> **Planning folder only.** This folder describes *how KisanNiti should be* (design, decisions, research plan, paper). All code, contracts-as-files, experiments and test evidence live in the separate implementation folder [`../kisaniti_implementation`](../kisaniti_implementation/README.md) (`/Users/arijitsingh/Documents/kisaniti_implementation`). Do not put code here.
+> **Planning folder only.** This folder describes *how KisanNiti should be* (design, decisions, research plan, paper). Product code, contracts-as-files and product test evidence live in [`../kisaniti_implementation`](../kisaniti_implementation/README.md); research prototypes, experiments and the paper live in [`../kisaniti_research_paper`](../kisaniti_research_paper/README.md) (CHAT-27). Do not put code here.
 
 Read [docs/START_HERE.md](docs/START_HERE.md), the complete protected architecture, the dated conversation amendments, current blueprint status, decision and unknown registers before implementation. Claude-specific entry is [CLAUDE.md](CLAUDE.md); these instructions apply to all agents.
 

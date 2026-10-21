@@ -109,3 +109,9 @@ Details: [Patiala research](../research/2026-10-15_Patiala_Storage_Risk_and_Unkn
 - **CHAT-24:** Add the **hold-or-sell advisory** to Layer 3 for held wheat and basmati — spec: [HOLD_SELL_ADVISORY](../design/HOLD_SELL_ADVISORY.md). Resolves OI-01 at design level.
 - **CHAT-25:** Use the **300-member Patiala persona** for demo, workflow and paper scenarios; keep 5 × 200 (CHAT-02) only as a load test — [FPO profile](../research/PATIALA_FPO_PROFILE_APPROX.md).
 - **CHAT-26:** A **privacy contract** (India DPDP Act 2023 / Rules 2025) is required before coding; Aadhaar numbers are never stored — spec: [PRIVACY_CONTRACT](../design/PRIVACY_CONTRACT.md). Resolves OI-06 at design level; legal review still needed before a real pilot.
+
+## CHAT-27 — research paper first; research prototypes in a separate workspace, 21 October 2026
+
+**Classification:** DESIGN DECISION — explicit user decision ("our main goal right now first is research paper … make different folder kisaniti_research_paper").<br>
+**Decision:** Work now goes research-first in `../kisaniti_research_paper` (GitHub `kisaniti_research_paper`, private): research prototypes of every layer, real-data experiments, comparisons and the Springer paper text, written together phase by phase (R0–R10 in its RESEARCH_PLAN.md). Research code is allowed there. The **product coding gate for `kisaniti_implementation` is unchanged** (00_BLUEPRINT_STATUS stays PROHIBITED); research code is not copied into the product without review. Earlier paper v2 work (`~/Documents/rp_kisan`) is imported as the baseline.<br>
+**Open decisions listed in the research plan:** D1 hardware story for the paper (recommended ESP32 + SHT30 with Wokwi), D2 venue, D3 prototype dashboard (recommended Streamlit), D4 manuscript format.

@@ -1,6 +1,8 @@
 # Claude — start here for KisanNiti
 
-> **Planning folder only.** This folder describes *how KisanNiti should be* (design, decisions, research plan, paper). All code, contracts-as-files, experiments and test evidence live in the separate implementation folder [`../kisaniti_implementation`](../kisaniti_implementation/README.md) (`/Users/arijitsingh/Documents/kisaniti_implementation`). Do not put code here.
+> **Research paper first (CHAT-27, 21 Oct 2026):** current work happens in [`../kisaniti_research_paper`](../kisaniti_research_paper/RESEARCH_PLAN.md) (research prototypes, experiments, paper). This folder stays the design source of truth.
+
+> **Planning folder only.** This folder describes *how KisanNiti should be* (design, decisions, research plan, paper). Product code, contracts-as-files and product test evidence live in [`../kisaniti_implementation`](../kisaniti_implementation/README.md); research prototypes, experiments and the paper live in [`../kisaniti_research_paper`](../kisaniti_research_paper/README.md) (CHAT-27). Do not put code here.
 
 This folder contains a self-contained project design handoff requested by the user on 14–15 October 2026. The user wants another agent to understand what was decided, improve remaining decisions and proceed toward implementation without hallucinating history.
 
