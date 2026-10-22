@@ -152,3 +152,16 @@ User words: "we are simultaneously doing implementation also so it would keep on
 - **W01-S07 Errors:** RFC 9457 problem details with a closed list of 19 codes and fixed HTTP statuses.
 - **W01-S08 Versioning:** draft 2020-12 schemas with `.invalid` `$id`s, `contract` field on top-level documents, CI validates every example.<br>
 **Revisit trigger:** a second FPO time zone, a unit that needs finer precision than 1 g or 1 paisa, or a real FPO workflow that conflicts with the tenant rule.
+
+## W01-L3D — Layer 3d allocation contract slice frozen (`allocation/v1`), 22 October 2026
+
+**Classification:** ENGINEERING LEAN — contract freeze delegated by the master plan (M7, Session B) under CHAT-28. It implements the existing DESIGN DECISIONS D14 and CHAT-10 (lexicographic hierarchy with per-farmer true leximin, pure optimizer, independent validator). It adds no business policy.<br>
+**Status:** FROZEN. Spec: [CONTRACT_SPEC_V1_L3d_allocation](../contracts/CONTRACT_SPEC_V1_L3d_allocation.md); schemas in `kisaniti_implementation/contracts/allocation/v1/`; code in `kisaniti_core.allocation`.<br>
+**Choices made to fill gaps (recorded, reversible by a v2):**
+1. Costs reach the optimizer as one exact per-kg rate per choice; costs are linear only, with no fixed trip charge.
+2. A missing STRICT capacity is an input error.
+3. The leximin preserve rows fix θ at the exact k-th value (equivalent on the optimal set), with one row per distinct value and an exact collapse once the value reaches 1.
+4. TIE_BREAK_V1 = minimise Σ rank·increments in (lot ID, date, mandi ID) order. It fixes the score, not plan uniqueness.
+5. CP-SAT reports NOT_APPLICABLE when exact integer scaling exceeds 2⁴⁰.
+6. Policy versions LEXIMIN_FULFILMENT_V1, STORAGE_PRIORITY_V1, TIE_BREAK_V1 and NONE_DEMO_V1.<br>
+**Still open:** EconomicPolicy, real increments and calendar, transport grouping, proposal eligibility of time-limited results (G09), and real-FPO acceptance (PILOT-009).
