@@ -1,6 +1,8 @@
 # L3b contract slice v1 — device telemetry, SensorReading and StorageAssessment
 
-**Status: FROZEN for implementation (W01 slice for Layer 3b), 22 October 2026.** Recorded in the [decision register](../blueprint/01_DECISION_REGISTER.md) as `W01-L3B`. Machine-readable JSON Schemas: `kisaniti_implementation/contracts/sensor/`.
+**Status: FROZEN for implementation (W01 slice for Layer 3b), 22 October 2026.** Recorded in the [decision register](../blueprint/01_DECISION_REGISTER.md) as `W01-L3B`. Machine-readable JSON Schemas: `kisaniti_implementation/contracts/sensor/v1/` (they reuse `shared/v1/common.schema.json`).
+
+**Aligned with the [shared contract](CONTRACT_SPEC_V1_shared.md) (22 Oct, same day):** every time below is a shared-contract *instant* (`YYYY-MM-DDTHH:MM:SS.sssZ`, exactly milliseconds), and every stored reading and assessment carries the shared `provenance` object.
 
 This slice turns the existing design text into exact fields. It does not add new policy. Sources:
 
@@ -29,7 +31,7 @@ Topic: `kisaniti/v1/devices/{device_id}/telemetry`, QoS 1, not retained. JSON, U
 | `device_id` | string `^[a-z0-9][a-z0-9-]{2,31}$` | Must equal the `{device_id}` in the topic. Identity only; it never grants FPO or location authority |
 | `boot_id` | string, 8 lowercase hex | New random value at every boot |
 | `seq` | integer ≥ 0 | Starts at 0 each boot, +1 per sample (not per send) |
-| `measured_at` | RFC 3339 UTC string or `null` | `null` when the clock was never trustworthy for this sample |
+| `measured_at` | instant or `null` | `null` when the clock was never trustworthy for this sample |
 | `time_quality` | `NTP_SYNCED` \| `UPTIME_BACKFILLED` \| `UNSYNCED` | `UPTIME_BACKFILLED`: sample taken before NTP sync, time filled in later in the same boot from the uptime difference |
 | `uptime_ms` | integer ≥ 0 | Milliseconds since boot at measurement |
 | `temperature_c` | number −40…125 or `null` | `null` when the read failed. Never a false zero |
@@ -48,7 +50,7 @@ Topic: `kisaniti/v1/devices/{device_id}/telemetry`, QoS 1, not retained. JSON, U
 
 **Buffer (firmware v1):** RAM ring buffer of 288 samples (24 h at 5 min). It survives Wi-Fi, broker and backend outages. **It does not survive a power cut or reset**; samples in it are then lost and the gap shows as missing sequence numbers in the old boot. On overflow the oldest sample is dropped and `dropped_since_boot` increases. A flash-backed queue is future work.
 
-**Status topic:** `kisaniti/v1/devices/{device_id}/status`, retained, `{"state":"online"|"offline","boot_id":…,"at":…}`; `offline` is the MQTT last will. Status never makes a reading fresh.
+**Status topic:** `kisaniti/v1/devices/{device_id}/status`, retained, `{"state":"online"|"offline","boot_id":…,"at":instant|null}`; `offline` is the MQTT last will. Status never makes a reading fresh.
 
 ## 3. SensorReadingV1 (stored by the backend)
 
@@ -57,13 +59,14 @@ Every field of `DeviceTelemetryV1`, plus:
 | Field | Type | Rule |
 |---|---|---|
 | `reading_id` | string | `"{device_id}:{boot_id}:{seq}"` |
-| `received_at` | RFC 3339 UTC | Backend clock at first receipt |
+| `received_at` | instant | Backend clock at first receipt |
 | `measured_at_trusted` | boolean | `true` only for `NTP_SYNCED` or `UPTIME_BACKFILLED`, and `measured_at` not more than 5 min after `received_at` |
 | `temperature_valid`, `humidity_valid` | boolean | Value present and inside the plausible range (temperature −10…60 °C, humidity 0…100 %) |
 | `ingest_status` | `ACCEPTED` \| `QUARANTINED` | Quarantined readings are kept (with reason) but never used for assessment |
 | `quarantine_reason` | string or `null` | e.g. `TOPIC_DEVICE_MISMATCH`, `SCHEMA_INVALID`, `UNREGISTERED_DEVICE`, `FUTURE_TIMESTAMP` |
 | `raw_sha256` | hex string | Hash of the exact payload bytes |
 | `topic` | string | MQTT topic it arrived on |
+| `provenance` | shared `provenance` | From the **registered** source, not the payload: `DEVICE` → `REAL`/`SENSOR`; `WOKWI_TWIN` or `SIMULATOR` → `SYNTHETIC`/`SIMULATOR` with a generator. A payload whose `source_origin` disagrees with the registration is quarantined (`SOURCE_ORIGIN_MISMATCH`) |
 
 The backend, not the device, resolves the FPO, location and placement from the device-assignment history at `measured_at` (IC-DOMAIN-004). A reading with an untrusted time cannot be assigned by guessing; it stays stored but is not used for assessment.
 
@@ -73,8 +76,8 @@ The backend, not the device, resolves the FPO, location and placement from the d
 |---|---|---|
 | `device_id` | string | |
 | `placement` | `IN_GRAIN` \| `AMBIENT` | `IN_GRAIN`: probe tip at mid-depth of the bag or heap |
-| `crop` | `PADDY` \| `WHEAT` | Same thresholds for both (Part B4) |
-| `assigned_at` | RFC 3339 UTC | Insertion or reassignment time; starts the settling period |
+| `crop` | `PADDY` \| `WHEAT` | `PADDY` includes basmati, the main stored crop of the study (CHAT-32). Same thresholds for both (Part B4) |
+| `assigned_at` | instant | Insertion or reassignment time; starts the settling period |
 | `sample_interval_s` | integer | 300 for real use |
 
 ## 5. StorageAssessmentV1 (output of `STORAGE-DEMO-0.1`)
@@ -84,8 +87,8 @@ The backend, not the device, resolves the FPO, location and placement from the d
 | `schema` | const `"kisaniti.storage_assessment.v1"` | |
 | `policy_version` | const `"STORAGE-DEMO-0.1"` | |
 | `device_id`, `crop`, `placement` | | From the assignment |
-| `assessed_at` | RFC 3339 UTC | |
-| `window_start`, `window_end` | RFC 3339 UTC | 24 h ending at `assessed_at` |
+| `assessed_at` | instant | |
+| `window_start`, `window_end` | instant | 24 h ending at `assessed_at` |
 | `category` | `LOW` \| `MEDIUM` \| `HIGH` \| `UNKNOWN` | |
 | `unknown_reasons` | list of `NOT_IN_GRAIN`, `NO_ASSIGNMENT`, `SETTLING`, `STALE`, `LOW_COVERAGE` | Empty unless `UNKNOWN`; all failing checks are listed |
 | `mould_level` | `LOW` \| `MEDIUM` \| `HIGH` or `null` | Water-activity band after hysteresis, before temperature adjustment |
@@ -94,10 +97,11 @@ The backend, not the device, resolves the FPO, location and placement from the d
 | `rh_median_pct`, `temperature_median_c` | number or `null` | Reported also for `AMBIENT` placement, labelled "ambient conditions" |
 | `insect_flag` | `INSECT_FAVOURABLE` \| `INSECTS_SLOW` \| `INSECTS_INACTIVE` or `null` | Advisory; never sets urgency alone |
 | `samples_used`, `samples_expected` | integer | Coverage check: `samples_used ≥ 0.75 × samples_expected` |
-| `latest_measured_at` | RFC 3339 UTC or `null` | |
+| `latest_measured_at` | instant or `null` | |
 | `hysteresis` | object `{level, below_since}` | State carried to the next assessment |
 | `label` | const `"Experimental approximation — not measured spoilage"` | Shown wherever the category is shown |
 | `evidence_ref` | string | Link to Part B |
+| `provenance` | shared `provenance` | `source_kind = DERIVED`; `origin` by the taint rule over the readings used (twin data gives `SYNTHETIC`) |
 
 ### 5.1 Rule `STORAGE-DEMO-0.1` (exact)
 
