@@ -124,3 +124,11 @@ User words: "we are simultaneously doing implementation also so it would keep on
 - **CHAT-29 (DESIGN DECISION — choice delegated to Claude by the user):** Hardware for paper and product is ESP32-WROOM-32 + protected SHT30 probe inside the grain, built for real, plus a Wokwi digital twin running the same firmware. The paper v2 DHT22 + 2×DS18B20 circuit is retired (history only). Rationale in MASTER_PLAN §5.
 - **CHAT-30 (DESIGN DECISION — delegated):** One frontend — the product Next.js app — supplies the paper screenshots; no separate Streamlit prototype.
 - **CHAT-31 (ENGINEERING LEAN — delegated, venue-dependent):** Manuscript in LaTeX with the Springer template unless the venue or guide requires Word.
+
+## W01-L3B — Layer 3b contract slice frozen (device telemetry, SensorReadingV1, StorageAssessmentV1), 22 October 2026
+
+**Classification:** ENGINEERING LEAN — contract freeze delegated by the master plan (M5, Session C) under CHAT-28; no new business policy.<br>
+**Status:** FROZEN for implementation. Contract: [L3b_SENSOR_STORAGE_CONTRACT_v1](../contracts/L3b_SENSOR_STORAGE_CONTRACT_v1.md); schemas in `kisaniti_implementation/contracts/sensor/`.<br>
+**What is fixed:** message fields and event identity `(device_id, boot_id, seq)`; topics `kisaniti/v1/devices/{id}/telemetry|ack|status`; QoS 1 with backend de-duplication; application acknowledgement after durable store; `STORAGE-DEMO-0.1` constants and order of steps exactly as in Part B (6 h settling, 24 h median, 15 min freshness, 75% coverage, aw 0.65/0.70, 10 °C/25 °C adjustments, 2-point/48 h hysteresis, advisory insect flag).<br>
+**Choices made to fill gaps (recorded, reversible by a v2):** (1) hysteresis acts on the water-activity band, and the temperature adjustment is applied after it; (2) an `UNKNOWN` assessment leaves the hysteresis state unchanged; (3) samples taken before NTP sync may be back-filled from uptime within the same boot (`UPTIME_BACKFILLED`) and then count as trusted; (4) firmware v1 buffers 288 samples in **RAM only**, so a power cut loses unsent samples — stated as a limit, flash queue is future work.<br>
+**Still open (unchanged):** PILOT-007 local calibration of thresholds, real settling time (bench test H4), broker hosting and device provisioning for a real FPO.
