@@ -41,6 +41,17 @@ Let y_e be the integer number of increments on admissible choice e = (lot, mandi
 
 **How the optimum is preserved.** After stage k, the k-th value v_k = L_k* − L_{k−1}* is computed exactly from the integer plan. The preserve constraint fixes θ at v_k: Σ_f (v_k − r_f)⁺ ≤ k·v_k − L_k*. This holds for exactly the plans that keep the optimal prefix L_1*…L_k*. Equal consecutive values give the same row, so only one row per distinct value is added. When v_k = 1, every later value is also 1, and the remaining stages collapse into Σ_f r_f ≥ L_|F|*. Integer-valued stages (1, 3, 4, 5) are preserved exactly.
 
+**Two exact methods for stages 1–2 (same semantics).**
+- *Flow water-filling* (`leximin_flow.py`) is used automatically when every lot has the same increment and the mode is PARTIAL. It repeatedly gives one more increment to the farmer first in the order (smallest current ratio, then smaller P_f, then farmer ID), along an augmenting path that may reroute other farmers but never reduces them.
+  - With one common increment, the reachable farmer totals form an integral polymatroid.
+  - Leximin equals maximising Σ_f −exp(−M·r_f) for large M, a separable concave objective.
+  - Greedy is optimal for separable concave maximisation over polymatroids (Federgruen & Groenevelt 1986; Megiddo 1974 for lexicographically optimal flows).
+
+  Its exact sorted vector is then written into the MILP as the preserve rows above, and stages 3–5 are solved by the MILP.
+- *Staged MILP* (Ogryczak) is used in every other case, or when `leximin_method="milp"` is passed.
+
+Both methods agree with each other and with the oracle in the tests. The MILP leximin can be slow even for about 8 farmers, because proving integer max-min values needs a near-zero gap. That is why the flow method is the default.
+
 **Numerics.** Fairness truth is always the exact fraction S_f/P_f. After every stage the core checks that no earlier leximin value was lost; if one was, the result is `TECHNICAL_FAILURE`. HiGHS and SCIP run with a relative MIP gap of 0 and a 10⁻⁹ tolerance on fairness rows. CP-SAT runs in exact integers. When the common denominator of the fulfilment ratios needs coefficients above 2⁴⁰, CP-SAT reports `NOT_APPLICABLE` rather than rounding.
 
 **Tie-break limit (recorded).** TIE_BREAK_V1 fixes the tie-break *score*. Two plans with the same business tuple and the same score can both exist; then the plan depends on solver, version and seed. Business metrics are identical either way. A truly lexicographic tie-break needs one solve per coordinate, which the architecture (§40) says not to do without benchmark evidence.
