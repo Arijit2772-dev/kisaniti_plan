@@ -35,6 +35,7 @@
 | CHAT-29 | DESIGN DECISION — delegated, 21 October | Hardware: real ESP32 + SHT30 in grain + Wokwi twin; DHT22/DS18B20 circuit retired | Kit purchase, calibration |
 | CHAT-30 | DESIGN DECISION — delegated, 21 October | One frontend (product Next.js) for paper screenshots | — |
 | CHAT-31 | ENGINEERING LEAN — delegated, 21 October | LaTeX Springer template unless venue/guide needs Word | Venue choice |
+| CHAT-32 | DESIGN DECISION — user decision on measured data, 22 October | Basmati is the main market-priced crop; off-season Punjab wheat too sparse (2–5 rows/month) → held wheat is a limitation/future work | Basmati season downloads 2021–2026 |
 
 See [current Layer 5](../communication/KisanNiti_Layer_5_Current.md) and [WhatsApp/multilingual specification](../communication/WHATSAPP_MULTILINGUAL.md); earlier optional/generic-channel language is superseded. Storage approximation and Patiala answers: [research note](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
 
