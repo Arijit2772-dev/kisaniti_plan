@@ -4,6 +4,20 @@
 
 How to use it: finish the steps of a phase in order; steps in different phases marked ∥ can run at the same time in separate sessions (one session per folder).
 
+## RESUME POINT (read this first in a new chat)
+
+*Updated 24 Oct 2026.* Phase A.1 is in progress. **Next month to download: February 2025** (Paddy(Basmati), Punjab). After it: Sep–Jan for 2023-24, then 2022-23, then 2021-22, then June 2025 as the off-season test.
+
+How to continue in a fresh chat:
+
+1. Open the research repo (`~/Documents/kisaniti_research_paper`) and read `AGENT_HANDOFF.md`, `layers/L1_data/DOWNLOAD_RUNBOOK.md` and `layers/L1_data/download_log.csv`. A month is done only if it appears in the log.
+2. Open `https://agmarknet.gov.in/datewisespeccommdodityinput` (keep the odd spelling), fill year, month, State = Punjab, Commodity = Paddy(Basmati). The Back button forgets the choices.
+3. The user types the CAPTCHA and presses Submit; then Export → Export as CSV.
+4. File it: `python3 -I layers/L1_data/ingest_download.py` (add `--copy` to keep the original).
+5. Tick the month below and commit only `layers/L1_data` and `data/manifests`.
+
+Months filed so far: 2024-09…2025-01, 2025-09…2026-02, 2026-09, 2026-10 (13). Still to do: 2025-02; 2023-09…2024-01; 2022-09…2023-01; 2021-09…2022-01; 2025-06 (test).
+
 ## 0. Where things stand (24 Oct 2026)
 
 | Area | State | Evidence |
