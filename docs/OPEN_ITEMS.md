@@ -17,19 +17,21 @@
 | ID | Finding | Next step | Owner | Status |
 |---|---|---|---|---|
 | O6 | Share of rows with min = max = modal rises from 7% (2024-25) to 27% (2025-26) and 56% (2026-27) | Ask in the hand check whether the website shows the same; decide whether min/max may be used at all; the index uses modal only | YOU (check) then AI | open |
-| O7 | Very large arrivals at Khanna (about 18,000 t on many days; median over all rows 190 t) | One Khanna row (HC42) is in the hand-check sheet; arrivals are excluded from the primary models until checked | YOU | open |
-| O8 | Price of ₹800 (Kot Ise Khan, 31 Oct 2021, 1 t) against a season median of ₹3,400 | HC02 in the sheet; flagged, not removed | YOU | open |
+| O7 | Very large arrivals at Khanna (about 18,000 t on many days; median over all rows 190 t) | Two largest-arrivals rows (Khanna 2026-01_punjab.csv:21, Budalada 2025-11_punjab.csv:97) are in the hand-check sheet; arrivals are excluded from the primary models until checked | YOU | open |
+| O8 | Price of ₹800 (Kot Ise Khan, 31 Oct 2021, 1 t) against a season median of ₹3,400 | row 2021-10_punjab.csv:149 is in the hand-check sheet; flagged, not removed | YOU | open |
 | O9 | Market map was **not** built in B.1. 86 raw names include 9 groups that look like sub-yards of one town (for example six Bhikhiwind names, three Samana names), and the index's "at least 3 mandis" rule currently counts each raw name | Decide with a rule (merge sub-yards or not). **Sensitivity measured (24 Oct, `build_index.py` `*_towns` variants):** index days barely change (1121: 433 to 431; 1509: 369 unchanged), but about 20% of days get a different value (median difference ₹0, largest ₹617 = 29%, on days with few mandis). So the rule matters and must be chosen and reported | AI built the variants, rule needs YOU | open |
-| O10 | Two same-variety, same-day pairs (Bariwala 18 Nov 2025; Bareta 11 Sep 2026) | Hand-check rows HC40/41, HC44/45; excluded from the index meanwhile | YOU | open |
+| O10 | Two same-variety, same-day pairs (Bariwala 18 Nov 2025; Bareta 11 Sep 2026) | Both pairs are in the hand-check sheet (2025-11_punjab.csv:46/47, 2026-09_punjab.csv:76/77); excluded from the index meanwhile | YOU | open |
 | O11 | Outlier screens (MAD, Hampel, IQR) not implemented; no literature says which suits AGMARKNET | Implement as candidates, score on the hand-checked sample and by forecast effect (B.3) | AI after O1 | waiting |
 | O12 | Jain 2020 fills missing days with a spline; our rule forbids showing filled values as observed | Compare in B.3, do not adopt silently | AI | waiting |
+| O26 | **48 rows have a modal price of ₹2,389 or ₹2,390, mostly Kot Ise Khan in Oct–Nov 2025, mostly variety 1121 (season median about ₹3,150).** ₹2,389 is the 2025-26 paddy Grade A MSP (verified, see O23). They look like the MSP entered as a price, not a market price. Found by the spot-check worker; I confirmed the count | 4 of them are in the hand-check sheet; if the website shows the same, add a rule that flags modal = MSP value, and test its effect on the index | YOU (check) then AI | open |
+| O27 | The repo's demo constants use the KMS 2025-26 paddy MSP (2369/2389) although KMS 2026-27 (2441/2461) was announced on 13 May 2026 | Decide which season the demo means; no code changed | YOU | open |
 | O13 | CEDA long history (A.4) stays on hold by your decision | Re-test the portal later; the paper states the limit | — | on hold |
 
 ## C. Literature
 
 | ID | Item | Status |
 |---|---|---|
-| O14 | Ladhar et al. 2023 (soybean cooperatives, forecast + sell-or-wait, field-tested app) may contradict the review's gap 4 on hold-or-sell | worker running: `rp:literature/LADHAR2023_CHECK.md` |
+| O14 | Ladhar et al. 2023 does contradict gap 4 as written (a collective-level, ML-based, field-tested sale-timing system). Worker read the authors' own copy (full text); partial overlap: it has forecasting and prospect-theory sale dates, but no storage loss or holding cost, no allocation across members, no fairness, no sensors, no approval step. **The gap sentence must be reworded and the paper cited; the review file is not yet edited** | DONE (check); edit pending (authors), `rp:literature/LADHAR2023_CHECK.md` |
 | O15 | Six references found this session are not in `references.bib` (Leys 2013, Hampel 1974, Pearson 2016, Rousseeuw & Croux 1993, Chandola 2009, Jain 2020; plus Gonzalez 2025, Ladhar 2023) | AI, after full text is read for each; abstract-only ones stay uncited as evidence |
 | O16 | Full texts not read: Gonzalez 2025 (MDPI blocked), Bhoi 2023, Ladhar 2023 (ACM blocked) | library access may be needed: YOU |
 | O17 | The R1 review never recorded cleaning practice; the 57-reference list is otherwise unchanged | note only |
@@ -50,10 +52,10 @@ Per the repository rules these go into the decision register only after you appr
 
 | ID | Item | Output | Status |
 |---|---|---|---|
-| O23 | A.3 official MSP table with source links | `rp:layers/L1_data/msp/` | running |
+| O23 | A.3 official MSP table with source links | `rp:layers/L1_data/msp/` | **done**: 18 values (6 paddy seasons x 2 grades, 6 wheat seasons) from PIB; I re-opened 14 PIB pages myself and the numbers match; the DES PDF cross-check used `curl -k` (certificate check off), not relied on |
 | O14 | Ladhar 2023 overlap | `rp:literature/LADHAR2023_CHECK.md` | running |
 | O24 | Can Chronos-2 run here at all? (protocol model 8) | report only | running |
-| O25 | B.2b second source for the independent spot check | `rp:layers/L2_cleaning/SPOT_CHECK_SOURCES.md` | running |
+| O25 | B.2b second source for the independent spot check | `rp:layers/L2_cleaning/SPOT_CHECK_SOURCES.md` | **done**: no fully independent, no-login daily source found for named Punjab mandis. Best options: eNAM viewed by you in a normal browser (blocked automated access; may overlap AGMARKNET), and Tribune/trade-press ranges as plausibility only. Punjab Mandi Board hosts do not resolve. 15 cells proposed for October 2025 (not yet reviewed by me cell by cell) |
 
 ## F. Not started
 
