@@ -6,6 +6,8 @@ How to use it: finish the steps of a phase in order; steps in different phases m
 
 ## RESUME POINT (read this first in a new chat)
 
+**Also read [OPEN_ITEMS.md](OPEN_ITEMS.md)**: every unsettled finding and who owns it (24 Oct 2026).
+
 *Updated 24 Oct 2026.* **Phase A.1 (basmati downloads) is finished.** All 29 months are filed; June 2025 is empty. Nothing more needs downloading for Paper 1. Open items in Phase A: **A.3 (sourced MSP table)** and optional A.4/A.5.
 
 Next steps, in order (each can start in a fresh chat from the files alone):
@@ -71,7 +73,7 @@ Done when: ≥ 4 full basmati seasons are filed ✅, the coverage table exists �
 
 Why the data is considered enough for Paper 1, and what it cannot support: research `layers/L1_data/DATA_ADEQUACY.md`.
 
-- [x] B.1 (24 Oct, research commit ee9de51: parser, 9 tests, 50-row sheet; outlier screens deliberately deferred to B.3) Tidy parser, **blank-date rule** (580 rows that are probably real second-variety prices), variety map, market map, rule checks, outlier flags — `AI`
+- [x] B.1 (24 Oct, research commit ee9de51: parser, 9 tests, 50-row sheet; outlier screens deferred to B.3; **market map B.1d not built yet**, see OPEN_ITEMS O9) Tidy parser, **blank-date rule** (580 rows that are probably real second-variety prices), variety map, market map, rule checks, outlier flags — `AI`
 - [ ] B.2 **Hand check ~50 rows against the AGMARKNET website**, which also confirms or rejects the blank-date rule; the checker is recorded — `YOU` (an agent prepares the sheet)
 - [ ] B.2b **Independent spot check:** compare one month with a second source (eNAM, Punjab Mandi Board portal or published price reports) — `BOTH`
 - [ ] B.3 Compare cleaning options (raw only, + blank-date rule, + outlier exclusions; MAD vs Hampel vs IQR) by precision/recall and by effect on forecast error — `AI`
