@@ -176,3 +176,9 @@ Manuscript prose uses passive or impersonal academic phrasing, superseding older
 **Status:** Revised complete-paper copies and guarded research-source updates prepared; canonical research writeback pending writable access. See [editorial checkpoint](../handoff/2026-10-22_Paper_Editorial_Revision.md).
 
 **Still UNKNOWN / pending:** Harkiran Kaur's email; previously unconfirmed student emails; supervisor/author approval; new college checker score; venue requirements. No product gate or experimental status is changed.
+
+## DATA-ADEQUACY-2026-10-24 — how the basmati data is used in Paper 1
+
+**Classification:** ENGINEERING LEAN (analysis-based; no user decision pending).<br>
+**Basis:** exploratory statistics on the 29 filed AGMARKNET files (research `layers/L1_data/DATA_ADEQUACY.md`): prices move (median change ₹50/q; 1121 same-day spread across mandis median ₹1,468/q), but only five seasons exist and only 21 of 71 mandi series have at least 60 observations.<br>
+**Decisions:** (1) model the variety-level daily index for 1121 and 1509 rather than per-mandi series; (2) report the hold-or-sell backtest as exploratory (per season, with uncertainty, no significance claim) until longer history (CEDA) is available; (3) add an independent spot check to cleaning; (4) AGMARKNET modal price is never described as the farmer's price. Blank-date rows are treated as probable real second-variety observations pending the website check (research `layers/L2_cleaning/CLEANING_PLAN.md`).

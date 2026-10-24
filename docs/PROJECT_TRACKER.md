@@ -61,19 +61,24 @@ Why first: forecasting, the hold-or-sell backtest and the whole-system result al
   - Note: Feb 2026 had only 3 rows and Jan 2026 only 27, so older seasons need Sep–Jan only; the site offers 2021 onward.
 - [x] A.2 (24 Oct) Coverage report written: 6,098 observed rows, 86 mandis, 726 trading days, 6 varieties; June 2025 empty; a forecastable-series rule is *proposed* (confirm in Phase B/C) — `AI`; see research `results/L1_coverage/basmati_coverage.md`
 - [ ] A.3 Collect the official **MSP values** for paddy and wheat for 2021-22 to 2026-27 with source links, for the MSP_SCHEDULE — `AI` ∥
-- [ ] A.4 Optional: apply for CEDA access for pre-2021 history; only needed if three seasons are not enough — `YOU`
+- [ ] A.4 **Recommended for the hold-or-sell result and Paper 2:** get CEDA access (harmonised AGMARKNET archive from 2000, about 20 more seasons). Five seasons are too few for a reliable "holding pays" claim — `YOU`
+- [ ] A.6 Optional for Paper 2: Haryana basmati mandis as a second region; weather (IMD/NASA POWER) and APEDA export prices as covariates — `AI` after A.4
 - [ ] A.5 Register on data.gov.in for the daily API (needed for the live demo, not for the paper) — `YOU` ∥
 
 Done when: ≥ 4 full basmati seasons are filed ✅, the coverage table exists ✅, and the MSP table is sourced (A.3, still open).
 
-## Phase B — Cleaning (L2, EXP-02)
+## Phase B — Cleaning (L2, EXP-02) — detailed steps in research `layers/L2_cleaning/CLEANING_PLAN.md`
 
-- [ ] B.1 Build the deterministic cleaner: units, dates, min ≤ modal ≤ max, duplicates, variety-name mapping (1121/1509/…), and a rule for **blank-date rows** (Nov 2024 has 108, Dec 2024 has 50) — `AI`
-- [ ] B.2 Draw a stratified sample (~300 rows) and **hand-check about 50 of them against the AGMARKNET website**; the checker is recorded — `YOU` (an agent prepares the sheet)
-- [ ] B.3 Compare cleaning options (rules only, +MAD flag, +Hampel, +IQR) by precision/recall and by effect on forecast error — `AI`
-- [ ] B.4 Dataset release with manifest and row reconciliation (raw = kept + removed + flagged) — `AI`
+Why the data is considered enough for Paper 1, and what it cannot support: research `layers/L1_data/DATA_ADEQUACY.md`.
 
-Done when: counts reconcile exactly and the chosen rule set is justified by the comparison.
+- [ ] B.1 Tidy parser, **blank-date rule** (580 rows that are probably real second-variety prices), variety map, market map, rule checks, outlier flags — `AI`
+- [ ] B.2 **Hand check ~50 rows against the AGMARKNET website**, which also confirms or rejects the blank-date rule; the checker is recorded — `YOU` (an agent prepares the sheet)
+- [ ] B.2b **Independent spot check:** compare one month with a second source (eNAM, Punjab Mandi Board portal or published price reports) — `BOTH`
+- [ ] B.3 Compare cleaning options (raw only, + blank-date rule, + outlier exclusions; MAD vs Hampel vs IQR) by precision/recall and by effect on forecast error — `AI`
+- [ ] B.4 Build the **variety-level daily index** (1121 and 1509; at least 3 mandis per day; no forward-fill shown as observed) — `AI`
+- [ ] B.5 Dataset release with manifest and exact row reconciliation (raw = kept + flagged + removed) — `AI`
+
+Done when: counts reconcile exactly, both checks are recorded, and the chosen rules are justified by the comparison.
 
 ## Phase C — Forecasting (L3a, EXP-03/04) — needs A and B
 
