@@ -37,6 +37,9 @@
 | CHAT-31 | ENGINEERING LEAN — delegated, 21 October | LaTeX Springer template unless venue/guide needs Word | Venue choice |
 | CHAT-32 | DESIGN DECISION — user decision on measured data, 22 October | Basmati is the main market-priced crop; off-season Punjab wheat too sparse (2–5 rows/month) → held wheat is a limitation/future work | Basmati season downloads 2021–2026 |
 | PAPER-EDITORIAL | DESIGN DECISION (editorial only) — user/supervisor, 22 October | Manuscript in passive/impersonal voice; students first and Harkiran Kaur last; separate citation brackets `[1][4]`; elaborate illustrated figures | Author emails; checker score; venue; redo of the revision (tracker H.1–H.2) |
+| CHAT-33 | DESIGN DECISION — user decision, 24 October | ONE paper only; what the data cannot support becomes limitations/future work ([THE_ONE_PAPER](../paper/THE_ONE_PAPER.md)) | — |
+| CHAT-34 | DESIGN DECISION — user decision, 24 October | Springer conference format, about 11 pages including references, like the ICDPN 2025 reference paper | Exact conference and page limit with the supervisor |
+| DATA-ADEQUACY | ENGINEERING LEAN — 24 October | Variety-level daily index; hold-or-sell exploratory; detectable gain 11–17%; CEDA on hold (no email, no registration, by user choice) | — |
 
 See [current Layer 5](../communication/KisanNiti_Layer_5_Current.md) and [WhatsApp/multilingual specification](../communication/WHATSAPP_MULTILINGUAL.md); earlier optional/generic-channel language is superseded. Storage approximation and Patiala answers: [research note](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
 

@@ -6,6 +6,16 @@
 
 > I am continuing the KisanNiti project (a Thapar Institute research paper plus working software and hardware). Three repos sit side by side in ~/Documents: `kisaniti` (design, decisions, tracker), `kisaniti_research_paper` (data, experiments, paper) and `kisaniti_implementation` (the product). Read, in this order: `kisaniti/docs/NEW_CHAT_START.md`, `kisaniti/docs/PROJECT_TRACKER.md` (RESUME POINT), `kisaniti_research_paper/AGENT_HANDOFF.md`, `kisaniti_research_paper/STATUS.md`. Then do the next unticked step of the tracker that I name. Rules: verify everything, never invent data, numbers or references; real data only for accuracy claims; commit only your own files and push; tell me when something needs me (CAPTCHA, accounts, hardware, sending an email, supervisor decisions). First message: tell me the state in five lines and propose the next step.
 
+## 1b. State of the files when this chat ended (24 Oct 2026, nothing is uncommitted)
+
+- All three repos are pushed and in sync with GitHub (`Arijit2772-dev/kisaniti_plan`, `kisaniti_implementation`, `kisaniti_research_paper`, all private). The product repo's CI was green on its last runs.
+- **Done:** design and decisions (CHAT-01…34); literature review and 57 verified references; v2 reproduced exactly; 29 basmati months filed with checksums plus coverage and power checks; storage rule, firmware, Wokwi twin, simulations; allocation core with brute-force oracle and validator; LaTeX paper base with figure drafts; guides for writing and figures.
+- **Work in progress, not finished:** allocation experiments (scripts exist, never run, no results yet; tracker E); paper editorial redo and the elaborate illustrated figures (tracker H.1–H.2; the other AI agent's revised files were lost, so redo them); cleaning has not started (tracker B).
+- **Not started:** forecasting, hold-or-sell, manager-approval and WhatsApp screens, integration run.
+- **Folders in `~/Documents` that are not part of the project:** `kisaniti_final`, `untitled folder`, `untitled folder 2`. `downloads` holds the original basmati CSVs (a backup; they are already filed).
+- **On hold by the user:** CEDA email/registration, data.gov.in registration, anything else needing outside accounts.
+- **Mistakes to avoid** (learned): AGMARKNET's report URL is spelled `datewisespeccommdodityinput` (with the odd double d); after Submit the site sometimes lands on a wrong address and the result is lost (re-submit with a new CAPTCHA); the Back button forgets the form; never run `git add -A` in the research repo (other sessions leave unfinished files); a file may arrive a few seconds after the export click.
+
 ## 2. What "final" means (acceptance checklist)
 
 Acceptance by a journal or conference cannot be guaranteed; the aim is to remove every avoidable reason for rejection. "Done" means all of this has recorded evidence.
