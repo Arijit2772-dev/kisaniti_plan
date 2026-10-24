@@ -6,7 +6,7 @@ How to use it: finish the steps of a phase in order; steps in different phases m
 
 ## RESUME POINT (read this first in a new chat)
 
-*Updated 24 Oct 2026.* Phase A.1 is in progress. **Next month to download: February 2025** (Paddy(Basmati), Punjab). After it: Sep–Jan for 2023-24, then 2022-23, then 2021-22, then June 2025 as the off-season test.
+*Updated 24 Oct 2026.* Phase A.1 is in progress. **Next month to download: September 2023** (Paddy(Basmati), Punjab), then Oct 2023 – Jan 2024, then Sep–Jan for 2022-23 and 2021-22, then June 2025 as the off-season test.
 
 How to continue in a fresh chat:
 
@@ -16,7 +16,7 @@ How to continue in a fresh chat:
 4. File it: `python3 -I layers/L1_data/ingest_download.py` (add `--copy` to keep the original).
 5. Tick the month below and commit only `layers/L1_data` and `data/manifests`.
 
-Months filed so far: 2024-09…2025-01, 2025-09…2026-02, 2026-09, 2026-10 (13). Still to do: 2025-02; 2023-09…2024-01; 2022-09…2023-01; 2021-09…2022-01; 2025-06 (test).
+Months filed so far (14): 2024-09…2025-02, 2025-09…2026-02, 2026-09, 2026-10. Still to do (16): 2023-09…2024-01; 2022-09…2023-01; 2021-09…2022-01; 2025-06 (test).
 
 ## 0. Where things stand (24 Oct 2026)
 
@@ -54,7 +54,7 @@ Months filed so far: 2024-09…2025-01, 2025-09…2026-02, 2026-09, 2026-10 (13)
 Why first: forecasting, the hold-or-sell backtest and the whole-system result all depend on enough basmati seasons.
 
 - [ ] A.1 Download the **remaining 17 months** of Paddy(Basmati), Punjab — `BOTH` (you type each CAPTCHA; an agent fills the form and files it using the [runbook](../../kisaniti_research_paper/layers/L1_data/DOWNLOAD_RUNBOOK.md)):
-  - [ ] February 2025 (the only gap in the 2024–25 season)
+  - [x] February 2025 (24 Oct; 51 rows, 6 mandis)
   - [ ] 2023-24 season: Sep, Oct, Nov, Dec 2023, Jan 2024
   - [ ] 2022-23 season: Sep 2022 – Jan 2023
   - [ ] 2021-22 season: Sep 2021 – Jan 2022
