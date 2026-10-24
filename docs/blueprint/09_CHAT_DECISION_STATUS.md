@@ -36,6 +36,7 @@
 | CHAT-30 | DESIGN DECISION — delegated, 21 October | One frontend (product Next.js) for paper screenshots | — |
 | CHAT-31 | ENGINEERING LEAN — delegated, 21 October | LaTeX Springer template unless venue/guide needs Word | Venue choice |
 | CHAT-32 | DESIGN DECISION — user decision on measured data, 22 October | Basmati is the main market-priced crop; off-season Punjab wheat too sparse (2–5 rows/month) → held wheat is a limitation/future work | Basmati season downloads 2021–2026 |
+| PAPER-EDITORIAL | DESIGN DECISION (editorial only) — user/supervisor, 22 October | Manuscript in passive/impersonal voice; students first and Harkiran Kaur last; separate citation brackets `[1][4]`; elaborate illustrated figures | Author emails; checker score; venue; redo of the revision (tracker H.1–H.2) |
 
 See [current Layer 5](../communication/KisanNiti_Layer_5_Current.md) and [WhatsApp/multilingual specification](../communication/WHATSAPP_MULTILINGUAL.md); earlier optional/generic-channel language is superseded. Storage approximation and Patiala answers: [research note](../research/2026-10-15_Patiala_Storage_Risk_and_Unknowns.md).
 

@@ -1,5 +1,9 @@
 # Claude — start here for KisanNiti
 
+> **Next steps live in [docs/PROJECT_TRACKER.md](docs/PROJECT_TRACKER.md)** (phased checklist, updated 24 Oct 2026).
+
+> **Latest continuation checkpoint (22 Oct 2026):** resume AGMARKNET acquisition from [the Claude continuation handoff](docs/handoff/2026-10-22_Claude_Continuation.md). It lists 11 verified CSV exports still in Downloads pending research import, the exact working report URL, browser recovery notes, and January 2025 as the next missing month. Inspect current files/browser state before resuming; this checkpoint does not change architecture or contract authority.
+
 > **Research paper first (CHAT-27, 21 Oct 2026):** current work happens in [`../kisaniti_research_paper`](../kisaniti_research_paper/RESEARCH_PLAN.md) (research prototypes, experiments, paper). This folder stays the design source of truth.
 
 > **Planning folder only.** This folder describes *how KisanNiti should be* (design, decisions, research plan, paper). Product code, contracts-as-files and product test evidence live in [`../kisaniti_implementation`](../kisaniti_implementation/README.md); research prototypes, experiments and the paper live in [`../kisaniti_research_paper`](../kisaniti_research_paper/README.md) (CHAT-27). Do not put code here.

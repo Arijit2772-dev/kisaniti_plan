@@ -165,3 +165,14 @@ User words: "we are simultaneously doing implementation also so it would keep on
 5. CP-SAT reports NOT_APPLICABLE when exact integer scaling exceeds 2⁴⁰.
 6. Policy versions LEXIMIN_FULFILMENT_V1, STORAGE_PRIORITY_V1, TIE_BREAK_V1 and NONE_DEMO_V1.<br>
 **Still open:** EconomicPolicy, real increments and calendar, transport grouping, proposal eligibility of time-limited results (G09), and real-FPO acceptance (PILOT-009).
+
+
+## PAPER-EDITORIAL-2026-10-22 — supervisor feedback and manuscript presentation
+
+**Classification:** DESIGN DECISION — explicit user instruction, editorial scope only.
+
+Manuscript prose uses passive or impersonal academic phrasing, superseding older first-person guidance. Student authors and supplied student emails come first, with Harkiran Kaur last. Each cited reference has its own adjacent brackets, for example `[1][4]`. Architecture and methods figures use elaborate illustrated vector panels based on the supplied sample. Preserve numerical evidence and label proposed, simulated and physical work distinctly.
+
+**Status:** Revised complete-paper copies and guarded research-source updates prepared; canonical research writeback pending writable access. See [editorial checkpoint](../handoff/2026-10-22_Paper_Editorial_Revision.md).
+
+**Still UNKNOWN / pending:** Harkiran Kaur's email; previously unconfirmed student emails; supervisor/author approval; new college checker score; venue requirements. No product gate or experimental status is changed.

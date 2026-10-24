@@ -12,6 +12,7 @@ KisanNiti helps an FPO manager choose which selected farmer lots to send to whic
 
 | Read | Contents |
 |---|---|
+| **[Project tracker](docs/PROJECT_TRACKER.md)** | **Step-by-step checklist of what to do next, in phases (tick as done)** |
 | **[Master plan](docs/MASTER_PLAN.md)** | **Start here: paper + software + hardware plan, layer by layer, milestones M0–M12** |
 | [Current decision status](docs/blueprint/09_CHAT_DECISION_STATUS.md) | Agreed choices, recommendations and unresolved evidence |
 | [Layer 1–3 handoff](docs/handoff/2026-10-14/KisanNiti_Layers_1_to_3_Handoff.md) | Sources, data volumes, cleaning, models, transport, sensors, optimizer, contracts and work packages |
