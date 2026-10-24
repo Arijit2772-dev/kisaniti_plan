@@ -54,7 +54,7 @@ Per the repository rules these go into the decision register only after you appr
 |---|---|---|---|
 | O23 | A.3 official MSP table with source links | `rp:layers/L1_data/msp/` | **done**: 18 values (6 paddy seasons x 2 grades, 6 wheat seasons) from PIB; I re-opened all 12 PIB pages myself and the numbers match (common-grade and wheat values read from the tables; Grade A values confirmed to appear on the page); the DES PDF cross-check used `curl -k` (certificate check off), not relied on |
 | O14 | Ladhar 2023 overlap | `rp:literature/LADHAR2023_CHECK.md` | running |
-| O24 | Can Chronos-2 run here at all? (protocol model 8) | report only | running |
+| O24 | Can Chronos-2 run here at all? (protocol model 8) | report only | **done**: yes, CPU only, system Python 3.13; I re-ran the worker's script and got the same forecasts and quantile shapes. Irregular timestamps fail unless the series is reindexed to daily with NaN gaps. Training-data overlap with public price series is unconfirmed (model card defers to the paper, arXiv 2510.15821). Not yet tested on the real index, on MPS, or on more than one series. Weights (about 478 MB) are cached in `~/.cache/huggingface` |
 | O25 | B.2b second source for the independent spot check | `rp:layers/L2_cleaning/SPOT_CHECK_SOURCES.md` | **done**: no fully independent, no-login daily source found for named Punjab mandis. Best options: eNAM viewed by you in a normal browser (blocked automated access; may overlap AGMARKNET), and Tribune/trade-press ranges as plausibility only. Punjab Mandi Board hosts do not resolve. 15 cells proposed for October 2025 (not yet reviewed by me cell by cell) |
 
 ## F. Not started
