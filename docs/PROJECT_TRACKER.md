@@ -136,8 +136,8 @@ Each layer follows the eight steps of the master plan (freeze contract → core 
 
 ## Phase H — Paper 1 assembly (runs alongside everything)
 
-- [ ] H.1 **Redo the editorial revision** on the paper, since the other agent's output is not on this machine: passive voice, students first and Harkiran Kaur last, `[1][4]` citations, v2 text carried into v3 — `AI`
-- [ ] H.2 **Elaborate illustrated figures** in the style of the supplied sample (architecture, methodology, hardware); show drafts to the supervisor — `AI`, then `YOU` to show them
+- [x] H.1 **Redo the editorial revision** on the paper, since the other agent's output is not on this machine: passive voice, students first and Harkiran Kaur last, `[1][4]` citations, v2 text carried into v3 — `AI` (done 24 Oct: `kisaniti_research_paper/paper/revisions/2026-10-24/`, v2 revised, commit f553615 + later; still to carry into v3 once results exist)
+- [~] H.2 **Elaborate illustrated figures** in the style of the supplied sample (architecture, methodology, hardware); show drafts to the supervisor — `AI`, then `YOU` to show them (drafts done 24 Oct in `paper/revisions/2026-10-24/figs/` (architecture, method, node, via `src/clip.py` + `src/figs.py`); supervisor to review; redo results figures with v3 data)
 - [ ] H.3 Section drafts written from results as each phase finishes (2 Related Work already drafted) — `AI`
 - [ ] H.4 Authors rewrite each section in their own words; the AI use is declared per Springer policy — `YOU`
 - [ ] H.5 Verify all references again (24–25 in v2 plus the new ones) — `AI`
