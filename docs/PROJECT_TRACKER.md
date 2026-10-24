@@ -6,24 +6,23 @@ How to use it: finish the steps of a phase in order; steps in different phases m
 
 ## RESUME POINT (read this first in a new chat)
 
-*Updated 24 Oct 2026.* Phase A.1 (basmati downloads) is in progress. **Run `python3 -I layers/L1_data/progress.py` in the research repo: it lists filed months and prints the next one to download** (the download log is the source of truth, so this block never goes stale).
+*Updated 24 Oct 2026.* **Phase A.1 (basmati downloads) is finished.** All 29 months are filed; June 2025 is empty. Nothing more needs downloading for Paper 1. Open items in Phase A: **A.3 (sourced MSP table)** and optional A.4/A.5.
 
-How to continue in a fresh chat:
+Next steps, in order (each can start in a fresh chat from the files alone):
 
-1. Open the research repo (`~/Documents/kisaniti_research_paper`) and read `AGENT_HANDOFF.md`, `layers/L1_data/DOWNLOAD_RUNBOOK.md` and `layers/L1_data/download_log.csv`. A month is done only if it appears in the log.
-2. Open `https://agmarknet.gov.in/datewisespeccommdodityinput` (keep the odd spelling), fill year, month, State = Punjab, Commodity = Paddy(Basmati). The Back button forgets the choices.
-3. The user types the CAPTCHA and presses Submit; then Export → Export as CSV.
-4. File it: `python3 -I layers/L1_data/ingest_download.py` (add `--copy` to keep the original).
-5. Commit only `layers/L1_data` and `data/manifests`; no need to edit this file per month.
+1. **A.3** — official MSP values 2021-22 to 2026-27 with source links (`AI`, web research).
+2. **Phase B (cleaning)** — read the "Data quality flags" in research `layers/L1_data/DOWNLOAD_CHECKLIST.md` first: 580 blank-date rows, 4 rows with missing min/max, one ₹800 price in 2021-22 to check.
+3. **In parallel:** Phase E (finish allocation experiments), Phase H.1–H.2 (redo editorial revision and elaborate figures).
+4. Then Phase C (forecasting) and Phase D (hold-or-sell).
 
-Order of the remaining months: Sep–Jan for 2023-24, then 2022-23, then 2021-22, then 2025-06 as the off-season test.
+Where to start reading: research repo `AGENT_HANDOFF.md` → `STATUS.md` → this file. To see the data: `python3 -I layers/L1_data/progress.py` and `python3 -I layers/L1_data/coverage_basmati.py` (research repo).
 
 ## 0. Where things stand (24 Oct 2026)
 
 | Area | State | Evidence |
 |---|---|---|
 | Planning (architecture, 5 layers, decisions CHAT-01…32) | Done | this repo |
-| Data | **13 basmati months** (Sep 2024–Jan 2025, Sep 2025–Feb 2026, Sep–Oct 2026) + Paddy(Common) + 4 wheat months filed with checksums; **17 months still to download** | research `layers/L1_data/download_log.csv` |
+| Data | **Basmati complete for Paper 1: 29 months** (4 full seasons 2021-22…2024-25, 2025-26, start of 2026-27), 6,098 rows, 86 mandis, 6 varieties; Paddy(Common) and 4 wheat months also filed; all with checksums | research `results/L1_coverage/basmati_coverage.md` |
 | Literature review R1 | Done (38 studies, 57 verified references); authors must check | research `literature/` |
 | v2 reproduction R0 | Done: 222 of 222 numbers match | research `results/R0_v2_reproduction` |
 | Storage rule + simulation (L3b) | Done in simulation; real node needs the kit | research `results/L3b_storage`, product `core.storage` (31 tests) |
@@ -53,19 +52,19 @@ Order of the remaining months: Sep–Jan for 2023-24, then 2022-23, then 2021-22
 
 Why first: forecasting, the hold-or-sell backtest and the whole-system result all depend on enough basmati seasons.
 
-- [ ] A.1 Download the **remaining 17 months** of Paddy(Basmati), Punjab — `BOTH` (you type each CAPTCHA; an agent fills the form and files it using the [runbook](../../kisaniti_research_paper/layers/L1_data/DOWNLOAD_RUNBOOK.md)):
+- [x] A.1 (24 Oct, done) Download the **remaining 17 months** of Paddy(Basmati), Punjab — `BOTH` (you type each CAPTCHA; an agent fills the form and files it using the [runbook](../../kisaniti_research_paper/layers/L1_data/DOWNLOAD_RUNBOOK.md)):
   - [x] February 2025 (24 Oct; 51 rows, 6 mandis)
-  - [ ] 2023-24 season: Sep, Oct, Nov, Dec 2023, Jan 2024 (Sep 2023 done; see progress.py)
-  - [ ] 2022-23 season: Sep 2022 – Jan 2023
-  - [ ] 2021-22 season: Sep 2021 – Jan 2022
-  - [ ] One off-season test month (June 2025) to confirm basmati is quiet outside the season
+  - [x] 2023-24 season: Sep, Oct, Nov, Dec 2023, Jan 2024 (Sep 2023 done; see progress.py)
+  - [x] 2022-23 season: Sep 2022 – Jan 2023
+  - [x] 2021-22 season: Sep 2021 – Jan 2022
+  - [x] One off-season test month (June 2025) to confirm basmati is quiet outside the season
   - Note: Feb 2026 had only 3 rows and Jan 2026 only 27, so older seasons need Sep–Jan only; the site offers 2021 onward.
-- [ ] A.2 Write the coverage report (rows, mandis, gaps and price spread per month and variety) and decide the "forecastable series" rule (EXP-01) — `AI`
+- [x] A.2 (24 Oct) Coverage report written: 6,098 observed rows, 86 mandis, 726 trading days, 6 varieties; June 2025 empty; a forecastable-series rule is *proposed* (confirm in Phase B/C) — `AI`; see research `results/L1_coverage/basmati_coverage.md`
 - [ ] A.3 Collect the official **MSP values** for paddy and wheat for 2021-22 to 2026-27 with source links, for the MSP_SCHEDULE — `AI` ∥
 - [ ] A.4 Optional: apply for CEDA access for pre-2021 history; only needed if three seasons are not enough — `YOU`
 - [ ] A.5 Register on data.gov.in for the daily API (needed for the live demo, not for the paper) — `YOU` ∥
 
-Done when: ≥ 4 full basmati seasons are filed, the coverage table exists, and the MSP table is sourced.
+Done when: ≥ 4 full basmati seasons are filed ✅, the coverage table exists ✅, and the MSP table is sourced (A.3, still open).
 
 ## Phase B — Cleaning (L2, EXP-02)
 
