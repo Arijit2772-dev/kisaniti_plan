@@ -1,6 +1,6 @@
 # Claude — start here for KisanNiti
 
-> **Next steps live in [docs/PROJECT_TRACKER.md](docs/PROJECT_TRACKER.md)** (phased checklist, updated 24 Oct 2026).
+> **New chat? Read [docs/NEW_CHAT_START.md](docs/NEW_CHAT_START.md) first.** Next steps live in [docs/PROJECT_TRACKER.md](docs/PROJECT_TRACKER.md)** (phased checklist, updated 24 Oct 2026).
 
 > **Latest continuation checkpoint (22 Oct 2026):** resume AGMARKNET acquisition from [the Claude continuation handoff](docs/handoff/2026-10-22_Claude_Continuation.md). It lists 11 verified CSV exports still in Downloads pending research import, the exact working report URL, browser recovery notes, and January 2025 as the next missing month. Inspect current files/browser state before resuming; this checkpoint does not change architecture or contract authority.
 
