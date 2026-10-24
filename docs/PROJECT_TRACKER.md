@@ -71,18 +71,18 @@ Done when: ≥ 4 full basmati seasons are filed ✅, the coverage table exists �
 
 Why the data is considered enough for Paper 1, and what it cannot support: research `layers/L1_data/DATA_ADEQUACY.md`.
 
-- [ ] B.1 Tidy parser, **blank-date rule** (580 rows that are probably real second-variety prices), variety map, market map, rule checks, outlier flags — `AI`
+- [x] B.1 (24 Oct, research commit ee9de51: parser, 9 tests, 50-row sheet; outlier screens deliberately deferred to B.3) Tidy parser, **blank-date rule** (580 rows that are probably real second-variety prices), variety map, market map, rule checks, outlier flags — `AI`
 - [ ] B.2 **Hand check ~50 rows against the AGMARKNET website**, which also confirms or rejects the blank-date rule; the checker is recorded — `YOU` (an agent prepares the sheet)
 - [ ] B.2b **Independent spot check:** compare one month with a second source (eNAM, Punjab Mandi Board portal or published price reports) — `BOTH`
 - [ ] B.3 Compare cleaning options (raw only, + blank-date rule, + outlier exclusions; MAD vs Hampel vs IQR) by precision/recall and by effect on forecast error — `AI`
-- [ ] B.4 Build the **variety-level daily index** (1121 and 1509; at least 3 mandis per day; no forward-fill shown as observed) — `AI`
+- [~] B.4 (24 Oct: built both ways, `build_index.py`; primary variant waits for the B.2 hand check) Build the **variety-level daily index** (1121 and 1509; at least 3 mandis per day; no forward-fill shown as observed) — `AI`
 - [ ] B.5 Dataset release with manifest and exact row reconciliation (raw = kept + flagged + removed) — `AI`
 
 Done when: counts reconcile exactly, both checks are recorded, and the chosen rules are justified by the comparison.
 
 ## Phase C — Forecasting (L3a, EXP-03/04) — needs A and B
 
-- [ ] C.0 **Pre-register the forecasting protocol before touching the test seasons:** at most 6–8 models, splits, metrics, Holm/Model-Confidence-Set correction, effect sizes with intervals (see research `layers/L1_data/DATA_ADEQUACY.md` §3b) — `AI`
+- [~] C.0 (24 Oct: DRAFT `L3a_forecasting/PREREGISTERED_PROTOCOL.md`, owner approval needed, then freeze commit) **Pre-register the forecasting protocol before touching the test seasons:** at most 6–8 models, splits, metrics, Holm/Model-Confidence-Set correction, effect sizes with intervals (see research `layers/L1_data/DATA_ADEQUACY.md` §3b) — `AI`
 - [ ] C.1 Freeze the forecast contract slice (ranges required beyond 7 days, CHAT-22) — `AI`
 - [ ] C.2 Baselines (naive, seasonal naive, moving average) and the MSP rule per variety — `AI`
 - [ ] C.3 ETS/ARIMA, then XGBoost/LightGBM with lags, calendar and arrivals — `AI`
