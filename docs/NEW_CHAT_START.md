@@ -33,7 +33,7 @@ Acceptance by a journal or conference cannot be guaranteed; the aim is to remove
 ## 3. Order of work (critical path first)
 
 ```text
-A data ✅ ──► B cleaning ──► C forecasting (needs a pre-registered protocol) ──► D hold-or-sell ─┐
+A data ✅ (current data is the Paper 1 data) ──► B cleaning ──► C forecasting (needs a pre-registered protocol) ──► D hold-or-sell ─┐
    │                                                                                           ├─► I integration ─► H final paper pass ─► submit
    ├─► A.3 MSP table                          E allocation experiments ──────────────────────────┤
    ├─► A.4 long history (CEDA / data.gov.in)  F hardware (kit → calibration → week run) ────────┤
@@ -57,7 +57,7 @@ Suggested sessions, one folder each so they never collide:
 | Gate | Question | If no |
 |---|---|---|
 | G1 after cleaning | Do counts reconcile and does the hand check agree with the blank-date rule? | Fix the rule; do not model on unchecked data |
-| G2 before forecasting | Is long history (CEDA or data.gov.in) available? | Run the small pre-registered comparison; state the power limit; move rankings and the hold-or-sell claim to Paper 2 |
+| G2 before forecasting | Is long history available (only if CEDA's site is up and offers a download)? | **Default: no.** Run the small pre-registered comparison; state the power limit; move rankings and the hold-or-sell claim to Paper 2 |
 | G3 after forecasting | Does any model beat the baseline by more than the detectable size? | Report that the baseline is hard to beat; this is a valid result |
 | G4 before writing results | Do all numbers come from scripts and match the result files? | Do not write them |
 | G5 before submission | Supervisor review, checker score, references, declarations, venue rules | Do not submit |
@@ -66,7 +66,7 @@ Suggested sessions, one folder each so they never collide:
 
 | Risk | Fallback |
 |---|---|
-| CEDA stays unreachable (portal down on 24 Oct) | Email ceda@ashoka.edu.in (draft ready); data.gov.in daily-price resource (2013–2025, needs a key); else keep Paper 1's scope |
+| CEDA stays unreachable (portal down on 24 Oct) | **Default (user decision): no email, no registration.** Keep Paper 1's scope; any new chat may re-test the portal with `curl -I https://agmarknet.ceda.ashoka.edu.in` and, if it answers, follow `layers/L1_data/CEDA_RUNBOOK.md` (a download needs no token). The email draft and data.gov.in route stay on file but are not to be used unless the user changes their mind |
 | Models do not beat naive | Report honestly; the contribution shifts to the pipeline, fair allocation, calibration of ranges and the negative finding |
 | Hardware kit delayed | Wokwi twin and simulated scenarios carry Paper 1; real data go in Paper 2 |
 | Checker still flags text | Authors rewrite in their own words; declare AI assistance; do not disguise it |
@@ -74,4 +74,4 @@ Suggested sessions, one folder each so they never collide:
 
 ## 6. What only the user can do (priority)
 
-1. Send the CEDA email and register on data.gov.in (A.4, A.5) · 2. Hand-check ~50 rows on the AGMARKNET site (B.2) · 3. Show the figure drafts to the supervisor and confirm venue, author emails and corresponding author · 4. Buy the hardware kit · 5. Create the Meta WhatsApp test number · 6. Ask about ethics approval before any human testing · 7. Talk to one Patiala FPO and one arhtiya (Paper 2).
+1. ~~Send the CEDA email / register on data.gov.in~~ — **user decision 24 Oct: no emails or new registrations for now; only use CEDA if its website works later** · 2. Hand-check ~50 rows on the AGMARKNET site (B.2) · 3. Show the figure drafts to the supervisor and confirm venue, author emails and corresponding author · 4. Buy the hardware kit · 5. Create the Meta WhatsApp test number · 6. Ask about ethics approval before any human testing · 7. Talk to one Patiala FPO and one arhtiya (Paper 2).
