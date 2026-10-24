@@ -61,7 +61,7 @@ Why first: forecasting, the hold-or-sell backtest and the whole-system result al
   - Note: Feb 2026 had only 3 rows and Jan 2026 only 27, so older seasons need Sep–Jan only; the site offers 2021 onward.
 - [x] A.2 (24 Oct) Coverage report written: 6,098 observed rows, 86 mandis, 726 trading days, 6 varieties; June 2025 empty; a forecastable-series rule is *proposed* (confirm in Phase B/C) — `AI`; see research `results/L1_coverage/basmati_coverage.md`
 - [ ] A.3 Collect the official **MSP values** for paddy and wheat for 2021-22 to 2026-27 with source links, for the MSP_SCHEDULE — `AI` ∥
-- [ ] A.4 **Recommended for the hold-or-sell result and Paper 2:** get CEDA access (harmonised AGMARKNET archive from 2000, about 20 more seasons). Five seasons are too few for a reliable "holding pays" claim — `YOU`
+- [ ] A.4 **Needed before the forecasting comparison can rank models (power check, 24 Oct):** with 5 seasons only gains of ~11–17% over the naive baseline are detectable; CEDA history (about 20 more seasons) lowers that to ~5–7%. Check whether the portal needs registration and download basmati, Punjab, 2000–2021 — `YOU` (an agent can prepare the filing script)
 - [ ] A.6 Optional for Paper 2: Haryana basmati mandis as a second region; weather (IMD/NASA POWER) and APEDA export prices as covariates — `AI` after A.4
 - [ ] A.5 Register on data.gov.in for the daily API (needed for the live demo, not for the paper) — `YOU` ∥
 
@@ -82,6 +82,7 @@ Done when: counts reconcile exactly, both checks are recorded, and the chosen ru
 
 ## Phase C — Forecasting (L3a, EXP-03/04) — needs A and B
 
+- [ ] C.0 **Pre-register the forecasting protocol before touching the test seasons:** at most 6–8 models, splits, metrics, Holm/Model-Confidence-Set correction, effect sizes with intervals (see research `layers/L1_data/DATA_ADEQUACY.md` §3b) — `AI`
 - [ ] C.1 Freeze the forecast contract slice (ranges required beyond 7 days, CHAT-22) — `AI`
 - [ ] C.2 Baselines (naive, seasonal naive, moving average) and the MSP rule per variety — `AI`
 - [ ] C.3 ETS/ARIMA, then XGBoost/LightGBM with lags, calendar and arrivals — `AI`
