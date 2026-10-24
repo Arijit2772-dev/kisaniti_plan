@@ -184,3 +184,8 @@ Manuscript prose uses passive or impersonal academic phrasing, superseding older
 **Decisions:** (1) model the variety-level daily index for 1121 and 1509 rather than per-mandi series; (2) report the hold-or-sell backtest as exploratory (per season, with uncertainty, no significance claim) until longer history (CEDA) is available; (3) add an independent spot check to cleaning; (4) AGMARKNET modal price is never described as the farmer's price. Blank-date rows are treated as probable real second-variety observations pending the website check (research `layers/L2_cleaning/CLEANING_PLAN.md`).
 
 **Update 24 Oct (power check):** with the five available seasons a rolling-origin test detects only gains of about 11–17% over the naive baseline (research `results/L1_coverage/power_check.txt`). Therefore: forecasting comparisons use at most 6–8 pre-registered models; deep models are reported as exploratory; CEDA history (2000 onward) is required before claiming a ranking of close models or a hold-or-sell benefit. Still ENGINEERING LEAN.
+
+## CHAT-33 — one paper only, 24 October 2026
+
+**Classification:** DESIGN DECISION — explicit user decision ("there is not any paper 2 … the one paper that we are making would be final").<br>
+**Decision:** The project produces a single paper. Material previously planned for a "Paper 2" is either included here at the strength the data supports or listed as a limitation and future work. Scope, claim strength and page budget: [THE_ONE_PAPER](../paper/THE_ONE_PAPER.md). Venue (journal or conference) is to be confirmed with the supervisor.

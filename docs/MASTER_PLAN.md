@@ -14,7 +14,7 @@ Research and implementation run **side by side** (CHAT-28).
 | Deliverable | Done means |
 |---|---|
 | **Paper 1** (Springer conference, LNNS/LNCS style) | Every number comes from a script-produced result. Every reference is opened and checked. Comparisons use baselines and significance tests. Only finished, tested parts are described; everything else is Future Work. Guide-reviewed, humanized, plagiarism-checked, in the venue template, declarations complete |
-| **Paper 2** (Springer journal) | Paper 1 plus the multi-season backtest, real hardware results, scaling and (if ethics allow) user tests |
+| *(no second paper — CHAT-33)* | Everything is in the one paper; what the data cannot support is a limitation and future work |
 | **Software** | The full flow runs on one command (Docker Compose): data → cleaning → forecast with ranges → storage risk → hold-or-sell → fair plan → manager approval → WhatsApp to a test phone → sale from J-form → stock update → next plan. All acceptance tests in CI pass. Mobile-friendly UI in Punjabi/Hindi/English. DEMO label wherever data is synthetic |
 | **Hardware** | A real ESP32 + SHT30 node in a grain container sending readings into the live app, calibrated, outage-tested, plus a Wokwi copy anyone can run |
 | **Documentation** | Per layer: how it works, why this choice vs alternatives, how to run, tests, results. A user manual, deployment guide, demo script and paper reproducibility guide |
@@ -79,7 +79,7 @@ Timeline assumes data access in week 1. **Every week of data delay moves M3–M6
 - a protected probe that can sit inside the grain;
 - in-grain humidity approximates water activity, which links directly to published mould limits.
 
-It needs no manual moisture readings, and the same design works for wheat and basmati. Optional future add-ons (Paper 2): a CO₂ sensor for early spoilage signs, and a second probe at a different depth.
+It needs no manual moisture readings, and the same design works for wheat and basmati. Optional future add-ons: a CO₂ sensor for early spoilage signs, and a second probe at a different depth.
 
 | Step | Output |
 |---|---|
@@ -148,7 +148,7 @@ Each session updates the STATUS files and pushes; this main session coordinates 
 | Wheat/basmati data not obtained | **Critical path.** The user downloads with a CAPTCHA in the browser (Claude can drive the in-app browser while the user solves it), or gets CEDA access. If impossible, Paper 1 focuses on paddy, allocation, fairness and IoT, and says so |
 | Models don't beat simple baselines | Report it; it is still a finding (v2 already shows this for MSP crops) |
 | Optimizer too slow at 1,000 farmers | Progressive leximin variant; report realistic sizes |
-| Hardware delays | The Wokwi twin keeps the pipeline testable; real-node results go in Paper 2 if needed |
+| Hardware delays | The Wokwi twin keeps the pipeline testable; real-node results are added only if collected in time |
 | WhatsApp test number setup issues | Simulated adapter for development; the live screenshot needs only one working test message |
 | Over-claiming | Paper describes only finished, tested parts; the checklist in M11 enforces it |
 | Unverified references | Session A verification log; nothing goes in without a checked DOI |

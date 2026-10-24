@@ -12,6 +12,7 @@ KisanNiti helps an FPO manager choose which selected farmer lots to send to whic
 
 | Read | Contents |
 |---|---|
+| **[The one paper](docs/paper/THE_ONE_PAPER.md)** | **Thesis, contributions with allowed claim strength, venue/page-budget decision, how the single paper is built** |
 | **[NEW CHAT START](docs/NEW_CHAT_START.md)** | **Final plan, acceptance checklist, gates, risks and the message to paste into a new chat** |
 | **[Project tracker](docs/PROJECT_TRACKER.md)** | **Step-by-step checklist of what to do next, in phases (tick as done)** |
 | **[Master plan](docs/MASTER_PLAN.md)** | **Start here: paper + software + hardware plan, layer by layer, milestones M0–M12** |

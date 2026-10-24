@@ -14,9 +14,7 @@
 
 **Recommended strategy:**
 
-1. Conference paper first: system plus forecasting results (EXP-01, 03, 04).
-2. Main journal paper: full system with the backtest and fairness results, in *SN Computer Science* or *Agricultural Research*.
-3. Optional: an optimisation-only paper for *Operations Research Forum*.
+**One paper only (CHAT-33).** Scope, claim strength and page budget: [THE_ONE_PAPER](THE_ONE_PAPER.md). The venue (journal such as *SN Computer Science* or *Agricultural Research*, or a Springer proceedings conference) is chosen with the supervisor, because it decides how much of the work fits in the main text.
 
 Do not split one study into overlapping papers; each must report distinct results.
 

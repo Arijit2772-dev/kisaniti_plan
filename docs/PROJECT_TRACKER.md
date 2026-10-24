@@ -61,8 +61,8 @@ Why first: forecasting, the hold-or-sell backtest and the whole-system result al
   - Note: Feb 2026 had only 3 rows and Jan 2026 only 27, so older seasons need Sep–Jan only; the site offers 2021 onward.
 - [x] A.2 (24 Oct) Coverage report written: 6,098 observed rows, 86 mandis, 726 trading days, 6 varieties; June 2025 empty; a forecastable-series rule is *proposed* (confirm in Phase B/C) — `AI`; see research `results/L1_coverage/basmati_coverage.md`
 - [ ] A.3 Collect the official **MSP values** for paddy and wheat for 2021-22 to 2026-27 with source links, for the MSP_SCHEDULE — `AI` ∥
-- [ ] A.4 **Needed before the forecasting comparison can rank models (power check, 24 Oct):** with 5 seasons only gains of ~11–17% over the naive baseline are detectable; CEDA history (about 20 more seasons) lowers that to ~5–7%. **24 Oct: the CEDA web portal does not load; user decision: NO email and NO new registration for now (plan C = keep Paper 1's scope, long history moves to Paper 2). Only if CEDA's website works later, follow the runbook.** Optional/on hold — follow research `layers/L1_data/CEDA_RUNBOOK.md`: read CEDA's terms, get a download or an API token from CEDA (the script is ready and tested on a fake server), then run `ceda_fetch.py`. Note the history is **commodity-level basmati** (no variety split) — `YOU`
-- [ ] A.6 Optional for Paper 2: Haryana basmati mandis as a second region; weather (IMD/NASA POWER) and APEDA export prices as covariates — `AI` after A.4
+- [ ] A.4 **Needed before the forecasting comparison can rank models (power check, 24 Oct):** with 5 seasons only gains of ~11–17% over the naive baseline are detectable; CEDA history (about 20 more seasons) lowers that to ~5–7%. **24 Oct: the CEDA web portal does not load; user decision: NO email and NO new registration for now (plan C = keep the single paper's scope; the lack of long history is stated as a limitation and future work). Only if CEDA's website works later, follow the runbook.** Optional/on hold — follow research `layers/L1_data/CEDA_RUNBOOK.md`: read CEDA's terms, get a download or an API token from CEDA (the script is ready and tested on a fake server), then run `ceda_fetch.py`. Note the history is **commodity-level basmati** (no variety split) — `YOU`
+- [ ] A.6 Optional extras (future work, not needed for the paper): Haryana basmati mandis as a second region; weather (IMD/NASA POWER) and APEDA export prices as covariates — `AI` after A.4
 - [ ] A.5 *(on hold by user decision, 24 Oct)* Register on data.gov.in for the daily API (needed for the live demo, not for the paper) — `YOU` ∥
 
 Done when: ≥ 4 full basmati seasons are filed ✅, the coverage table exists ✅, and the MSP table is sourced (A.3, still open).
@@ -119,7 +119,7 @@ The core, oracle and validator exist; the experiments were interrupted by the us
 - [ ] F.5 One-week run in a labelled grain container (dry, then humidified) — `YOU`
 - [ ] F.6 One-time moisture-meter check at a mandi — `YOU`
 
-Paper 1 can go out with the Wokwi simulation only; the real results strengthen Paper 2.
+The paper can go out with the Wokwi simulation only; a one-week real run makes it stronger, so order the kit early.
 
 ## Phase G — Product build (layer by layer, product repo)
 
@@ -153,7 +153,7 @@ Each layer follows the eight steps of the master plan (freeze contract → core 
 - [ ] I.3 Demo script run from a fresh clone on a second machine; demo video — `BOTH`
 - [ ] I.4 Tag releases, archive code and data scripts (e.g. Zenodo DOI), user manual, deployment guide — `AI`
 
-## Phase J — Real-world validation (Paper 2 and any pilot)
+## Phase J — Real-world validation (future work; not required for the paper)
 
 - [ ] J.1 Talk to a Patiala FPO CEO and an arhtiya (the question list is in the FPO profile) — `YOU`
 - [ ] J.2 Ethics approval from the college before any human testing — `YOU`
