@@ -30,16 +30,25 @@ Rule: every sentence in the paper uses the wording of its row. Anything beyond i
 5. **Show the system really works:** CI, brute-force verification, the demo script run from a fresh clone, real hardware readings if possible.
 6. **Limitations stated plainly** (modal price is not the farmer's price; synthetic FPO; five seasons; one sensor; WhatsApp assumed for all members; no user study).
 
-## 4. The venue decides the scope: ask the supervisor first
+## 4. Venue: a Springer conference paper like the reference (decision CHAT-34)
 
-Everything above does not fit in a typical 10–12 page conference paper. Decide now, because the writing plan differs:
+The user chose the format of the group's published paper (*Sustainable Oyster Mushroom Farming at Home*, ICDPN 2025, LNNS 1934, pp. 201–211): **11 pages including references**. Reading it shows the standard we must meet and exceed:
 
-| Venue type | Length | What goes in the main text | What goes elsewhere |
-|---|---|---|---|
-| Journal (for example *SN Computer Science* or *Agricultural Research*) | about 20–30 pages | Everything in section 2 | Reproducibility details in a supplement and the repo |
-| Conference proceedings (LNNS/LNCS) | about 10–12 pages | Contributions 1, 2, 3 in full; 4 as a short subsection; 5 and 6 as one section each with one figure | A longer technical report in the repository (cited) |
+- Structure: Abstract and keywords → 1 Introduction → 2 Related Work (chronological, one sentence per study) → 3 Proposed System Architecture (numbered steps, an **algorithm box**, a process figure, a 4-stage architecture figure) → 4 Results and Discussions (dashboard and phone screenshots) with 4.1 Societal Impact → 5 Conclusion and Future Work → 22 references in Springer style.
+- It has **six illustrated figures, one algorithm, no numerical results table**. Its weaknesses (no quantitative results, claims beyond what was built, unformatted references) are exactly what we avoid. Our paper adds real data, tables, tests and verified references, so the bar is passed comfortably if the writing is clear.
 
-I recommend asking whether a **journal** is acceptable, since the user wants a single, final paper. The text will be written in modules so either target works.
+**Page budget (11 pages in total)**
+
+| Part | Pages | Content |
+|---|---|---|
+| Abstract, Introduction | 1.2 | Problem, MSP vs market regimes, contributions (6 bullet-sized claims) |
+| 2 Related Work | 1.0 | About 12–15 of the 38 reviewed studies, chronological, plus the gap |
+| 3 Proposed system | 3.0 | Architecture figure (illustrated), regime test + allocation formulation (one algorithm box), storage/IoT figure with the circuit, WhatsApp and approval flow in two sentences |
+| 4 Results and discussion | 3.6 | Table: regime finding (paddy, wheat, basmati); table: forecasting at the detectable-effect level with ranges; figure: price of fairness and solver time; figure: storage scenarios; dashboard and WhatsApp screenshots; 4.1 societal impact |
+| 5 Conclusion and future work | 0.4 | Findings, limitations, future work |
+| References | 1.4 | 25–30 verified references (57 are on file) |
+
+If a source of space is needed, cut in this order: hold-or-sell to two sentences; the graph models to one table row; screenshots to one composite figure. The long technical detail lives in the public repository (cited), not in the paper.
 
 ## 5. How the work is organised (all unchanged phases of the tracker, in this order)
 

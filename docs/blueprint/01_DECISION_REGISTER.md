@@ -189,3 +189,8 @@ Manuscript prose uses passive or impersonal academic phrasing, superseding older
 
 **Classification:** DESIGN DECISION — explicit user decision ("there is not any paper 2 … the one paper that we are making would be final").<br>
 **Decision:** The project produces a single paper. Material previously planned for a "Paper 2" is either included here at the strength the data supports or listed as a limitation and future work. Scope, claim strength and page budget: [THE_ONE_PAPER](../paper/THE_ONE_PAPER.md). Venue (journal or conference) is to be confirmed with the supervisor.
+
+## CHAT-34 — venue format: Springer conference paper of about 11 pages, 24 October 2026
+
+**Classification:** DESIGN DECISION — user decision (attached the group's published ICDPN 2025 paper as the reference).<br>
+**Decision:** The single paper follows that format: Springer LNNS/LNCS conference style, about 11 pages including references, with the section structure of the reference paper. Page budget and cut order: [THE_ONE_PAPER §4](../paper/THE_ONE_PAPER.md). The exact conference and page limit are still to be confirmed with the supervisor.
