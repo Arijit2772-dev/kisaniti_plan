@@ -25,10 +25,28 @@
 | `GET /devices/{id}/readings?limit=` | `data.read` | the latest readings (default 100, at most 1,000) as `DeviceReadingV1` |
 | `POST /devices/{id}/deactivate` | `users.manage`, CSRF | the device is no longer accepted by the ingestion service; history is kept |
 
+## 2a. Amendment A1 — stored storage assessments (26 October 2026, before any consumer; CHAT-42)
+
+The slice gains the stored result of the frozen rule `STORAGE-DEMO-0.1` (object `StorageAssessmentV1` of `contracts/sensor/v1`, unchanged):
+
+| Method and path | Needs | Does |
+|---|---|---|
+| `GET /devices/{id}/assessment` | `data.read` | the latest stored assessment of the FPO's device; 404 `NOT_FOUND` with "no assessment yet" for its own device before the first run, "device not found" otherwise |
+| `GET /devices/{id}/assessments?limit=` | `data.read` | the latest assessments, newest first (default 48, at most 1,000) |
+
+Semantics of the **assessment job** (a system process, not a tenant request):
+
+1. **Slots.** A device is assessed at whole-hour instants (UTC). A slot already assessed is never recomputed (idempotent, one row per device and slot).
+2. **Catch-up.** After a gap, every missed slot is assessed in order, so the persisted state equals the state of an uninterrupted hourly run (the rule's reference behaviour, `assess_series`). A first run starts at the first whole hour after the current assignment began, but never more than 14 days before now; with no assignment at all, a single `NO_ASSIGNMENT` assessment is stored for the latest slot.
+3. **Persisted hysteresis.** Every stored assessment carries the hysteresis state it ended with (`level`, `below_since`, and the assignment it belongs to). The next slot starts from the previous stored state; a new assignment resets it, as the rule requires.
+4. **Placement at the time of the reading** (contract L3B §3, IC-DOMAIN-004). The assignment used at a slot is the latest with `assigned_at <=` the slot. A reading is used only if the assignment valid at *its own* `measured_at` is that same assignment. A reading with an untrusted or missing time is never matched, so it is stored and shown but never used.
+5. **Append-only**, visible to a tenant only through its own devices (row-level security), written only by the job.
+6. **Origin.** The result's origin follows the rule's taint: any simulator, twin or synthetic input makes it SYNTHETIC.
+
 ## 3. Ingestion
 
 `kn-ingest` reads its registry from the `devices` table when started with `KN_REGISTRY=db` (PostgreSQL store). Changes made in the website take effect within the registry's refresh interval (30 seconds) or sooner for an unknown device (at most one lookup per 5 seconds). `devices.json` stays for stand-alone and SQLite use.
 
 ## 4. Not in this slice
 
-Broker user creation and password issue (H-4b), several FPOs sharing a device, moving a device, calibration records, per-lot linking (comes with the lot slice), the storage assessment job (H-5), and any page.
+Broker user creation and password issue (H-4b), several FPOs sharing a device, moving a device, calibration records, per-lot linking (comes with the lot slice), and any page. (The assessment job is amendment A1.)
