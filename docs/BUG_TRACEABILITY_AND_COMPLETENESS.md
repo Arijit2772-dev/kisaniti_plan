@@ -13,13 +13,13 @@
 | R5 | Hold-or-sell advice | PLANNED | no code yet |
 | R6 | Fair allocation across members | PARTLY | core + oracle + validator done; policy comparison needs the basmati prices; paddy prices are constant |
 | R7 | Storage sensing, hardware plugs in without rework | PARTLY | contract, firmware, simulator, conformance harness, PostgreSQL tables done; registry, assessment job and live page not built; real node not built |
-| R8 | Login that separates FPOs | PARTLY | decision recorded and approved; access contract and backend being built now |
+| R8 | Login that separates FPOs | PARTLY | contract frozen; backend built and tested (81 tests; database wall proven independently); sign-in page not built ([report](../../kisaniti_implementation/docs/reports/2026-10-26_access_login_two_fpo.md)) |
 | R9 | Website in Punjabi and English | PARTLY | mechanism and status page done; Punjabi text unreviewed; other pages not built |
 | R10 | Manager review and approval with exact stock reservation | PLANNED | needs R8 first |
 | R11 | WhatsApp messages in three languages | PLANNED | design done; preview channel then real channel; needs your Meta steps |
 | R12 | A website that shows all of it, deployed where you can reach it | PARTLY | stack runs locally and is shown in the app; public deployment waits for your account decision |
 | R13 | Everything tested, integrations checked | PARTLY | 5 CI jobs; live broker + PostgreSQL run; browser tests and whole-stack script not built |
-| R14 | Bugs traceable and fixed | PARTLY | request IDs exist; the rules below add the rest |
+| R14 | Bugs traceable and fixed | PARTLY | request IDs exist; bug register started with 5 real entries (`docs/BUGS.md`); structured logs, build identity and the screen-to-cause drill still to build |
 | R15 | Hardware built to my specification, integrated later | PLANNED | [HARDWARE_BUILD_SPEC.md](HARDWARE_BUILD_SPEC.md) |
 
 A requirement becomes DONE only when its row has: contract (if it crosses a boundary), code, tests, documentation, a recorded run, and a trace path (§2). The tracker's rule stands: no tick without an evidence link.
