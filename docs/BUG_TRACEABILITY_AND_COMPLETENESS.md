@@ -13,8 +13,8 @@
 | R5 | Hold-or-sell advice | PLANNED | no code yet |
 | R6 | Fair allocation across members | PARTLY | core + oracle + validator done; policy comparison needs the basmati prices; paddy prices are constant |
 | R7 | Storage sensing, hardware plugs in without rework | PARTLY | contract, firmware, simulator, conformance harness, PostgreSQL tables done; registry, assessment job and live page not built; real node not built |
-| R8 | Login that separates FPOs | PARTLY | contract frozen; backend built and tested (81 tests; database wall proven independently); sign-in page not built ([report](../../kisaniti_implementation/docs/reports/2026-10-26_access_login_two_fpo.md)) |
-| R9 | Website in Punjabi and English | PARTLY | mechanism and status page done; Punjabi text unreviewed; other pages not built |
+| R8 | Login that separates FPOs | PARTLY | contract frozen; backend built and tested (82 tests; database wall proven independently); sign-in page and shell built ([report](../../kisaniti_implementation/docs/reports/2026-10-26_access_login_two_fpo.md)) |
+| R9 | Website in Punjabi and English | PARTLY | sign-in, change password, home, users, status in both languages, checked by hand in the browser; Punjabi text unreviewed; other pages not built; no automated browser tests ([report](../../kisaniti_implementation/docs/reports/2026-10-26_signin_shell_punjabi.md)) |
 | R10 | Manager review and approval with exact stock reservation | PLANNED | needs R8 first |
 | R11 | WhatsApp messages in three languages | PLANNED | design done; preview channel then real channel; needs your Meta steps |
 | R12 | A website that shows all of it, deployed where you can reach it | PARTLY | stack runs locally and is shown in the app; public deployment waits for your account decision |
