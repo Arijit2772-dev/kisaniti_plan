@@ -86,6 +86,10 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O38 | Registering a device needs `users.manage`; a dedicated `devices.manage` capability is cleaner (access slice v2) | decision for the owner | open |
 | O39 | Broker credentials for a new device are still made by hand (H-4b would issue them from the website) | AI | planned |
 
+| O40 | Late-arriving readings do not change slots already assessed; an optional recompute is not built | AI, if wanted | open |
+| O41 | Slot length (1 h) and catch-up cap (14 days) are constants, not settings; no alert on a category change | AI | planned |
+| O42 | Storage-rule thresholds and the 48 h hold remain desk-research values until the real-node bench tests | YOU (hardware) | open |
+
 ## F. Not started
 
 - E allocation experiments (scripts exist, never run).

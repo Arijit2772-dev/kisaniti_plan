@@ -10,6 +10,7 @@ Read this first in a new session, after `NEW_CHAT_START.md`. Updated at the end 
 | L3b sensor path: contract, firmware, `core.storage`, MQTT ingestion | built, tested | product `firmware/`, `backend/ingestion/`, `core/` | 45 ingestion tests; live broker script |
 | H-1 conformance harness, H-2 software node, H-3 PostgreSQL readings | done | `backend/ingestion/src/kisaniti_ingestion/{simulator,conformance}.py`, migration 0002 | report `docs/reports/2026-10-26_H1-H3_*` |
 | Access slice (login, sessions, roles, two walls) | done, contract `access/v1` frozen + amendment A1 | `backend/src/kisaniti_api/access/`, migration 0003 | 82 backend tests; report `…_access_login_two_fpo.md` |
+| H-5 storage assessment job + endpoints | done | `backend/src/kisaniti_api/devices/{assess_job,placement}.py`, migration 0005, compose `assessor` | 121 backend tests; `scripts/demo_storage.sh` |
 | H-4a devices/v1: registry, assignments, tenant-scoped readings, DB registry for kn-ingest | done | `backend/src/kisaniti_api/devices/`, migration 0004 | 106 backend tests; live run with `REGISTRY=db` |
 | Website: sign-in, change password, home, users, status; Punjabi and English; API proxy | done (UI to be restyled by the owner) | `frontend/src/` | report `…_signin_shell_punjabi.md` |
 | Research: parser B.1, index B.4, hand-check sheet, protocol draft, MSP table, Ladhar check | done | research repo | see OPEN_ITEMS, STATUS |
@@ -19,8 +20,8 @@ Read this first in a new session, after `NEW_CHAT_START.md`. Updated at the end 
 ## 2. Next, in order (take the first unchecked item)
 
 - [x] **H-4a** device registry, assignments, tenant-scoped device endpoints, DB-backed registry for `kn-ingest` (CHAT-40, CHAT-41; report `…_H4a_device_registry.md`). Note: the placement valid at a reading's time is not yet computed anywhere; do it in H-5
-- [ ] **H-5 (next)** scheduled storage assessment with persisted hysteresis (`core.storage` + readings); must also compute the placement at `measured_at` from `device_assignments` and never match untrusted times; add `kn-assess` use of the database; HTTP `GET /devices/{id}/assessment`
-- [ ] H-6 devices and storage page (both languages) from simulator data
+- [x] **H-5** scheduled storage assessment, persisted hysteresis, placement at `measured_at`, endpoints, compose service `assessor` (CHAT-42; report `…_H5_storage_assessment.md`; demo `scripts/demo_storage.sh`)
+- [ ] **H-6 (next)** devices and storage page (both languages) from simulator data: device list, current category with reasons in plain words, last reading, 24 h trend, assignment form; registration (admin); use the endpoints `/devices`, `/devices/{id}/readings`, `/assessment`
 - [ ] Logging and build identity (structured JSON logs, request ID end to end, commit hash in `/api/v1/meta` and footer) — see BUG_TRACEABILITY §2
 - [ ] Market data page D1 (needs an L1/L2 contract slice first — freeze before code)
 - [ ] Allocation experiment decisions (solver time limit) then full seeds; forecasting only after the hand check and the frozen protocol
