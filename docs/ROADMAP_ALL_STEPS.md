@@ -1,6 +1,6 @@
 # Roadmap: every step of every phase, done and left
 
-26 October 2026 • Generated from one list, so the counts match the rows. Phases 0 to J are the tracker's; K to P cover the login, hardware software, website, deployment, WhatsApp and quality work added since. `H-n` with a hyphen is hardware integration software; `H.n` with a dot is the paper. Status: **done**, **started**, **not started**, **on hold**, **waiting** (needs another step). Owner: `AI`, `YOU`, `BOTH`.
+26 October 2026 • The same work cut by product stage is in [PRODUCT_FLOW_STATUS.md](PRODUCT_FLOW_STATUS.md). Generated from one list, so the counts match the rows. Phases 0 to J are the tracker's; K to P cover the login, hardware software, website, deployment, WhatsApp and quality work added since. `H-n` with a hyphen is hardware integration software; `H.n` with a dot is the paper. Status: **done**, **started**, **not started**, **on hold**, **waiting** (needs another step). Owner: `AI`, `YOU`, `BOTH`.
 
 **Total: 125 steps. Done 24, started 10, not started 85, on hold 2, waiting 4.**
 
