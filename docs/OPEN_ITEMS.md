@@ -57,6 +57,19 @@ Per the repository rules these go into the decision register only after you appr
 | O24 | Can Chronos-2 run here at all? (protocol model 8) | report only | **done**: yes, CPU only, system Python 3.13; I re-ran the worker's script and got the same forecasts and quantile shapes. Irregular timestamps fail unless the series is reindexed to daily with NaN gaps. Training-data overlap with public price series is unconfirmed (model card defers to the paper, arXiv 2510.15821). Not yet tested on the real index, on MPS, or on more than one series. Weights (about 478 MB) are cached in `~/.cache/huggingface` |
 | O25 | B.2b second source for the independent spot check | `rp:layers/L2_cleaning/SPOT_CHECK_SOURCES.md` | **done**: no fully independent, no-login daily source found for named Punjab mandis. Best options: eNAM viewed by you in a normal browser (blocked automated access; may overlap AGMARKNET), and Tribune/trade-press ranges as plausibility only. Punjab Mandi Board hosts do not resolve. 15 cells proposed for October 2025 (not yet reviewed by me cell by cell) |
 
+## E2. Allocation smoke test (one seed, 26 Oct; not final, results files left uncommitted)
+
+| ID | Finding | Consequence |
+|---|---|---|
+| O28 | Real 2025 Paddy(Common) modal prices at the five candidate mandis are about ₹2,389 (the MSP) on nearly every date; mean cross-mandi spread ₹0.80. "Perfect foresight" therefore equals the KisanNiti plan exactly in all 6 weeks | This experiment cannot show a price-driven benefit. Gains over simple rules come from transport cost, capacity and fairness only. Claims about choosing better mandis need the basmati prices (E.4), where prices do differ. State this in the paper rather than hiding it |
+| O29 | The three weighted-sum policies hit the 300 s solver limit in all 6 weeks (status TIME_LIMIT / FEASIBLE_NOT_PROVEN) and give the same values as max-min; one seed took 31 minutes, so 10 seeds would take about 5 hours | Decide the time limit for the weighted sums and report them as not proven optimal; or lower the limit and say so |
+| O30 | "Independent best choice" sends 100% of lots and violates mandi-day limits in every run, so its "price of fairness" is negative and meaningless | Report it as an infeasible baseline, not as a cheaper plan |
+| O31 | Basmati rows with modal ₹2,389 (O26) coincide with this constant paddy price. Untested idea: some Oct–Nov 2025 "1121" rows may carry the MSP-level paddy price | Include in the hand check (4 rows are there); do not assume |
+
+## H-steps progress (hardware integration plan, FINAL_DELIVERY_PLAN §4.3)
+
+H-1 conformance harness, H-2 software node and H-3 PostgreSQL persistence are **done** (product repo commit `c91330d`; report `docs/reports/2026-10-26_H1-H3_simulator_conformance_postgres.md`). Change from the plan: no HTTP read endpoints and no per-lot queries yet, because tenant isolation needs the device registry (H-4). Next: H-4, H-5.
+
 ## F. Not started
 
 - E allocation experiments (scripts exist, never run).
