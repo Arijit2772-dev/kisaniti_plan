@@ -85,10 +85,14 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O37 | Device registration and assignment are not in the audit trail (the frozen audit event list has no device events); needs an access slice version bump | AI after your go-ahead | open |
 | O38 | Registering a device needs `users.manage`; a dedicated `devices.manage` capability is cleaner (access slice v2) | decision for the owner | open |
 | O39 | Broker credentials for a new device are still made by hand (H-4b would issue them from the website) | AI | planned |
-
 | O40 | Late-arriving readings do not change slots already assessed; an optional recompute is not built | AI, if wanted | open |
 | O41 | Slot length (1 h) and catch-up cap (14 days) are constants, not settings; no alert on a category change | AI | planned |
 | O42 | Storage-rule thresholds and the 48 h hold remain desk-research values until the real-node bench tests | YOU (hardware) | open |
+| O43 | The imported price dataset stays `PENDING_HAND_CHECK` until your 56-row hand check (B.2) and the decision on rows without a date (O9); then I run `set-status --to VALIDATED` with your note. The prices page shows the warning meanwhile | YOU, then AI | open |
+| O44 | Members have no phone numbers or consent records yet; they come with slice 4 and the privacy controls | AI | planned |
+| O45 | No link from a sensor to a lot; no distance or transport-cost inputs for mandis (transport cost is UNKNOWN) | AI, YOU for the cost evidence | open |
+| O46 | The prices page lists at most 200 rows without paging; staleness is shown only as the newest date and its age | AI | planned |
+| O47 | Punjabi text of the slice-1 pages (members, lots, prices, sensors) needs the same native-speaker review as K.6 | YOU | open |
 
 ## F. Not started
 

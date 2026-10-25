@@ -6,19 +6,19 @@
 
 | In the product today | Not in the product at all |
 |---|---|
-| Login, roles, FPO separation (two walls), audit log | Members, lots, stock (no table, no API, no page) |
-| Devices, sensor readings, hourly storage assessments with persisted hysteresis | Prices, MSP, mandi data, forecasts |
+| Login, roles, FPO separation (two walls), audit log | Reservations, plans and sales against the stock |
+| Devices, sensor readings, hourly storage assessments with persisted hysteresis | Forecasts (the imported prices are shown, not yet used) |
 | The fair-allocation algorithm as a library (exact solver, brute-force check, validator) | A plan, a proposal, an approval, a reservation |
-| Pages: sign-in, change password, users, status, home | Messages, WhatsApp, replies, sales, reconciliation |
+| Members, lots and the stock ledger; mandi prices (6 678 real rows, unchecked) and MSP; pages: sign-in, change password, users, status, home, members, lots, prices, storage sensors | Messages, WhatsApp, replies, sales, reconciliation |
 | Five CI jobs, a bug register, simulator and conformance checks | The pages for stages 2 to 5 |
 
-So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 is only done for the sensor readings. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
+So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 now holds sensor readings, members, lots, the stock ledger, MSP and the imported price dataset (slice 1, 26 Oct); the price dataset waits for the owner's hand check before it counts as validated. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
 
-**44 steps: done 3, started 3, not started 37, waiting 1.**
+**44 steps: done 7, started 6, not started 30, waiting 1.** (After slice 1, 26 Oct.)
 
 | Stage | Steps | Done | Started | Not started | Waiting |
 |---|---|---|---|---|---|
-| 1. Collect data from all sources and clean it | 10 | 1 | 1 | 7 | 1 |
+| 1. Collect data from all sources and clean it | 10 | 5 | 4 | 0 | 1 |
 | 2. Make the opinion: forecast, advice and a fair plan | 9 | 1 | 1 | 7 | 0 |
 | 3. The manager verifies or not | 7 | 0 | 1 | 6 | 0 |
 | 4. Send the instruction to the farmers on WhatsApp | 8 | 0 | 0 | 8 | 0 |
@@ -31,16 +31,16 @@ Pull prices, rules, farmers' lots and sensor readings; check them; keep what is 
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| S1.1 | Members of the FPO (name, village, preferred language): contract, tables, API, page | not started | AI | none of these tables exist |
-| S1.2 | Lots: crop, variety, declared quantity in exact kilograms, harvest date, shed, link to the storage probe | not started | AI |  |
-| S1.3 | Stock ledger: every movement in exact kilograms, free / reserved / sold, append-only | not started | AI | needed by plans, approval and sales |
-| S1.4 | Mandi master data and distance or transport-cost inputs | not started | AI | coordinates exist in the research repo |
-| S1.5 | MSP table inside the product (the values are verified, the table is not imported) | not started | AI |  |
-| S1.6 | Import of the cleaned price dataset with provenance and exact row reconciliation | not started | AI | needs the L1 and L2 contract slices and research steps B.4, B.5 |
+| S1.1 | Members of the FPO (name, village, preferred language): contract, tables, API, page | done | AI | org/v1 frozen; tables, API, page in both languages; no phone numbers until consent (slice 4) |
+| S1.2 | Lots: crop, variety, declared quantity in exact kilograms, harvest date, shed, link to the storage probe | started | AI | all fields, places and placements done; the link from a sensor to a lot is not built |
+| S1.3 | Stock ledger: every movement in exact kilograms, free / reserved / sold, append-only | done | AI | append-only events, derived balances, database-enforced no-negative, idempotency; reservations and sales endpoints come in slices 3 and 5 |
+| S1.4 | Mandi master data and distance or transport-cost inputs | started | AI | 86 mandis imported with the coordinates the release holds; distance and transport-cost inputs not built (transport cost UNKNOWN) |
+| S1.5 | MSP table inside the product (the values are verified, the table is not imported) | done | AI | 18 verified values imported (checksum-guarded) and shown on the prices page |
+| S1.6 | Import of the cleaned price dataset with provenance and exact row reconciliation | done | AI | 6 678 rows imported with exact reconciliation; status PENDING_HAND_CHECK until the owner's hand check; refusals tested |
 | S1.7 | Live price source (AGMARKNET or data.gov.in), bounded and authorised | waiting / blocked | BOTH | registration on hold by your decision; monthly files are used meanwhile |
 | S1.8 | Cleaning pipeline as a product job (parser, flags, index), not only research scripts | started | AI | research scripts and tests exist; the product job does not |
-| S1.9 | Sensor readings: validated, de-duplicated, stored, assessed, shown by device | done | AI | H-1 to H-5; the page is H-6 |
-| S1.10 | Data-readiness page: what is fresh or stale, per source and mandi | not started | AI |  |
+| S1.9 | Sensor readings: validated, de-duplicated, stored, assessed, shown by device | done | AI | H-1 to H-6; the page exists |
+| S1.10 | Data-readiness page: what is fresh or stale, per source and mandi | started | AI | prices page shows dataset status, counts, newest date and its age; per-source and per-mandi staleness not built |
 
 ## Stage 2: Make the opinion: forecast, advice and a fair plan
 

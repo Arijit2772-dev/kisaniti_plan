@@ -2,7 +2,7 @@
 
 26 October 2026 • The same work cut by product stage is in [PRODUCT_FLOW_STATUS.md](PRODUCT_FLOW_STATUS.md). Generated from one list, so the counts match the rows. Phases 0 to J are the tracker's; K to P cover the login, hardware software, website, deployment, WhatsApp and quality work added since. `H-n` with a hyphen is hardware integration software; `H.n` with a dot is the paper. Status: **done**, **started**, **not started**, **on hold**, **waiting** (needs another step). Owner: `AI`, `YOU`, `BOTH`.
 
-**Total: 125 steps. Done 24, started 10, not started 85, on hold 2, waiting 4.**
+**Total: 125 steps. Done 26, started 11, not started 82, on hold 2, waiting 4.** (H-6, D3 done and D1 started after slice 1, 26 Oct; the other rows are as generated earlier.)
 
 | Phase | Steps | Done | Started | Not started | On hold / waiting |
 |---|---|---|---|---|---|
@@ -18,8 +18,8 @@
 | I. Integration and release | 4 | 0 | 1 | 3 | 0 |
 | J. Real-world validation | 4 | 0 | 0 | 4 | 0 |
 | K. Login, FPO separation and languages | 11 | 5 | 0 | 6 | 0 |
-| L. Hardware integration software (H-n steps) | 12 | 5 | 0 | 6 | 1 |
-| M. Website pages (demo path) | 10 | 1 | 0 | 6 | 3 |
+| L. Hardware integration software (H-n steps) | 12 | 6 | 0 | 5 | 1 |
+| M. Website pages (demo path) | 10 | 2 | 1 | 4 | 3 |
 | N. Deployment and operations | 8 | 1 | 0 | 7 | 0 |
 | O. WhatsApp (Layer 5) | 7 | 0 | 0 | 7 | 0 |
 | P. Quality and traceability | 8 | 1 | 1 | 6 | 0 |
@@ -200,7 +200,7 @@ How the node plugs in without rework.
 | H-4a | Device registry with tenant isolation; registry for kn-ingest from the database | done | AI | 106 tests then |
 | H-4b | Broker credentials issued from the website; provisioning script that writes secrets.h | not started | AI | HW-P1 |
 | H-5 | Scheduled storage assessment with persisted hysteresis | done | AI | 122 tests |
-| H-6 | Devices and storage page in both languages | not started | AI | NEXT |
+| H-6 | Devices and storage page in both languages | done | AI | slice 1; checked by hand in the browser with simulator data |
 | H-7 | Firmware hardening: flash queue, time sync, update method | not started | BOTH | over-the-air decision is yours |
 | H-8 | Real-node acceptance on your build | waiting for another step | YOU | needs F.4 |
 | H-9 | Guide for adding a second sensor type | not started | AI |  |
@@ -214,9 +214,9 @@ What the demo shows.
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
 | D0 | System status | done | AI |  |
-| D1 | Market data and reconciliation | not started | AI | needs L1/L2 slices |
+| D1 | Market data and reconciliation | started | AI | prices page, dataset status and MSP exist; reconciliation view against the hand check not built |
 | D2 | Prices and forecast with ranges | waiting for another step | AI | needs C |
-| D3 | Storage (the H-6 page) | not started | AI | NEXT |
+| D3 | Storage (the H-6 page) | done | AI | slice 1 |
 | D4 | Hold or sell | waiting for another step | AI | needs D |
 | D5 | Plan | waiting for another step | AI | needs E and G.4 |
 | D6 | Manager approval | not started | AI | needs G.5 |
@@ -293,7 +293,7 @@ Everything tested, every bug traceable.
 
 ## The next steps I will take, in order
 
-1. H-6 devices and storage page (both languages)
+1. Slice 2: a first plan (baseline forecast with ranges, storage risk, the allocation library run by an orchestration step, stored as a proposal)
 2. P.3 and P.4 structured logs and build identity
 3. P.5 recorded screen-to-cause drill
 4. H-4b broker credentials and the provisioning script

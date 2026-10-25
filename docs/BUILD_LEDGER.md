@@ -13,9 +13,10 @@ Read this first in a new session, after `NEW_CHAT_START.md`. Updated at the end 
 | H-5 storage assessment job + endpoints | done | `backend/src/kisaniti_api/devices/{assess_job,placement}.py`, migration 0005, compose `assessor` | 121 backend tests; `scripts/demo_storage.sh` |
 | H-4a devices/v1: registry, assignments, tenant-scoped readings, DB registry for kn-ingest | done | `backend/src/kisaniti_api/devices/`, migration 0004 | 106 backend tests; live run with `REGISTRY=db` |
 | Website: sign-in, change password, home, users, status; Punjabi and English; API proxy | done (UI to be restyled by the owner) | `frontend/src/` | report `…_signin_shell_punjabi.md` |
+| Slice 1: members, places, lots, exact stock ledger (org/v1); mandis, MSP and price import with refusals (market/v1); pages: members, lots, prices, storage sensors (H-6) in Punjabi and English | done; dataset is PENDING_HAND_CHECK | `backend/src/kisaniti_api/{org,market}/`, migrations 0006 and 0007, `frontend/src/components/{Members,Lots,Price,Devices}*`, `scripts/make_ci_release.py` | 175 backend tests, 240 contract checks; report `…_slice1_foundation_data.md`; BUG-007 fixed |
 | Research: parser B.1, index B.4, hand-check sheet, protocol draft, MSP table, Ladhar check | done | research repo | see OPEN_ITEMS, STATUS |
 | Hardware build spec, hosting plan, demo plan, traceability rules | written | planning `docs/` | — |
-| CI | 5 jobs green (core, backend, ingestion, frontend, stack incl. smoke) | `.github/workflows/ci.yml` | last green run after commit `da84e5a` |
+| CI | 5 jobs (core, backend, ingestion, frontend, stack incl. smoke through the website with a fixture price release) | `.github/workflows/ci.yml` | check the latest run after the slice-1 push |
 
 The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.md); this ledger keeps only the queue of what is taken next.
 
@@ -23,13 +24,14 @@ The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.m
 
 - [x] **H-4a** device registry, assignments, tenant-scoped device endpoints, DB-backed registry for `kn-ingest` (CHAT-40, CHAT-41; report `…_H4a_device_registry.md`). Note: the placement valid at a reading's time is not yet computed anywhere; do it in H-5
 - [x] **H-5** scheduled storage assessment, persisted hysteresis, placement at `measured_at`, endpoints, compose service `assessor` (CHAT-42; report `…_H5_storage_assessment.md`; demo `scripts/demo_storage.sh`)
-- [ ] **H-6 (next)** devices and storage page (both languages) from simulator data: device list, current category with reasons in plain words, last reading, 24 h trend, assignment form; registration (admin); use the endpoints `/devices`, `/devices/{id}/readings`, `/assessment`
+- [x] **H-6** devices and storage page (both languages) (slice 1; report `…_slice1_foundation_data.md`)
+- [x] **Slice 1** members, lots, stock ledger, mandi and MSP reference data, price import, storage page (CHAT-43)
+- [ ] **Slice 2 (next)** a first plan: baseline forecast with ranges, storage risk, the existing allocation library run by an orchestration step, stored as a proposal with its explanation (S2.1, S2.2, S2.6 to S2.9). Needs its contract slice frozen first (CHAT-28); needs your approval of the scope
 - [ ] Logging and build identity (structured JSON logs, request ID end to end, commit hash in `/api/v1/meta` and footer) — see BUG_TRACEABILITY §2
-- [ ] Market data page D1 (needs an L1/L2 contract slice first — freeze before code)
 - [ ] Allocation experiment decisions (solver time limit) then full seeds; forecasting only after the hand check and the frozen protocol
 - [ ] D-layer hold-or-sell, L4 approval, L5 messages (preview channel first) — each after its contract slice is frozen
 
-Blocked on the owner: 56-row hand check (O1), protocol approval (O2), sub-yard rule (O9), account/hosting (O34), Meta steps (O35), kit purchase, Punjabi text review, Playwright decision.
+Blocked on the owner: 56-row hand check (O1; also gates the price dataset's VALIDATED status, O43), protocol approval (O2), sub-yard rule (O9), account/hosting (O34), Meta steps (O35), kit purchase, Punjabi text review, Playwright decision.
 
 ## 3. Rules learned the hard way (do not rediscover)
 
@@ -60,6 +62,10 @@ cd ~/Documents/kisaniti_implementation && core/.venv/bin/python -m pytest contra
 cd frontend && npm run lint && npm run typecheck && npm run i18n:check && npm run build
 # whole stack and smoke
 docker compose up --build -d --wait ; scripts/smoke_access.sh ; scripts/smoke_access.sh http://localhost:3000
+# import the cleaned prices and the MSP table into a running stack (real data; the release is git-ignored)
+cd backend && DATABASE_URL=postgresql+psycopg://kisaniti:kisaniti-local-only@localhost:5433/kisaniti PYTHONPATH=src:ingestion/src:../core/src \
+  .venv/bin/python -m kisaniti_api.market.import_release import-release --dir ~/Documents/kisaniti_research_paper/data/processed/basmati/release/basmati_punjab_release1
+# same module: import-msp --csv <msp_schedule.csv>, set-status --dataset NAME --to VALIDATED --note "..." (only after the hand check)
 # CI result after a push (one blocking call, no polling)
 gh run watch $(gh run list --limit 1 --json databaseId -q '.[0].databaseId') --exit-status
 ```
