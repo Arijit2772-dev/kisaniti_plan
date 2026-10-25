@@ -6,7 +6,7 @@ How to use it: finish the steps of a phase in order; steps in different phases m
 
 ## RESUME POINT (read this first in a new chat)
 
-**Start with [BUILD_LEDGER.md](BUILD_LEDGER.md)** (what is done, what is next, working commands), then **[BUG_TRACEABILITY_AND_COMPLETENESS.md](BUG_TRACEABILITY_AND_COMPLETENESS.md)** (every requirement and its status; how bugs are traced and fixed), **[HARDWARE_BUILD_SPEC.md](HARDWARE_BUILD_SPEC.md)** (what to build), **[HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md)** (where it runs, the URL, WhatsApp, hardware), **[DEMO_TEST_DEPLOY_PLAN.md](DEMO_TEST_DEPLOY_PLAN.md)** (what the website must show, how it is tested, where it runs), **[FINAL_DELIVERY_PLAN.md](FINAL_DELIVERY_PLAN.md)** (paper, product and plug-in hardware plan) and **[OPEN_ITEMS.md](OPEN_ITEMS.md)**: every unsettled finding and who owns it (24 Oct 2026).
+**The full list of every step, done and left, is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.md)** (125 steps, phases 0 to P). **Start with [BUILD_LEDGER.md](BUILD_LEDGER.md)** (what is done, what is next, working commands), then **[BUG_TRACEABILITY_AND_COMPLETENESS.md](BUG_TRACEABILITY_AND_COMPLETENESS.md)** (every requirement and its status; how bugs are traced and fixed), **[HARDWARE_BUILD_SPEC.md](HARDWARE_BUILD_SPEC.md)** (what to build), **[HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md)** (where it runs, the URL, WhatsApp, hardware), **[DEMO_TEST_DEPLOY_PLAN.md](DEMO_TEST_DEPLOY_PLAN.md)** (what the website must show, how it is tested, where it runs), **[FINAL_DELIVERY_PLAN.md](FINAL_DELIVERY_PLAN.md)** (paper, product and plug-in hardware plan) and **[OPEN_ITEMS.md](OPEN_ITEMS.md)**: every unsettled finding and who owns it (24 Oct 2026).
 
 *Updated 24 Oct 2026.* **Phase A.1 (basmati downloads) is finished.** All 29 months are filed; June 2025 is empty. Nothing more needs downloading for Paper 1. Open items in Phase A: **A.3 (sourced MSP table)** and optional A.4/A.5.
 
@@ -62,7 +62,7 @@ Why first: forecasting, the hold-or-sell backtest and the whole-system result al
   - [x] One off-season test month (June 2025) to confirm basmati is quiet outside the season
   - Note: Feb 2026 had only 3 rows and Jan 2026 only 27, so older seasons need Sep–Jan only; the site offers 2021 onward.
 - [x] A.2 (24 Oct) Coverage report written: 6,098 observed rows, 86 mandis, 726 trading days, 6 varieties; June 2025 empty; a forecastable-series rule is *proposed* (confirm in Phase B/C) — `AI`; see research `results/L1_coverage/basmati_coverage.md`
-- [ ] A.3 Collect the official **MSP values** for paddy and wheat for 2021-22 to 2026-27 with source links, for the MSP_SCHEDULE — `AI` ∥
+- [x] A.3 (26 Oct: 18 values from 12 PIB pages, all re-opened; `rp:layers/L1_data/msp/`) Collect the official **MSP values** for paddy and wheat for 2021-22 to 2026-27 with source links, for the MSP_SCHEDULE — `AI` ∥
 - [ ] A.4 **Needed before the forecasting comparison can rank models (power check, 24 Oct):** with 5 seasons only gains of ~11–17% over the naive baseline are detectable; CEDA history (about 20 more seasons) lowers that to ~5–7%. **24 Oct: the CEDA web portal does not load; user decision: NO email and NO new registration for now (plan C = keep the single paper's scope; the lack of long history is stated as a limitation and future work). Only if CEDA's website works later, follow the runbook.** Optional/on hold — follow research `layers/L1_data/CEDA_RUNBOOK.md`: read CEDA's terms, get a download or an API token from CEDA (the script is ready and tested on a fake server), then run `ceda_fetch.py`. Note the history is **commodity-level basmati** (no variety split) — `YOU`
 - [ ] A.6 Optional extras (future work, not needed for the paper): Haryana basmati mandis as a second region; weather (IMD/NASA POWER) and APEDA export prices as covariates — `AI` after A.4
 - [ ] A.5 *(on hold by user decision, 24 Oct)* Register on data.gov.in for the daily API (needed for the live demo, not for the paper) — `YOU` ∥
@@ -106,7 +106,7 @@ Done when: results files and figures exist from scripts and negative results are
 
 The core, oracle and validator exist; the experiments were interrupted by the usage limit.
 
-- [ ] E.1 Finish the policy comparison on the 300-member Patiala persona (nearest mandi, independent choice, weighted sum, max-min, utilitarian, leximin, perfect foresight) with real prices — `AI`
+- [~] E.1 (26 Oct: one-seed smoke run finished in 31 min; findings O28 to O30; results not final) Finish the policy comparison on the 300-member Patiala persona (nearest mandi, independent choice, weighted sum, max-min, utilitarian, leximin, perfect foresight) with real prices — `AI`
 - [ ] E.2 Solver comparison and scaling grid (HiGHS, SCIP, CP-SAT, greedy) with timings — `AI`
 - [ ] E.3 Price of fairness and sensitivity (transport rate, daily limits) — `AI`
 - [ ] E.4 Re-run with basmati prices once Phase A has them — `AI`

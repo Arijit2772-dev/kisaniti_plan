@@ -17,6 +17,8 @@ Read this first in a new session, after `NEW_CHAT_START.md`. Updated at the end 
 | Hardware build spec, hosting plan, demo plan, traceability rules | written | planning `docs/` | — |
 | CI | 5 jobs green (core, backend, ingestion, frontend, stack incl. smoke) | `.github/workflows/ci.yml` | last green run after commit `da84e5a` |
 
+The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.md); this ledger keeps only the queue of what is taken next.
+
 ## 2. Next, in order (take the first unchecked item)
 
 - [x] **H-4a** device registry, assignments, tenant-scoped device endpoints, DB-backed registry for `kn-ingest` (CHAT-40, CHAT-41; report `…_H4a_device_registry.md`). Note: the placement valid at a reading's time is not yet computed anywhere; do it in H-5
