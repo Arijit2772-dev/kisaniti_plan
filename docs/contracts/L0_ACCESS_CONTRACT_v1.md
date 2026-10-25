@@ -79,6 +79,10 @@ Events: `LOGIN_SUCCESS`, `LOGIN_FAILURE`, `LOGIN_THROTTLED`, `LOGOUT`, `SESSION_
 
 OTP or SMS or WhatsApp sign-in, second factor, single sign-on, self-registration, password reset by email, one user in several FPOs, API keys for programs, device authentication (devices use broker credentials, see L3B), member (farmer) logins, phone-number storage (comes with the member slice and the privacy controls).
 
-## 10. Test obligations
+## 10. Amendment A1 (26 October 2026, before any consumer existed)
+
+`PrincipalV1` gains two required fields so the website can show who is signed in and for which FPO: `display_name` (string, 1 to 120) and `fpo_name` (string, 1 to 200, null for the platform operator). Reason: without them the application header cannot tell two FPOs or two people apart, which the demo of FPO separation needs. Made inside `access/v1` only because the frozen slice had no consumer yet (the website was not built); any change after a consumer exists is a new slice version. Schema, examples (one new invalid case) and tests updated in the same commit; recorded as CHAT-39.
+
+## 11. Test obligations
 
 Contract examples (valid pass, invalid fail); backend tests on real PostgreSQL with two fictional FPOs: no cross-tenant read or write by any endpoint, 404 for another FPO's user, restricted database role sees nothing without `app.fpo_id` and only its own FPO's rows with it; wrong password, unknown user, throttling and unlock; session expiry, revocation and fixation; cookie flags; CSRF missing and wrong; password policy; must-change flow; the operator command; no secret in any log line.
