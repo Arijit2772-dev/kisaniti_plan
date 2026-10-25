@@ -6,7 +6,7 @@ How to use it: finish the steps of a phase in order; steps in different phases m
 
 ## RESUME POINT (read this first in a new chat)
 
-**Also read [OPEN_ITEMS.md](OPEN_ITEMS.md)**: every unsettled finding and who owns it (24 Oct 2026).
+**Also read [FINAL_DELIVERY_PLAN.md](FINAL_DELIVERY_PLAN.md)** (paper, product and plug-in hardware plan) and **[OPEN_ITEMS.md](OPEN_ITEMS.md)**: every unsettled finding and who owns it (24 Oct 2026).
 
 *Updated 24 Oct 2026.* **Phase A.1 (basmati downloads) is finished.** All 29 months are filed; June 2025 is empty. Nothing more needs downloading for Paper 1. Open items in Phase A: **A.3 (sourced MSP table)** and optional A.4/A.5.
 
