@@ -70,6 +70,18 @@ Per the repository rules these go into the decision register only after you appr
 
 H-1 conformance harness, H-2 software node and H-3 PostgreSQL persistence are **done** (product repo commit `c91330d`; report `docs/reports/2026-10-26_H1-H3_simulator_conformance_postgres.md`). Change from the plan: no HTTP read endpoints and no per-lot queries yet, because tenant isolation needs the device registry (H-4). Next: H-4, H-5.
 
+## G. Hosting, WhatsApp, hardware and the next build step (26 Oct)
+
+Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
+
+| ID | Item | Owner | Status |
+|---|---|---|---|
+| O32 | **BLOCKER (UNKNOWN): how FPO managers sign in, and their roles.** The shared contract requires every tenant-scoped endpoint to act for a "principal" (404 for another FPO's object, 422 for a mismatched `fpo_id`), but authentication and roles are not frozen (the spec says it does not freeze roles). No website-facing read endpoint, manager screen or approval can be built until this slice is decided. I will not invent one | YOU decide, then AI freezes the slice (G.1) | open |
+| O33 | Proposed decision H-4a (no HTTP, no auth needed): tables `devices` (device_id, fpo_id, source_origin) and append-only `device_assignments` (the frozen DeviceAssignment fields plus fpo_id); `kn-ingest` reads the registry from PostgreSQL instead of `devices.json`; a reading's FPO is resolved from the assignment history at `measured_at` (contract IC-DOMAIN-004); an untrusted time is never guessed; tests prove two FPOs never see each other's readings at database and service level. Needs your approval, then a decision-register entry, then code | YOU approve | proposed |
+| O34 | Account owner and hosting choice (Azure for Students VM recommended; see the plan §2) | YOU | open |
+| O35 | Create the Meta developer account and test app; add your own number as a recipient; check whether Hindi and Punjabi templates are available | YOU | open |
+| O36 | Facts not verified yet: how many recipients a Meta test number allows; Hindi and Punjabi template support; India per-message rates; whether Azure public IPs give a free DNS name; which root certificate the ESP32 needs for the broker's public certificate; DigitalOcean's student credit | AI while building, YOU in dashboards | open |
+
 ## F. Not started
 
 - E allocation experiments (scripts exist, never run).
