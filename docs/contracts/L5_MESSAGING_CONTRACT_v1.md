@@ -19,7 +19,7 @@ An **approved** plan (approval/v1) becomes one **instruction** per farmer: the e
 | Re-check at send | Immediately before an attempt the same checks run again, plus: the member's language still equals the frozen one (`LANGUAGE_CHANGED`), and for a sale instruction the plan's reservation is still `ACTIVE` (`COMMITMENT_NOT_ACTIVE`). A failed check is recorded as an attempt with status `BLOCKED` and its codes; nothing is sent (WA04) | DESIGN |
 | Templates | Versioned files in the product (`SALE_INSTRUCTION`, `CANCELLATION`), each with a Punjabi, a Hindi and an English variant and a per-variant review status (`UNREVIEWED` or `REVIEWED` with reviewer and date). A released version is never edited: a change is a new version. All variants written so far are `UNREVIEWED` (no native-speaker review has happened). The preview shows that label; a real channel (later) must refuse an unreviewed variant. Provider template names and locale codes are UNKNOWN until the Meta account exists and are not part of this slice | DESIGN, review UNKNOWN |
 | Rendering | Deterministic and exact: the facts (farmer name, variety, per line quantity in kg with three decimals, mandi name as in the price source, date) are inserted as the stored strings; dates are written with the month name in the variant's language and Western digits (CHAT-37); no price, no transport detail and no guarantee is ever added; a placeholder left unfilled is an error, never sent | DESIGN (WA05) |
-| One instruction per farmer | One instruction per (plan, member, kind) holds all of that farmer's lines. Preparing again returns the existing one; only a `BLOCKED` one is replaced (new version, `supersedes` set) once the member is eligible. Languages never produce parallel instructions | DESIGN (WA07) |
+| One instruction per farmer | One instruction per (plan, member, kind) holds all of that farmer's lines. Preparing again returns the existing one; it is replaced (new version, `supersedes` set) only if it is `BLOCKED` and the blockers have changed, or if it is `PREPARED` but the member's recorded language is no longer the one it was written in. Languages never produce parallel instructions | DESIGN (WA07) |
 | Cancellation | After a plan's reservation was released, a `CANCELLATION` instruction can be prepared for each farmer whose sale instruction has a delivery record with a status of at least `PREVIEWED`; it links the earlier instruction. It says the earlier plan is cancelled and must not be acted on; it never claims the earlier message was recalled | DESIGN (WA08) |
 | Authority | Preparing, previewing and viewing instructions: `messages.send` for preparing and sending, `data.read` for viewing. Recording contacts and consents: `data.write`. Viewing an unmasked phone: `contacts.view_phone`. In the demo fixture the FPO admin holds all of them; staff hold `data.write` and may be given `messages.send` | DEMO |
 
@@ -43,7 +43,8 @@ An **approved** plan (approval/v1) becomes one **instruction** per farmer: the e
 | `GET /message-templates` | `data.read` | the templates, versions and the review status of each language | 200 list of `TemplateInfoV1` | |
 | `POST /plans/{id}/instructions` | `messages.send`, CSRF | prepares the instructions of an approved plan (or of its cancellation) | 201 list of `InstructionV1` | 404; 409 `NOT_APPROVED`, `NOT_RELEASED`; 422 `NOTHING_TO_CANCEL` |
 | `GET /plans/{id}/instructions` | `data.read` | the latest instruction per farmer and kind, with delivery state | 200 list | 404 |
-| `GET /instructions/{id}` | `data.read` | one instruction with its attempts | 200 | 404 |
+| `GET /instructions/{id}` | `data.read` | one instruction with its delivery summary | 200 `InstructionV1` | 404 |
+| `GET /instructions/{id}/attempts` | `data.read` | the delivery records of one instruction, newest first | 200 list of `DeliveryAttemptV1` | 404 |
 | `POST /instructions/{id}/send` | `messages.send`, CSRF, optional `Idempotency-Key` | re-checks, then makes one attempt on the channel | 201 `DeliveryAttemptV1` (status `PREVIEWED` or `BLOCKED`) | 404; 409 `INSTRUCTION_BLOCKED`, `ALREADY_SENT`; 422 `CHANNEL_NOT_AVAILABLE` |
 | `GET /instruction-queue` | `data.read` | instructions that need attention: `BLOCKED`, or last attempt `BLOCKED` or `FAILED` | 200 list | |
 
@@ -69,3 +70,9 @@ Contract examples; backend tests on real PostgreSQL: two FPOs (no contact, conse
 ## 6. Open (deliberately not decided or built here)
 
 The erasure and data-access screens (PR-T04), a retention job, blocking planning when `ADVICE` consent is missing (PR-T02's second half; it would change plan/v1 behaviour and needs your decision), consent notice texts and their versions (the demo notice version is a name, not a reviewed text), a native-speaker review of the templates, provider template names and locale codes, the real channel, the webhook, shared household phones and representatives.
+
+## 7. Clarifications made while building (no schema change; 26 October)
+
+1. `GET /instructions/{id}` returns the instruction with its delivery summary; the delivery records are at `GET /instructions/{id}/attempts` (the schema of an instruction holds no list of attempts).
+2. Preparing a `SALE_INSTRUCTION` needs the plan to be approved **with an active reservation**; otherwise `409 NOT_APPROVED`.
+3. The commit message of this contract said 31 examples; there were 33 (15 valid, 18 invalid).
