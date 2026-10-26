@@ -93,6 +93,11 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O45 | No link from a sensor to a lot; no distance or transport-cost inputs for mandis (transport cost is UNKNOWN) | AI, YOU for the cost evidence | open |
 | O46 | The prices page lists at most 200 rows without paging; staleness is shown only as the newest date and its age | AI | planned |
 | O47 | Punjabi text of the slice-1 pages (members, lots, prices, sensors) needs the same native-speaker review as K.6 | YOU | open |
+| O48 | DEMO policies in plan/v1 need your decision or evidence before any real use: increment (100 kg default), transport (entered by the manager, no model), no waiting cost, mandi basis (30 days, 5 days minimum), 2-hour age limit for a sensor assessment, 30 s solver time limit (E.0) | YOU | open |
+| O49 | The rule for "no reliable signal" (CHAT-22) is undefined until EXP-04 is run; forecasts show NOT_ASSESSED. The 95% ranges on real prices are wide (see the slice 2 report) | AI after C.0 | open |
+| O50 | The plan uses the naive forecast until the protocol (C.0) is frozen and run; seasonal naive waits for C.2 because the protocol's "same calendar day" is ambiguous | YOU (C.0), then AI | open |
+| O51 | Whether a result that is not proven optimal may ever become a proposal (G09) is open; today it is stored as NOT_PROPOSED | YOU | open |
+| O52 | Inactive members' lots are still planned; whether they should be excluded is undecided | YOU | open |
 
 ## F. Not started
 

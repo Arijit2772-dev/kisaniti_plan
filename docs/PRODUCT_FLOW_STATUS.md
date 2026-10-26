@@ -6,7 +6,7 @@
 
 | In the product today | Not in the product at all |
 |---|---|
-| Login, roles, FPO separation (two walls), audit log | Reservations, plans and sales against the stock |
+| Login, roles, FPO separation (two walls), audit log | Reservations and sales against the stock; approval; messages |
 | Devices, sensor readings, hourly storage assessments with persisted hysteresis | Forecasts (the imported prices are shown, not yet used) |
 | The fair-allocation algorithm as a library (exact solver, brute-force check, validator) | A plan, a proposal, an approval, a reservation |
 | Members, lots and the stock ledger; mandi prices (6 678 real rows, unchecked) and MSP; pages: sign-in, change password, users, status, home, members, lots, prices, storage sensors | Messages, WhatsApp, replies, sales, reconciliation |
@@ -14,12 +14,12 @@
 
 So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 now holds sensor readings, members, lots, the stock ledger, MSP and the imported price dataset (slice 1, 26 Oct); the price dataset waits for the owner's hand check before it counts as validated. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
 
-**44 steps: done 7, started 6, not started 30, waiting 1.** (After slice 1, 26 Oct.)
+**44 steps: done 13, started 5, not started 25, waiting 1.** (After slice 2, 26 Oct.)
 
 | Stage | Steps | Done | Started | Not started | Waiting |
 |---|---|---|---|---|---|
-| 1. Collect data from all sources and clean it | 10 | 5 | 4 | 0 | 1 |
-| 2. Make the opinion: forecast, advice and a fair plan | 9 | 1 | 1 | 7 | 0 |
+| 1. Collect data from all sources and clean it | 10 | 6 | 3 | 0 | 1 |
+| 2. Make the opinion: forecast, advice and a fair plan | 9 | 6 | 1 | 2 | 0 |
 | 3. The manager verifies or not | 7 | 0 | 1 | 6 | 0 |
 | 4. Send the instruction to the farmers on WhatsApp | 8 | 0 | 0 | 8 | 0 |
 | 5. Get feedback and close the loop | 7 | 0 | 0 | 7 | 0 |
@@ -32,7 +32,7 @@ Pull prices, rules, farmers' lots and sensor readings; check them; keep what is 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
 | S1.1 | Members of the FPO (name, village, preferred language): contract, tables, API, page | done | AI | org/v1 frozen; tables, API, page in both languages; no phone numbers until consent (slice 4) |
-| S1.2 | Lots: crop, variety, declared quantity in exact kilograms, harvest date, shed, link to the storage probe | started | AI | all fields, places and placements done; the link from a sensor to a lot is not built |
+| S1.2 | Lots: crop, variety, declared quantity in exact kilograms, harvest date, shed, link to the storage probe | done | AI | all fields, places, placements and the sensor link (plan/v1) |
 | S1.3 | Stock ledger: every movement in exact kilograms, free / reserved / sold, append-only | done | AI | append-only events, derived balances, database-enforced no-negative, idempotency; reservations and sales endpoints come in slices 3 and 5 |
 | S1.4 | Mandi master data and distance or transport-cost inputs | started | AI | 86 mandis imported with the coordinates the release holds; distance and transport-cost inputs not built (transport cost UNKNOWN) |
 | S1.5 | MSP table inside the product (the values are verified, the table is not imported) | done | AI | 18 verified values imported (checksum-guarded) and shown on the prices page |
@@ -48,15 +48,15 @@ From prices, forecasts, storage condition and stock, produce a recommendation an
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| S2.1 | Forecast contract slice (ranges beyond 7 days, 'no reliable signal') | not started | AI |  |
-| S2.2 | Baseline forecast in the product, with prediction ranges | not started | AI |  |
+| S2.1 | Forecast contract slice (ranges beyond 7 days, 'no reliable signal') | done | AI | plan/v1 frozen (CHAT-44). The rule for the words "no reliable signal" is UNKNOWN until EXP-04; forecasts say NOT_ASSESSED |
+| S2.2 | Baseline forecast in the product, with prediction ranges | done | AI | naive and 5-day average with empirical 80% and 95% ranges, labelled not validated; index equals the research script exactly (433 and 369 days) |
 | S2.3 | Model comparison on the pre-registered protocol | not started | BOTH | needs your protocol approval and the hand check |
 | S2.4 | Storage-risk estimate per lot's probe | done | AI |  |
 | S2.5 | Hold-or-sell rule and advice (storage loss, holding cost, interest) | not started | AI |  |
-| S2.6 | Fair allocation: exact solver, brute-force check, independent validator | started | AI | library and one smoke experiment done; not in the product |
-| S2.7 | Planning orchestration: freeze the inputs, run the optimiser, store the proposal with provenance | not started | AI | the missing link between the library and the manager |
-| S2.8 | Plain-language explanation of a plan (fairness, options excluded and why) | not started | AI |  |
-| S2.9 | Pages: prices and forecast, advice, new plan | not started | AI |  |
+| S2.6 | Fair allocation: exact solver, brute-force check, independent validator | done | AI | the existing optimiser and independent validator run inside the product; proposal checked against the brute-force oracle in a test |
+| S2.7 | Planning orchestration: freeze the inputs, run the optimiser, store the proposal with provenance | done | AI | POST /plans freezes the inputs, runs HiGHS, validates, stores an immutable proposal; not-proven results are stored but not proposed |
+| S2.8 | Plain-language explanation of a plan (fairness, options excluded and why) | done | AI | coded explanation translated in Punjabi and English; no prose from the backend |
+| S2.9 | Pages: prices and forecast, advice, new plan | started | AI | plan list, new-plan form with the price outlook, plan detail done; hold-or-sell advice page not built |
 
 ## Stage 3: The manager verifies or not
 
