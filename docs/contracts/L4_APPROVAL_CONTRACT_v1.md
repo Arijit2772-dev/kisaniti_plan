@@ -65,6 +65,8 @@ Computed from current data at the moment of the call and again, for the stock pa
 5. **Explicit failure.** Every refusal has a code; nothing is partly applied.
 6. **Exactness.** Quantities are integer grams; the reservation per lot is the exact sum of the approved revision's assignments.
 
+5a. **Order of refusals at approval** (clarification made while building): duplicate decision or replay, plan not proposed, stale revision, nothing to reserve, insufficient stock (`INSUFFICIENT_AVAILABLE`, a hard fact), then unacknowledged warnings (`WARNINGS_NOT_ACKNOWLEDGED`). A decided plan's context carries no context warnings (changes after a decision are not news).
+
 ## 6. Not in this slice (deliberate)
 
 "Request a change" from another person (needs a role workflow that is UNKNOWN), approving only some assignments, releasing part of a plan, consumption by sales (slice 5), expiry or same-day cutoff rules (UNKNOWN), blocking freshness thresholds (UNKNOWN), farmer acceptance (UNKNOWN), messages (slice 4), and any use of an `APPROVED` plan by the website's farmer-facing screens.
