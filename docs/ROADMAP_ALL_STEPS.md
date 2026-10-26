@@ -154,7 +154,7 @@ The whole chain on one command.
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| I.1 | End-to-end run: data, forecast, storage, advice, plan, approval, message, sale, stock | started | AI | smoke scripts exist for login, devices and storage; the full chain does not |
+| I.1 | End-to-end run: data, forecast, storage, advice, plan, approval, message, sale, stock | started | AI | `scripts/chain.py` runs data, sensor, plan, approval, preview messages, sales, release and ledger audit (no hold-or-sell advice yet: slice 6) |
 | I.2 | Whole-system backtest against simple practice | not started | AI |  |
 | I.3 | Run the demo from a fresh clone on a second machine; demo video | not started | BOTH |  |
 | I.4 | Tag releases, archive with a DOI, user manual, deployment guide | not started | AI |  |

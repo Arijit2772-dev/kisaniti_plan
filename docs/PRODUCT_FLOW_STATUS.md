@@ -14,7 +14,7 @@
 
 So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 now holds sensor readings, members, lots, the stock ledger, MSP and the imported price dataset (slice 1, 26 Oct); the price dataset waits for the owner's hand check before it counts as validated. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
 
-**44 steps: done 29, started 7, not started 7, waiting 1.** (After slice 5, 26 Oct.)
+**44 steps: done 30, started 7, not started 6, waiting 1.** (After slice 7, 26 Oct.)
 
 | Stage | Steps | Done | Started | Not started | Waiting |
 |---|---|---|---|---|---|
@@ -23,7 +23,7 @@ So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**.
 | 3. The manager verifies or not | 7 | 6 | 1 | 0 | 0 |
 | 4. Send the instruction to the farmers on WhatsApp | 8 | 5 | 1 | 2 | 0 |
 | 5. Get feedback and close the loop | 7 | 5 | 1 | 1 | 0 |
-| X. Across all five stages | 3 | 1 | 0 | 2 | 0 |
+| X. Across all five stages | 3 | 2 | 0 | 1 | 0 |
 
 ## Stage 1: Collect data from all sources and clean it
 
@@ -107,7 +107,7 @@ Prove it works as one chain. (Integration)
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| X.1 | One command runs the whole chain on fictional data and fails on any broken step | not started | AI |  |
+| X.1 | One command runs the whole chain on fictional data and fails on any broken step | done | AI | `scripts/chain.py`; clean run passes, ledger sabotage and 3 of 4 planted bugs fail it; report `…_slice7_chain.md` |
 | X.2 | Whole-system backtest against simple practice | not started | AI |  |
 | X.3 | Identity, tenants, sensors, storage, CI, bug register (the foundation under all stages) | done | AI | login, FPO separation, devices, assessments, five CI jobs |
 

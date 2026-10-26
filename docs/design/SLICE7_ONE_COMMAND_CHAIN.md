@@ -41,3 +41,7 @@ A browser-driven run of the pages (the browser-test tool is the owner's open dec
 
 - Standard library only; the program never prints a password or a phone number; fictional data only; the operator steps (creating an FPO, importing the fixture, feeding the simulator, running the assessor, the sabotage) use `docker compose exec` and are the only things that need Docker.
 - A step's check must be able to fail: every check compares against a value computed in the script from first principles or from the contract, never against what the same endpoint returned a moment before (except to prove idempotence).
+
+## As built (26 Oct 2026)
+
+Two deviations from the plan above, neither changes the scope: the simulator feed runs on the machine that runs the chain (the backend image has no `jsonschema`), reaching PostgreSQL on the published port, as `scripts/demo_storage.sh` does; and the chain adds a VIEWER account and two rounding-tie sales, which the first design lacked. Evidence: product repo `docs/reports/2026-10-26_slice7_chain.md`.

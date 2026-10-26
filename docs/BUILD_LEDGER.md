@@ -18,9 +18,10 @@ Read this first in a new session, after `NEW_CHAT_START.md`. Updated at the end 
 | Slice 3: plan revisions (validator-checked edits), approval with atomic exact reservation, rejection, release (approval/v1); review box on the plan page | done; demo roles and reason codes | `backend/src/kisaniti_api/approval/`, migration 0009, `frontend/src/components/PlanReview.tsx` | 243 backend tests (concurrency, isolation, immutability), 321 contract checks, smoke through the website; report `…_slice3_approval.md` |
 | Slice 4: contacts (masked, access log), consent events, three-language templates, instructions, preview channel, delivery records, queue (messaging/v1); pages: contacts, messages, instructions on the plan page | done; nothing is sent; translations unreviewed | `core/src/kisaniti_core/messaging.py`, `backend/src/kisaniti_api/messaging/`, migration 0010, `frontend/src/components/{Contacts,Instructions}Panel.tsx` | 265 backend tests, 563 core tests, 379 contract checks, smoke through the website; report `…_slice4_messaging.md` |
 | Slice 5: actual sales consuming the reservation, off-plan reconciliation (provisional), voids, execution, report, outcomes, replies (sales/v1); pages: sales, execution and report on the plan page | done; reconciliation policy provisional | `backend/src/kisaniti_api/sales/`, migration 0011, `frontend/src/components/SalesPanel.tsx` | 295 backend tests, 563 core tests, 417 contract checks, smoke through the website; report `…_slice5_sales.md` |
+| Slice 7: one-command chain `scripts/chain.py` (+ `chainlib.py` independent arithmetic), 13 steps, ledger sabotage run, CI stack job | done; fails on 3 of 4 planted bugs (a 1 g error is below a paisa and passes: recorded) | `scripts/chain.py`, `scripts/chainlib.py`, `backend/tests/test_chain_lib.py` (8 tests) | report `…_slice7_chain.md` |
 | Research: parser B.1, index B.4, hand-check sheet, protocol draft, MSP table, Ladhar check | done | research repo | see OPEN_ITEMS, STATUS |
 | Hardware build spec, hosting plan, demo plan, traceability rules | written | planning `docs/` | — |
-| CI | 5 jobs (core, backend, ingestion, frontend, stack incl. smoke through the website with a fixture price release) | `.github/workflows/ci.yml` | check the latest run after the slice-1 push |
+| CI | 5 jobs (core, backend, ingestion, frontend, stack incl. the chain, its sabotaged run, and the smoke through the website with a fixture price release) | `.github/workflows/ci.yml` | check the latest run after the slice-1 push |
 
 The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.md); this ledger keeps only the queue of what is taken next.
 
@@ -34,7 +35,8 @@ The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.m
 - [x] **Slice 3** review, approval with exact reservation, rejection, release (CHAT-45; report `…_slice3_approval.md`)
 - [x] **Slice 4** contacts and consent, templates, preview channel, delivery records (CHAT-46; report `…_slice4_messaging.md`)
 - [x] **Slice 5** replies, sales that consume the reservation, reconciliation, planned against actual (CHAT-47; report `…_slice5_sales.md`)
-- [ ] **Slice 7 (next)** the one-command chain (X.1): a script that runs data, plan, approval, messages (preview), sales and the report on fictional data and fails on any broken step; it needs nothing from you. **Slice 6** (model comparison, hold-or-sell, live prices) needs your approvals first (protocol C.0, hand check). The real WhatsApp send waits for your Meta account (O.1, O.4)
+- [x] **Slice 7** the one-command chain (X.1; CHAT-48; report `…_slice7_chain.md`; `python3 scripts/chain.py`, `--sabotage ledger`)
+- [ ] **Next: Slice 6** (it needs your approvals first, see below) or X.2 backtest. **Slice 6** (model comparison, hold-or-sell, live prices) needs your approvals first (protocol C.0, hand check). The real WhatsApp send waits for your Meta account (O.1, O.4)
 - [ ] Logging and build identity (structured JSON logs, request ID end to end, commit hash in `/api/v1/meta` and footer) — see BUG_TRACEABILITY §2
 - [ ] Allocation experiment decisions (solver time limit) then full seeds; forecasting only after the hand check and the frozen protocol
 - [ ] D-layer hold-or-sell, L4 approval, L5 messages (preview channel first) — each after its contract slice is frozen
