@@ -98,6 +98,12 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O50 | The plan uses the naive forecast until the protocol (C.0) is frozen and run; seasonal naive waits for C.2 because the protocol's "same calendar day" is ambiguous | YOU (C.0), then AI | open |
 | O51 | Whether a result that is not proven optimal may ever become a proposal (G09) is open; today it is stored as NOT_PROPOSED | YOU | open |
 | O52 | Inactive members' lots are still planned; whether they should be excluded is undecided | YOU | open |
+| O53 | "Request a change" from another person (for example staff asking the admin) needs a role workflow that is UNKNOWN; today staff can only save a revision for the admin to approve | YOU | open |
+| O54 | Who may approve in a real FPO is UNKNOWN; the demo gives `plans.approve` to the FPO admin only. Reason-code lists for rejection and release are DEMO | YOU | open |
+| O55 | Freshness thresholds (when a changed price, storage or stock should block approval) and same-day cutoff rules are UNKNOWN; today three non-blocking warnings need acknowledgement | YOU | open |
+| O56 | Release is for the whole remaining reservation; releasing one assignment or lot, and partial approval, are not built | AI, if wanted | open |
+| O57 | The validator's refusal messages after a bad edit are English technical sentences shown in both languages | AI | planned |
+| O58 | No sale can consume a reservation yet (slice 5); until then a reservation can only be released | AI | planned |
 
 ## F. Not started
 

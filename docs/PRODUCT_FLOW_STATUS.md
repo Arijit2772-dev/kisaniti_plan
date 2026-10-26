@@ -6,7 +6,7 @@
 
 | In the product today | Not in the product at all |
 |---|---|
-| Login, roles, FPO separation (two walls), audit log | Reservations and sales against the stock; approval; messages |
+| Login, roles, FPO separation (two walls), audit log | Messages; sales and reconciliation against the stock |
 | Devices, sensor readings, hourly storage assessments with persisted hysteresis | Forecasts (the imported prices are shown, not yet used) |
 | The fair-allocation algorithm as a library (exact solver, brute-force check, validator) | A plan, a proposal, an approval, a reservation |
 | Members, lots and the stock ledger; mandi prices (6 678 real rows, unchecked) and MSP; pages: sign-in, change password, users, status, home, members, lots, prices, storage sensors | Messages, WhatsApp, replies, sales, reconciliation |
@@ -14,13 +14,13 @@
 
 So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 now holds sensor readings, members, lots, the stock ledger, MSP and the imported price dataset (slice 1, 26 Oct); the price dataset waits for the owner's hand check before it counts as validated. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
 
-**44 steps: done 13, started 5, not started 25, waiting 1.** (After slice 2, 26 Oct.)
+**44 steps: done 19, started 5, not started 19, waiting 1.** (After slice 3, 26 Oct.)
 
 | Stage | Steps | Done | Started | Not started | Waiting |
 |---|---|---|---|---|---|
 | 1. Collect data from all sources and clean it | 10 | 6 | 3 | 0 | 1 |
 | 2. Make the opinion: forecast, advice and a fair plan | 9 | 6 | 1 | 2 | 0 |
-| 3. The manager verifies or not | 7 | 0 | 1 | 6 | 0 |
+| 3. The manager verifies or not | 7 | 6 | 1 | 0 | 0 |
 | 4. Send the instruction to the farmers on WhatsApp | 8 | 0 | 0 | 8 | 0 |
 | 5. Get feedback and close the loop | 7 | 0 | 0 | 7 | 0 |
 | X. Across all five stages | 3 | 1 | 0 | 2 | 0 |
@@ -64,13 +64,13 @@ The FPO manager reviews, edits, approves or rejects; approval reserves the stock
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| S3.1 | L4 contract slice: proposal states, revisions, decisions, reservation | not started | AI |  |
-| S3.2 | Proposal list and detail with warnings | not started | AI |  |
-| S3.3 | Edit a proposal; the independent validator re-checks it before saving | not started | AI |  |
-| S3.4 | Approve with atomic stock reservation, tested for concurrent approvals on PostgreSQL | not started | AI |  |
-| S3.5 | Reject or request a change with a reason; release a reservation | not started | AI |  |
-| S3.6 | Only a user with permission to approve may approve; every decision audited | started | AI | the permission and the audit log exist; decisions do not |
-| S3.7 | Pages: review, compare revisions, approve | not started | AI |  |
+| S3.1 | L4 contract slice: proposal states, revisions, decisions, reservation | done | AI | approval/v1 frozen (CHAT-45) |
+| S3.2 | Proposal list and detail with warnings | done | AI | plan states, revisions, approval context with every warning |
+| S3.3 | Edit a proposal; the independent validator re-checks it before saving | done | AI | manager edit = new immutable revision, accepted only if the independent validator finds no issue |
+| S3.4 | Approve with atomic stock reservation, tested for concurrent approvals on PostgreSQL | done | AI | decision and RESERVED ledger events in one transaction; concurrency tested on PostgreSQL (8 parallel approvals, two plans competing for one lot) |
+| S3.5 | Reject or request a change with a reason; release a reservation | started | AI | reject with a reason and release of the remaining reservation done; "request a change" by another person is not built (roles UNKNOWN) |
+| S3.6 | Only a user with permission to approve may approve; every decision audited | done | AI | plans.approve is needed for approve, reject, release; each decision row has actor, time and request ID; denials are audited by the access layer |
+| S3.7 | Pages: review, compare revisions, approve | done | AI | review box: revisions and changes, edit grid, approval with warning acknowledgements, rejection, reservation and release, in Punjabi and English |
 
 ## Stage 4: Send the instruction to the farmers on WhatsApp
 
