@@ -6,7 +6,7 @@
 
 | In the product today | Not in the product at all |
 |---|---|
-| Login, roles, FPO separation (two walls), audit log | A real WhatsApp send and its delivery webhook; sales and reconciliation against the stock |
+| Login, roles, FPO separation (two walls), audit log | A real WhatsApp send and its delivery webhook; hold-or-sell and the real forecast comparison |
 | Devices, sensor readings, hourly storage assessments with persisted hysteresis | Forecasts (the imported prices are shown, not yet used) |
 | The fair-allocation algorithm as a library (exact solver, brute-force check, validator) | A plan, a proposal, an approval, a reservation |
 | Members, lots and the stock ledger; mandi prices (6 678 real rows, unchecked) and MSP; pages: sign-in, change password, users, status, home, members, lots, prices, storage sensors | Messages, WhatsApp, replies, sales, reconciliation |
@@ -14,7 +14,7 @@
 
 So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 now holds sensor readings, members, lots, the stock ledger, MSP and the imported price dataset (slice 1, 26 Oct); the price dataset waits for the owner's hand check before it counts as validated. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
 
-**44 steps: done 24, started 6, not started 13, waiting 1.** (After slice 4, 26 Oct.)
+**44 steps: done 29, started 7, not started 7, waiting 1.** (After slice 5, 26 Oct.)
 
 | Stage | Steps | Done | Started | Not started | Waiting |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**.
 | 2. Make the opinion: forecast, advice and a fair plan | 9 | 6 | 1 | 2 | 0 |
 | 3. The manager verifies or not | 7 | 6 | 1 | 0 | 0 |
 | 4. Send the instruction to the farmers on WhatsApp | 8 | 5 | 1 | 2 | 0 |
-| 5. Get feedback and close the loop | 7 | 0 | 0 | 7 | 0 |
+| 5. Get feedback and close the loop | 7 | 5 | 1 | 1 | 0 |
 | X. Across all five stages | 3 | 1 | 0 | 2 | 0 |
 
 ## Stage 1: Collect data from all sources and clean it
@@ -93,13 +93,13 @@ Replies, actual sales and stock go back into the system, so plans can be compare
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| S5.1 | Farmers' replies stored and shown to staff; a reply is never treated as acceptance automatically | not started | AI |  |
-| S5.2 | Actual sale entry from a J-form by staff, with validation | not started | AI |  |
-| S5.3 | Stock reconciliation: planned against actual, release of unused reservations, off-plan sales | not started | AI |  |
-| S5.4 | Planned-against-actual and fairness report | not started | AI |  |
-| S5.5 | Forecast accuracy tracked from real outcomes | not started | AI |  |
+| S5.1 | Farmers' replies stored and shown to staff; a reply is never treated as acceptance automatically | done | AI | replies entered by staff, stored, shown to staff with messages.send, never interpreted; the webhook source waits for a public HTTPS address |
+| S5.2 | Actual sale entry from a J-form by staff, with validation | done | AI | actual sale from the J-form with validation, exact amount, duplicate J-form refused, void as a compensating record |
+| S5.3 | Stock reconciliation: planned against actual, release of unused reservations, off-plan sales | done | AI | sales consume the reservation; off-plan sales with the person choosing which reservation to give up (provisional policy, UNKNOWN to validate); release of the rest through approval/v1 |
+| S5.4 | Planned-against-actual and fairness report | done | AI | planned against actual per line, plan price against realised price, planned and sold share per farmer, exact; gross values only |
+| S5.5 | Forecast accuracy tracked from real outcomes | started | AI | plan price against realised price, fictional and real kept apart; this is not an evaluation of the forecast method (needs protocol C.0) |
 | S5.6 | Farmer comprehension and usability feedback (small, with consent) | not started | BOTH | needs ethics approval first |
-| S5.7 | Pages: record a sale, reconcile, reports | not started | AI |  |
+| S5.7 | Pages: record a sale, reconcile, reports | done | AI | sales page, execution and report on the plan page, outcomes, replies under each message, in both languages |
 
 ## Stage X: Across all five stages
 

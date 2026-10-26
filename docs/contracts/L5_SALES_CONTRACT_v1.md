@@ -60,3 +60,9 @@ The farmer comprehension and usability study (S5.6), automatic reading of replie
 ## 5. Test obligations
 
 Contract examples; backend tests on real PostgreSQL: a linked sale consumes exactly (ledger events, order, balances, execution), partial and over-line sales, `EXCEEDS_RESERVATION`, an off-plan sale inside free stock, `RECONCILIATION_REQUIRED` and the chosen-release path, `EXCEEDS_STOCK`, every validation refusal, J-form duplicates, void arithmetic, concurrent sales and a sale racing a release (never negative stock), idempotent replay, isolation of all objects, immutability, reply isolation and privacy, execution and report numbers against hand calculation, outcomes separating real from synthetic, mutation checks.
+
+## 6. Clarifications made while building (no schema change; 26 October)
+
+1. `POST /sales/{id}/void` cannot answer `EXCEEDS_STOCK` (a void adds stock); the code listed in §2 for it does not occur.
+2. `approval/v1` `reservation.lines[].remaining_kg` now subtracts consumption by sales and releases made for a sale; `released_kg` still means only a person's release. A reservation fully used by sales shows `state = RELEASED` and `release = null`; messaging treats a cancellation as possible only when `release` is not null.
+3. The contract commit said 29 examples; with the real execution and report documents the slice holds 38 (12 valid, 26 invalid).

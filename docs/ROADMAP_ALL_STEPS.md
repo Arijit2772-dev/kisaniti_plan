@@ -2,7 +2,7 @@
 
 26 October 2026 • The same work cut by product stage is in [PRODUCT_FLOW_STATUS.md](PRODUCT_FLOW_STATUS.md). Generated from one list, so the counts match the rows. Phases 0 to J are the tracker's; K to P cover the login, hardware software, website, deployment, WhatsApp and quality work added since. `H-n` with a hyphen is hardware integration software; `H.n` with a dot is the paper. Status: **done**, **started**, **not started**, **on hold**, **waiting** (needs another step). Owner: `AI`, `YOU`, `BOTH`.
 
-**Total: 125 steps. Done 31, started 15, not started 75, on hold 2, waiting 2.** (After slices 1 to 4, 26 Oct: H-6, D3, G.5, D6, O.2, O.3, O.7 done; D1, D2, D5, D7, G.4 started; the other rows are as generated earlier. The slice progress in PRODUCT_FLOW_STATUS.md is the more detailed record.)
+**Total: 125 steps. Done 32, started 16, not started 73, on hold 2, waiting 2.** (After slices 1 to 5, 26 Oct: H-6, D3, G.5, D6, D8, O.2, O.3, O.7 done; D1, D2, D5, D7, G.4, G.6 started; the other rows are as generated earlier. The slice progress in PRODUCT_FLOW_STATUS.md is the more detailed record.)
 
 | Phase | Steps | Done | Started | Not started | On hold / waiting |
 |---|---|---|---|---|---|
@@ -13,13 +13,13 @@
 | D. Hold-or-sell (Layer 3c) | 4 | 0 | 0 | 4 | 0 |
 | E. Allocation and fairness (Layer 3d) | 6 | 0 | 1 | 5 | 0 |
 | F. Hardware (your part) | 6 | 1 | 0 | 5 | 0 |
-| G. Product layers | 8 | 1 | 3 | 4 | 0 |
+| G. Product layers | 8 | 1 | 4 | 3 | 0 |
 | H. Paper 1 | 10 | 1 | 2 | 7 | 0 |
 | I. Integration and release | 4 | 0 | 1 | 3 | 0 |
 | J. Real-world validation | 4 | 0 | 0 | 4 | 0 |
 | K. Login, FPO separation and languages | 11 | 5 | 0 | 6 | 0 |
 | L. Hardware integration software (H-n steps) | 12 | 6 | 0 | 5 | 1 |
-| M. Website pages (demo path) | 10 | 3 | 4 | 2 | 1 |
+| M. Website pages (demo path) | 10 | 4 | 4 | 1 | 1 |
 | N. Deployment and operations | 8 | 1 | 0 | 7 | 0 |
 | O. WhatsApp (Layer 5) | 7 | 3 | 0 | 4 | 0 |
 | P. Quality and traceability | 8 | 1 | 1 | 6 | 0 |
@@ -122,12 +122,12 @@ Contract first, then code, tests, documents.
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| G.1 | Freeze contract slices. Frozen: shared, sensor L3b, allocation L3d, access, devices, org, market, plan, approval, messaging. Left: L3a protocol (C.0), L3c, L5 replies and sales | started | AI |  |
+| G.1 | Freeze contract slices. Frozen: shared, sensor L3b, allocation L3d, access, devices, org, market, plan, approval, messaging, sales. Left: L3a protocol (C.0), L3c | started | AI |  |
 | G.2 | L1/L2: import job, data and cleaning screens | not started | AI | needs G.1 and B |
 | G.3 | L3a/L3c: price and advice screens with ranges | not started | AI | needs C and D |
 | G.4 | L3d: plan generation and proposal screens | started | AI | plan/v1 and the pages exist with DEMO policies; real increments, transport, time limit are open |
 | G.5 | L4: review, edit, approve with exact stock reservation, release; concurrency tests | done | AI | slice 3; "request a change" by another person not built (roles UNKNOWN) |
-| G.6 | L5: WhatsApp templates, J-form sale entry (see phase O) | not started | BOTH |  |
+| G.6 | L5: WhatsApp templates, J-form sale entry (see phase O) | started | BOTH | templates (unreviewed) and J-form sale entry done; the real WhatsApp send waits for your Meta account |
 | G.7 | UI polish and restyle | not started | YOU | you said you will change the UI later |
 | G.8 | Privacy contract implemented: consent, no Aadhaar, access log | started | BOTH | sign-in audit log, consent events, phone masking and the access log done; erasure, data-access screens and the retention job not; legal review before any pilot |
 
@@ -221,7 +221,7 @@ What the demo shows.
 | D5 | Plan | started | AI | proposal pages done; approval (D6) is the next stage |
 | D6 | Manager approval | done | AI | slice 3 |
 | D7 | Messages | started | AI | preview pages done; the real send needs O.1, O.4, O.5 |
-| D8 | Sale and stock | not started | AI | needs G.5, G.6 |
+| D8 | Sale and stock | done | AI | slice 5 |
 | D9 | Evidence page: tables, protocol, test and CI status | not started | AI |  |
 
 ## Phase N: Deployment and operations
@@ -293,7 +293,7 @@ Everything tested, every bug traceable.
 
 ## The next steps I will take, in order
 
-1. Slice 5: replies, actual sales consuming the reservation, reconciliation, planned against actual (contract slice first)
+1. Slice 7: one command that runs the whole chain on fictional data and fails on any broken step (X.1); needs nothing from you. Slice 6 (depth: model comparison, hold-or-sell, live prices) needs your approvals first
 2. P.3 and P.4 structured logs and build identity
 3. P.5 recorded screen-to-cause drill
 4. H-4b broker credentials and the provisioning script

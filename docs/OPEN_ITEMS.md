@@ -108,6 +108,12 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O60 | Real WhatsApp send (S4.5) needs your Meta account, approved templates and the supported template-language codes; the status webhook (S4.6) needs a public HTTPS address | YOU, then AI | open |
 | O61 | Whether planning must be blocked for a member without ADVICE consent (privacy contract PR-T02) is undecided; it would change plan/v1 behaviour | YOU | open |
 | O62 | Mandi names in messages are the price source's English names, also in Punjabi and Hindi texts | AI, if wanted | planned |
+| O63 | The off-plan sale reconciliation (the person names which reservations to give up) is a provisional DEMO policy; architecture §14 lists the real workflow as UNKNOWN until a real FPO shows what it does | YOU (with the FPO) | open |
+| O64 | Transport costs actually paid are not recorded, so planned against actual is gross, not net | AI, if wanted | planned |
+| O65 | A sale cannot be edited; a void does not restore a consumed reservation (a new plan is needed) | YOU | open |
+| O66 | Farmers' replies are typed in by staff; the webhook source and any reading of replies wait for the real channel (O60) | AI | planned |
+| O67 | S5.5 proper (forecast accuracy from real outcomes) needs the protocol C.0 frozen and real, not fictional, sales | YOU, then AI | open |
+| O68 | The farmer comprehension and usability study (S5.6) needs ethics approval first | YOU | open |
 
 ## F. Not started
 
