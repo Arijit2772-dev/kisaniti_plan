@@ -16,6 +16,7 @@ Read this first in a new session, after `NEW_CHAT_START.md`. Updated at the end 
 | Slice 1: members, places, lots, exact stock ledger (org/v1); mandis, MSP and price import with refusals (market/v1); pages: members, lots, prices, storage sensors (H-6) in Punjabi and English | done; dataset is PENDING_HAND_CHECK | `backend/src/kisaniti_api/{org,market}/`, migrations 0006 and 0007, `frontend/src/components/{Members,Lots,Price,Devices}*`, `scripts/make_ci_release.py` | 175 backend tests, 240 contract checks; report `…_slice1_foundation_data.md`; BUG-007 fixed |
 | Slice 2: baseline forecast with ranges (core), sensor link, immutable plan proposals through the optimiser and validator, coded explanations (plan/v1); pages: plans, price outlook, sensor link on lots | done; DEMO policies, forecast not validated | `core/src/kisaniti_core/forecast.py`, `backend/src/kisaniti_api/plan/`, migration 0008, `frontend/src/components/{PlansPanel,LotsPanel}.tsx`, `frontend/src/app/[lang]/plans/` | 209 backend tests, 533 core tests, 277 contract checks, smoke through the website; report `…_slice2_first_plan.md` |
 | Slice 3: plan revisions (validator-checked edits), approval with atomic exact reservation, rejection, release (approval/v1); review box on the plan page | done; demo roles and reason codes | `backend/src/kisaniti_api/approval/`, migration 0009, `frontend/src/components/PlanReview.tsx` | 243 backend tests (concurrency, isolation, immutability), 321 contract checks, smoke through the website; report `…_slice3_approval.md` |
+| Slice 4: contacts (masked, access log), consent events, three-language templates, instructions, preview channel, delivery records, queue (messaging/v1); pages: contacts, messages, instructions on the plan page | done; nothing is sent; translations unreviewed | `core/src/kisaniti_core/messaging.py`, `backend/src/kisaniti_api/messaging/`, migration 0010, `frontend/src/components/{Contacts,Instructions}Panel.tsx` | 265 backend tests, 563 core tests, 379 contract checks, smoke through the website; report `…_slice4_messaging.md` |
 | Research: parser B.1, index B.4, hand-check sheet, protocol draft, MSP table, Ladhar check | done | research repo | see OPEN_ITEMS, STATUS |
 | Hardware build spec, hosting plan, demo plan, traceability rules | written | planning `docs/` | — |
 | CI | 5 jobs (core, backend, ingestion, frontend, stack incl. smoke through the website with a fixture price release) | `.github/workflows/ci.yml` | check the latest run after the slice-1 push |
@@ -30,7 +31,8 @@ The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.m
 - [x] **Slice 1** members, lots, stock ledger, mandi and MSP reference data, price import, storage page (CHAT-43)
 - [x] **Slice 2** first plan (CHAT-44; report `…_slice2_first_plan.md`)
 - [x] **Slice 3** review, approval with exact reservation, rejection, release (CHAT-45; report `…_slice3_approval.md`)
-- [ ] **Slice 4 (next)** messages: contacts and consent, templates, the preview channel, delivery records, then the real WhatsApp send once your Meta account is ready (S4.1 to S4.8). Contract slice first (CHAT-28); needs your approval of the scope. Later, a sale that uses a reservation must write RESERVATION_CONSUMED and SOLD together
+- [x] **Slice 4** contacts and consent, templates, preview channel, delivery records (CHAT-46; report `…_slice4_messaging.md`)
+- [ ] **Slice 5 (next)** replies, actual sales that consume the reservation (RESERVATION_CONSUMED and SOLD in one transaction), reconciliation, planned against actual (S5.1 to S5.7). Contract slice first (CHAT-28); needs your approval of the scope. The real WhatsApp send waits for your Meta account (O.1, O.4)
 - [ ] Logging and build identity (structured JSON logs, request ID end to end, commit hash in `/api/v1/meta` and footer) — see BUG_TRACEABILITY §2
 - [ ] Allocation experiment decisions (solver time limit) then full seeds; forecasting only after the hand check and the frozen protocol
 - [ ] D-layer hold-or-sell, L4 approval, L5 messages (preview channel first) — each after its contract slice is frozen
@@ -49,7 +51,8 @@ Blocked on the owner: 56-row hand check (O1; also gates the price dataset's VALI
 - Every check that passes locally can still fail in CI (the paho/mypy case): mirror CI.
 - The in-app browser pane must be visible (`show_pane preview`) while testing, or pages do not finish hydrating.
 - Backend `mypy` locally needs `MYPYPATH=src:ingestion/src:../core/src`; the core's solver wrapper is excluded from unused-ignore checks in the backend config.
-- Count examples and tests before writing a number in a commit message (two were wrong).
+- Count examples and tests before writing a number in a commit message (three were wrong: count with `ls … | wc -l` first).
+- A mutation run that shows no failure may simply not have applied: grep the file for the edit before believing it.
 - Fictional data only. No real farmer data before the privacy controls and a legal review.
 
 ## 4. Commands that work

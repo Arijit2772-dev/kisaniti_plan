@@ -89,7 +89,7 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O41 | Slot length (1 h) and catch-up cap (14 days) are constants, not settings; no alert on a category change | AI | planned |
 | O42 | Storage-rule thresholds and the 48 h hold remain desk-research values until the real-node bench tests | YOU (hardware) | open |
 | O43 | The imported price dataset stays `PENDING_HAND_CHECK` until your 56-row hand check (B.2) and the decision on rows without a date (O9); then I run `set-status --to VALIDATED` with your note. The prices page shows the warning meanwhile | YOU, then AI | open |
-| O44 | Members have no phone numbers or consent records yet; they come with slice 4 and the privacy controls | AI | planned |
+| O44 | Phone numbers and consent exist since slice 4 (fictional numbers only). Still open: erasure and data-access screens, retention job, reviewed consent notice text, shared household phones | AI, YOU (notice text, legal) | open |
 | O45 | No link from a sensor to a lot; no distance or transport-cost inputs for mandis (transport cost is UNKNOWN) | AI, YOU for the cost evidence | open |
 | O46 | The prices page lists at most 200 rows without paging; staleness is shown only as the newest date and its age | AI | planned |
 | O47 | Punjabi text of the slice-1 pages (members, lots, prices, sensors) needs the same native-speaker review as K.6 | YOU | open |
@@ -104,6 +104,10 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O56 | Release is for the whole remaining reservation; releasing one assignment or lot, and partial approval, are not built | AI, if wanted | open |
 | O57 | The validator's refusal messages after a bad edit are English technical sentences shown in both languages | AI | planned |
 | O58 | No sale can consume a reservation yet (slice 5); until then a reservation can only be released | AI | planned |
+| O59 | The Punjabi and Hindi message texts were written by me and are UNREVIEWED; a native speaker must read both templates before any real send (the real channel must refuse unreviewed variants) | YOU | open |
+| O60 | Real WhatsApp send (S4.5) needs your Meta account, approved templates and the supported template-language codes; the status webhook (S4.6) needs a public HTTPS address | YOU, then AI | open |
+| O61 | Whether planning must be blocked for a member without ADVICE consent (privacy contract PR-T02) is undecided; it would change plan/v1 behaviour | YOU | open |
+| O62 | Mandi names in messages are the price source's English names, also in Punjabi and Hindi texts | AI, if wanted | planned |
 
 ## F. Not started
 

@@ -6,7 +6,7 @@
 
 | In the product today | Not in the product at all |
 |---|---|
-| Login, roles, FPO separation (two walls), audit log | Messages; sales and reconciliation against the stock |
+| Login, roles, FPO separation (two walls), audit log | A real WhatsApp send and its delivery webhook; sales and reconciliation against the stock |
 | Devices, sensor readings, hourly storage assessments with persisted hysteresis | Forecasts (the imported prices are shown, not yet used) |
 | The fair-allocation algorithm as a library (exact solver, brute-force check, validator) | A plan, a proposal, an approval, a reservation |
 | Members, lots and the stock ledger; mandi prices (6 678 real rows, unchecked) and MSP; pages: sign-in, change password, users, status, home, members, lots, prices, storage sensors | Messages, WhatsApp, replies, sales, reconciliation |
@@ -14,14 +14,14 @@
 
 So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 now holds sensor readings, members, lots, the stock ledger, MSP and the imported price dataset (slice 1, 26 Oct); the price dataset waits for the owner's hand check before it counts as validated. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
 
-**44 steps: done 19, started 5, not started 19, waiting 1.** (After slice 3, 26 Oct.)
+**44 steps: done 24, started 6, not started 13, waiting 1.** (After slice 4, 26 Oct.)
 
 | Stage | Steps | Done | Started | Not started | Waiting |
 |---|---|---|---|---|---|
 | 1. Collect data from all sources and clean it | 10 | 6 | 3 | 0 | 1 |
 | 2. Make the opinion: forecast, advice and a fair plan | 9 | 6 | 1 | 2 | 0 |
 | 3. The manager verifies or not | 7 | 6 | 1 | 0 | 0 |
-| 4. Send the instruction to the farmers on WhatsApp | 8 | 0 | 0 | 8 | 0 |
+| 4. Send the instruction to the farmers on WhatsApp | 8 | 5 | 1 | 2 | 0 |
 | 5. Get feedback and close the loop | 7 | 0 | 0 | 7 | 0 |
 | X. Across all five stages | 3 | 1 | 0 | 2 | 0 |
 
@@ -78,14 +78,14 @@ Each farmer gets the approved instruction, in their language, with their consent
 
 | Step | What | Status | Owner | Note |
 |---|---|---|---|---|
-| S4.1 | L5 contract slice: instructions, delivery attempts, templates | not started | AI |  |
-| S4.2 | Farmer contact, language, consent and opt-out records (phone numbers masked) | not started | AI | privacy contract |
-| S4.3 | Message templates in Punjabi, Hindi and English, versioned and reviewed | not started | BOTH | needs a native reader |
-| S4.4 | Preview channel: shows the exact text, sends nothing | not started | AI |  |
+| S4.1 | L5 contract slice: instructions, delivery attempts, templates | done | AI | messaging/v1 frozen (CHAT-46) |
+| S4.2 | Farmer contact, language, consent and opt-out records (phone numbers masked) | done | AI | contacts (versioned, masked, access log), per-kind consent events, opt-out as a withdrawal; erasure and data-access screens not built, so fictional numbers only |
+| S4.3 | Message templates in Punjabi, Hindi and English, versioned and reviewed | started | BOTH | two templates in Punjabi, Hindi and English, versioned files; every variant UNREVIEWED until a native speaker reads it |
+| S4.4 | Preview channel: shows the exact text, sends nothing | done | AI | preview channel: exact text, masked recipient, labelled "nothing was sent"; never SENT or DELIVERED |
 | S4.5 | WhatsApp channel through Meta's Cloud API, to an allow-list; a real send only on your explicit yes | not started | BOTH | needs your Meta account and template approval |
 | S4.6 | Delivery-status webhook, repeat-safe: sent, delivered, read, failed | not started | AI | needs a public HTTPS address |
-| S4.7 | Queue of blocked and failed messages for the manager | not started | AI |  |
-| S4.8 | Pages: messages per farmer | not started | AI |  |
+| S4.7 | Queue of blocked and failed messages for the manager | done | AI | queue of blocked instructions and blocked or failed attempts, with reasons |
+| S4.8 | Pages: messages per farmer | done | AI | messages on the plan page, contacts and consent page, messages page, in both languages |
 
 ## Stage 5: Get feedback and close the loop
 
