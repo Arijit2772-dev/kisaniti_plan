@@ -2,17 +2,29 @@
 
 26 October 2026 • Written after the owner's question whether the five stages are implemented: **(1) collect data from all sources and clean it, (2) make the opinion (forecast, advice, plan), (3) the manager verifies or not, (4) send to farmers on WhatsApp, (5) get feedback.** This is the same work as the layer roadmap ([ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.md)) cut the way the product is used. It is checked against the product's actual files: tables, API routes, pages.
 
-## What exists and what does not (verified in the code, 26 Oct)
+## What exists and what does not (re-checked 26 Oct, after slice 7)
 
-| In the product today | Not in the product at all |
+| In the product and tested | Not in the product |
 |---|---|
-| Login, roles, FPO separation (two walls), audit log | A real WhatsApp send and its delivery webhook; hold-or-sell and the real forecast comparison |
-| Devices, sensor readings, hourly storage assessments with persisted hysteresis | Forecasts (the imported prices are shown, not yet used) |
-| The fair-allocation algorithm as a library (exact solver, brute-force check, validator) | A plan, a proposal, an approval, a reservation |
-| Members, lots and the stock ledger; mandi prices (6 678 real rows, unchecked) and MSP; pages: sign-in, change password, users, status, home, members, lots, prices, storage sensors | Messages, WhatsApp, replies, sales, reconciliation |
-| Five CI jobs, a bug register, simulator and conformance checks | The pages for stages 2 to 5 |
+| Login, roles, two-wall FPO separation, audit log | A real WhatsApp send and its delivery webhook (needs the Meta account and a public address) |
+| Members, lots, exact stock ledger, places; devices, sensor readings, hourly storage assessments | The model comparison (needs your protocol approval and the hand check); hold-or-sell advice |
+| Mandi prices (6 678 real rows, still unchecked), MSP; baseline forecast with ranges (naive, 5-day average), labelled not validated | A product job that cleans raw monthly files (cleaning is in the research repo; the product imports the cleaned release) |
+| Fair allocation (exact solver, brute-force check, independent validator) run as a plan, with explanation | Transport-cost and distance inputs from real data (entered by hand per plan; real values UNKNOWN) |
+| Manager review, edits, approval with exact reservation, rejection, release | The manager's own WhatsApp (O69, undecided) |
+| Contacts, consent, three-language templates, preview channel, delivery records, queue | A native speaker's review of the Punjabi and Hindi text |
+| Replies, actual sales consuming the reservation, voids, reconciliation (provisional), planned-against-actual report, outcomes | Real farmers, real sales, a public website |
+| The whole chain in one command on fictional data (`scripts/chain.py`), five CI jobs, bug register | The real sensor node (waits for the kit) |
 
-So the foundation is in place, and **stages 2, 3, 4 and 5 are not implemented**. Stage 1 now holds sensor readings, members, lots, the stock ledger, MSP and the imported price dataset (slice 1, 26 Oct); the price dataset waits for the owner's hand check before it counts as validated. The research repository holds the price data, the cleaning scripts and the experiments, but none of that is wired into the product yet.
+So stages 1 to 5 all run end to end on fictional farmers with real price data; what is missing is depth (stage 2), the real send (stage 4) and anything that needs you.
+
+### Your four inputs and where each stands
+
+| Input | Built | Missing |
+|---|---|---|
+| 1. The FPO's static data: members, villages, languages, lots, stock | Members, places, lots, ledger, contacts and consent, pages in Punjabi and English, tested | Bulk import (spreadsheet upload) of an FPO's member list; a real FPO's data (privacy controls and legal review first) |
+| 2. Mandi prices | Cleaned release imported with exact reconciliation, forecast (baselines) with ranges | The hand check (yours), the frozen protocol and the model comparison, a live price feed |
+| 3. Routine data (I read this as the day-to-day inputs: arrivals of lots, transport costs, distances, costs of holding; tell me if you meant something else) | Lots and stock changes in the ledger; transport cost typed per plan | Mandi distances and transport costs as stored inputs (UNKNOWN until you or an FPO supplies them); holding-cost inputs for hold-or-sell |
+| 4. Hardware, later | Contract, firmware, simulator, conformance harness, storage assessment, device pages | The physical node (your kit); nothing else needs to change when it is added |
 
 **44 steps: done 30, started 7, not started 6, waiting 1.** (After slice 7, 26 Oct.)
 
