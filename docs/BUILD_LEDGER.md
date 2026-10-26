@@ -14,6 +14,7 @@ Read this first in a new session, after `NEW_CHAT_START.md`. Updated at the end 
 | H-4a devices/v1: registry, assignments, tenant-scoped readings, DB registry for kn-ingest | done | `backend/src/kisaniti_api/devices/`, migration 0004 | 106 backend tests; live run with `REGISTRY=db` |
 | Website: sign-in, change password, home, users, status; Punjabi and English; API proxy | done (UI to be restyled by the owner) | `frontend/src/` | report `…_signin_shell_punjabi.md` |
 | Slice 1: members, places, lots, exact stock ledger (org/v1); mandis, MSP and price import with refusals (market/v1); pages: members, lots, prices, storage sensors (H-6) in Punjabi and English | done; dataset is PENDING_HAND_CHECK | `backend/src/kisaniti_api/{org,market}/`, migrations 0006 and 0007, `frontend/src/components/{Members,Lots,Price,Devices}*`, `scripts/make_ci_release.py` | 175 backend tests, 240 contract checks; report `…_slice1_foundation_data.md`; BUG-007 fixed |
+| Slice 2: baseline forecast with ranges (core), sensor link, immutable plan proposals through the optimiser and validator, coded explanations (plan/v1); pages: plans, price outlook, sensor link on lots | done; DEMO policies, forecast not validated | `core/src/kisaniti_core/forecast.py`, `backend/src/kisaniti_api/plan/`, migration 0008, `frontend/src/components/{PlansPanel,LotsPanel}.tsx`, `frontend/src/app/[lang]/plans/` | 209 backend tests, 533 core tests, 277 contract checks, smoke through the website; report `…_slice2_first_plan.md` |
 | Research: parser B.1, index B.4, hand-check sheet, protocol draft, MSP table, Ladhar check | done | research repo | see OPEN_ITEMS, STATUS |
 | Hardware build spec, hosting plan, demo plan, traceability rules | written | planning `docs/` | — |
 | CI | 5 jobs (core, backend, ingestion, frontend, stack incl. smoke through the website with a fixture price release) | `.github/workflows/ci.yml` | check the latest run after the slice-1 push |
@@ -26,7 +27,8 @@ The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.m
 - [x] **H-5** scheduled storage assessment, persisted hysteresis, placement at `measured_at`, endpoints, compose service `assessor` (CHAT-42; report `…_H5_storage_assessment.md`; demo `scripts/demo_storage.sh`)
 - [x] **H-6** devices and storage page (both languages) (slice 1; report `…_slice1_foundation_data.md`)
 - [x] **Slice 1** members, lots, stock ledger, mandi and MSP reference data, price import, storage page (CHAT-43)
-- [ ] **Slice 2 (next)** a first plan: baseline forecast with ranges, storage risk, the existing allocation library run by an orchestration step, stored as a proposal with its explanation (S2.1, S2.2, S2.6 to S2.9). Needs its contract slice frozen first (CHAT-28); needs your approval of the scope
+- [x] **Slice 2** first plan (CHAT-44; report `…_slice2_first_plan.md`)
+- [ ] **Slice 3 (next)** the manager's review, edit and approval with exact, atomic stock reservation; reject and release (S3.1 to S3.7). Contract slice first (CHAT-28); needs your approval of the scope. A sale that uses a reservation must write RESERVATION_CONSUMED and SOLD together
 - [ ] Logging and build identity (structured JSON logs, request ID end to end, commit hash in `/api/v1/meta` and footer) — see BUG_TRACEABILITY §2
 - [ ] Allocation experiment decisions (solver time limit) then full seeds; forecasting only after the hand check and the frozen protocol
 - [ ] D-layer hold-or-sell, L4 approval, L5 messages (preview channel first) — each after its contract slice is frozen
@@ -37,12 +39,15 @@ Blocked on the owner: 56-row hand check (O1; also gates the price dataset's VALI
 
 - Contract first: a layer's code starts only after its slice is frozen (decision register, CHAT-28). Changes after a consumer exists are a new slice version.
 - Never `git add -A` in the research repo. Commit only own files. Pull with `--rebase --autostash` before pushing.
-- `uv` is **not installed** on this Mac. Use the existing virtual environments with `PYTHONPATH` set (macOS hides `.pth` files from Python 3.13).
+- `uv` is **not installed** on this Mac; to change `uv.lock` run uv in Docker: `docker run --rm -v "$PWD":/repo -w /repo/backend -e UV_PROJECT_ENVIRONMENT=/tmp/venv python:3.13.9-slim-bookworm sh -c "pip install -q uv==0.9.5; uv lock"`, and copy the new wheels into the local venv by hand. Use the existing virtual environments with `PYTHONPATH` set (macOS hides `.pth` files from Python 3.13).
 - Research scripts: `env/run <script>` in `kisaniti_research_paper`. Plain `python3 -I` for stdlib-only scripts.
 - zsh does not split unquoted variables and does not take unquoted `--include=*.md`; macOS `sed -i ''`; no `timeout` command.
 - FastAPI yield-dependencies commit after the response: commit inside the endpoint (`with tenant_scope(...)`).
 - Instants must be `YYYY-MM-DDTHH:MM:SS.mmmZ` (use `kisaniti_core.timeutil.format_instant`).
 - Every check that passes locally can still fail in CI (the paho/mypy case): mirror CI.
+- The in-app browser pane must be visible (`show_pane preview`) while testing, or pages do not finish hydrating.
+- Backend `mypy` locally needs `MYPYPATH=src:ingestion/src:../core/src`; the core's solver wrapper is excluded from unused-ignore checks in the backend config.
+- Count examples and tests before writing a number in a commit message (two were wrong).
 - Fictional data only. No real farmer data before the privacy controls and a legal review.
 
 ## 4. Commands that work
