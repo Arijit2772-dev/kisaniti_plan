@@ -6,7 +6,7 @@
 
 > A selling framework for farmer organisations should first test whether a crop's price is set by policy (MSP) or by the market, then apply the right tool: coordination and fairness where prices are fixed, and range-aware forecasting plus storage-aware advice where they move.
 
-This ties the pieces together instead of presenting five separate topics, and it matches what our own data shows: paddy (common) sits at MSP in more than 96% of reports (strong evidence, 16,201 rows over six seasons), while basmati prices move (median daily change ₹50/q; same-day gap across mandis of about ₹1,468/q for 1121).
+This ties the pieces together instead of presenting five separate topics, and it matches what our own data shows: paddy (common) sits at MSP in more than 96% of reports (strong evidence, 16,201 rows over six seasons), while basmati prices move (median daily change ₹50/q; same-day gap across mandis of about ₹1,468/q for 1121) **[27 Oct: not reproduced by the index; computed values are in PUBLICATION_PLAN_V3 §4; reword before use]**.
 
 ## 2. Contributions, and how strong each may sound
 
