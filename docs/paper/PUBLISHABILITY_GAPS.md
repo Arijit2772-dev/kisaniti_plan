@@ -1,5 +1,7 @@
 # What is still needed to make the paper definitely publishable, phase by phase
 
+**Update 28 Oct 2026:** the C.0 protocol was approved and frozen, the comparison was run once (no method beat the naive forecast), the prospective check, sensitivity and scaling grids, the IMD citation (checked against the PDF) and a blank-date plausibility check are done, and the paper is rewritten to 12 pages in `kisaniti_research_paper/paper/drafts/kisaniti_v4_final_2026-10-28.pdf`. Still open and not doable by the AI: the hand check against the portal (CAPTCHA), a native-speaker review, the authors' own pass and sign-off of the AI-use declaration, the similarity check, and confirming the venue's page limit (12 pages incl. references was assumed). The tables below are the 27 Oct state.
+
 27 October 2026 • Companion to [PUBLICATION_PLAN_V3.md](PUBLICATION_PLAN_V3.md). "Me" is the AI agent working in the repositories; "you" is the owner or the authors. Status words: DONE (script, result file, test), RUNNING, TODO-ME, NEEDS-YOU.
 
 ## 1. Data in (farmer records, mandi prices, routine data, hardware)
