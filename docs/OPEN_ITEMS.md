@@ -6,7 +6,7 @@
 
 | ID | Item | Why it matters | Detail |
 |---|---|---|---|
-| O1 | Hand-check the 50 rows on AGMARKNET | Gate G1: confirms or rejects the blank-date rule (+9.5% rows); nothing is modelled before it | `rp:results/L2_cleaning/hand_check_instructions.md` |
+| O1 | Hand-check the 50 rows on AGMARKNET | Gate G1: confirms or rejects the blank-date rule (+9.5% rows); nothing is modelled before it | `rp:results/L2_cleaning/hand_check_instructions.md` **28 Oct: agents inspected all 56 rows on the live portal (56/56 modal prices agree; 20 differ in arrivals; 4 missing-as-zero; blank-date rule 21/22 confirmed beneath the preceding date, but NO merged cell). Your sign-off is pending: `rp:results/L2_cleaning/hand_check_summary.json`.** |
 | O2 | Approve the C.0 protocol and its deviations, then freeze it | Fixes models, splits, tests and claims before any test-season result exists | `rp:layers/L3a_forecasting/PREREGISTERED_PROTOCOL.md` §11 |
 | O3 | Decide how product advice beyond 28 days is handled | Forecast evidence stops at 28 days (index exists Sep–Jan only), but CHAT-22 and hold-or-sell reach further | protocol §4 |
 | O4 | Folders `kisaniti_final`, `untitled folder`, `untitled folder 2` and the older copy `sem_7/kisaniti` | Tracker 0.6; the `sem_7` copy confused the start of this session | tracker 0.6 |
@@ -88,7 +88,7 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O40 | Late-arriving readings do not change slots already assessed; an optional recompute is not built | AI, if wanted | open |
 | O41 | Slot length (1 h) and catch-up cap (14 days) are constants, not settings; no alert on a category change | AI | planned |
 | O42 | Storage-rule thresholds and the 48 h hold remain desk-research values until the real-node bench tests | YOU (hardware) | open |
-| O43 | The imported price dataset stays `PENDING_HAND_CHECK` until your 56-row hand check (B.2) and the decision on rows without a date (O9); then I run `set-status --to VALIDATED` with your note. The prices page shows the warning meanwhile | YOU, then AI | open |
+| O43 | The imported price dataset stays `PENDING_HAND_CHECK` until your 56-row hand check (B.2) and the decision on rows without a date (O9); then I run `set-status --to VALIDATED` with your note. The prices page shows the warning meanwhile | YOU, then AI | open 28 Oct: needs only your written sign-off of the agents' inspection (O1). |
 | O44 | Phone numbers and consent exist since slice 4 (fictional numbers only). Still open: erasure and data-access screens, retention job, reviewed consent notice text, shared household phones | AI, YOU (notice text, legal) | open |
 | O45 | No link from a sensor to a lot; no distance or transport-cost inputs for mandis (transport cost is UNKNOWN) | AI, YOU for the cost evidence | open |
 | O46 | The prices page lists at most 200 rows without paging; staleness is shown only as the newest date and its age | AI | planned |
