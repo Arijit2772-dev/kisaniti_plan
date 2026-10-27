@@ -1,0 +1,67 @@
+# What is still needed to make the paper definitely publishable, phase by phase
+
+27 October 2026 • Companion to [PUBLICATION_PLAN_V3.md](PUBLICATION_PLAN_V3.md). "Me" is the AI agent working in the repositories; "you" is the owner or the authors. Status words: DONE (script, result file, test), RUNNING, TODO-ME, NEEDS-YOU.
+
+## 1. Data in (farmer records, mandi prices, routine data, hardware)
+
+| Need | Why it matters for acceptance | Who | Status |
+|---|---|---|---|
+| Hand check of the 56-row sheet; independent spot check against a second source | A single-source dataset must show that its parsing and inferred dates are right | you (CAPTCHA site) | NEEDS-YOU; sheet ready |
+| Decide the blank-date rule and the sub-yard merge | They change about 9% (blank dates: 6,098 vs 6,678 rows) and about 20% (sub-yards) of index days | you | NEEDS-YOU; both run as labelled sensitivity variants |
+| More seasons: Oct 2026 onward | The prospective check is the only truly unseen test | you (monthly CAPTCHA download) | NEEDS-YOU; protocol treats it as a separate partial check |
+| Transport costs and mandi distances from real sources | The allocation uses invented rates; sensitivity shows what that does | you / FPO | NEEDS-YOU; sensitivity grid RUNNING (me) |
+| Real sensor week in grain | Turns "feasibility on simulation" into feasibility on data | you (kit) | NEEDS-YOU |
+| Product import job for the raw files | Cleaning is reproducible only in the research repo today | me | TODO-ME, small |
+
+## 2. Cleaning, verification, training and comparison
+
+| Need | Who | Status |
+|---|---|---|
+| Approve and freeze the C.0 protocol (with the corrected pair counts and the eight open choices) | you | NEEDS-YOU |
+| Install the pinned model packages (statsforecast, LightGBM, Chronos-2) and lock them; wire models 4–8 into the evaluation kit; write the grids file | me | after approval (the packages are not in the research environment today) |
+| A runner that refuses to run unless the freeze commit exists and the tree is clean; one results file per model with commit hash and data checksums | me | TODO-ME, built before the run |
+| Validation run, configuration freeze, single test-season run, prospective check, ranges and coverage, tables and figures | me | after approval |
+| Cleaning comparison (MAD, Hampel, IQR, forward fill) judged by the hand-checked sample, not by forecast error | me | after the hand check |
+| Reference check: every DOI against Crossref/DataCite | me | DONE: 38 match, 5 author-name formatting flags, 18 entries without DOI to check by hand |
+
+## 3. Optimizer
+
+| Need | Status |
+|---|---|
+| Solver vs brute-force oracle on random tiny cases | DONE: 1,728 of 1,728 cases agree (3 solvers, 2 methods, 324 instances, one proven infeasible) |
+| Policy comparison on 60 plans | DONE (seven policies, all plans validated, exact solves proven optimal) |
+| Sensitivity to transport rate and mandi-day limit (3 x 3 grid) | RUNNING |
+| Scaling grid, 10 to 1,000 farmers, three solvers and greedy | script written, runs after the grid (timings need an idle machine) |
+| Weighted-sum policies at the 300 s limit | NEEDS-YOU (decision E.0), then about 1 to 2 hours of compute |
+| Re-run with basmati prices on the training seasons only (2021-22 to 2023-24), so the test seasons stay unseen | TODO-ME |
+
+## 4. Approve, reject or edit
+
+| Need | Who | Status |
+|---|---|---|
+| Independent validator accepts exactly the valid manager edits (random edits against a brute-force constraint check) | me | TODO-ME: result file for the paper |
+| Parallel approvals never over-reserve stock | me | DONE in tests (8 parallel approvals, two competing plans); to be cited from the evidence file |
+| Real approver roles and reason codes | you / an FPO | NEEDS-YOU; the paper states them as demo policy |
+
+## 5. Messages out, replies and sales back
+
+| Need | Who | Status |
+|---|---|---|
+| Exact rendering of every text in three languages | me | DONE in tests (hand-written expected strings) |
+| Native-speaker review of the Punjabi and Hindi texts | you | NEEDS-YOU; the paper says the texts are unreviewed |
+| One real message to the authors' own phone; screenshots for the paper | you | NEEDS-YOU (phone, Meta account for the official channel; the manager's own-WhatsApp link needs none) |
+| Comprehension or usability study | you | NEEDS-YOU: ethics approval first; not claimed in the paper |
+| Planned-against-actual loop on real sales | an FPO | not possible before a pilot; the paper says so |
+
+## 6. The paper itself
+
+| Need | Who | Status |
+|---|---|---|
+| Insert the single pre-registered result, whatever it is, and write what follows from it | me (draft), authors (words) | after the run |
+| Cut 19 pages to the venue limit (about 11 to 12) | authors with me | after venue is confirmed |
+| Cite the IMD normals; rewrite the basmati movement sentence to the computed values | me | TODO-ME |
+| Authors' rewrite in their own words, declaration of AI use, similarity check, supervisor review | authors | NEEDS-YOU |
+
+## 7. The one thing that decides everything
+
+Without the forecast comparison on basmati the paper has a regime test, an allocation study and a system, but not its forecasting contribution. The comparison needs two things only you can give: the protocol approval, and (for the primary index variant) either the hand check or the choice of `dated_only` as primary.
