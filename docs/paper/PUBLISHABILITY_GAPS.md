@@ -19,9 +19,9 @@
 |---|---|---|
 | Approve and freeze the C.0 protocol (with the corrected pair counts and the eight open choices) | you | NEEDS-YOU |
 | Install the pinned model packages (statsforecast, LightGBM, Chronos-2) and lock them; wire models 4–8 into the evaluation kit; write the grids file | me | after approval (the packages are not in the research environment today) |
-| A runner that refuses to run unless the freeze commit exists and the tree is clean; one results file per model with commit hash and data checksums | me | TODO-ME, built before the run |
+| A runner that refuses to run unless the freeze commit exists, the code and data are unchanged and the test season has not been run; results with commit hash and data checksum | me | DONE: `run_protocol.py` and `protocol_gate.py`, 16 tests, refuses today because nothing is frozen |
 | Validation run, configuration freeze, single test-season run, prospective check, ranges and coverage, tables and figures | me | after approval |
-| Cleaning comparison (MAD, Hampel, IQR, forward fill) judged by the hand-checked sample, not by forecast error | me | after the hand check |
+| Cleaning comparison (MAD, Hampel, IQR) | me | descriptive part DONE (screens flag 2.2% to 8.8% of rows and would move 27 to 110 of 433 index days of 1121); precision and recall need the hand check |
 | Reference check: every DOI against Crossref/DataCite | me | DONE: 38 match, 5 author-name formatting flags, 18 entries without DOI to check by hand |
 
 ## 3. Optimizer
@@ -39,7 +39,7 @@
 
 | Need | Who | Status |
 |---|---|---|
-| Independent validator accepts exactly the valid manager edits (random edits against a brute-force constraint check) | me | TODO-ME: result file for the paper |
+| Independent validator accepts exactly the valid manager edits | me | DONE: 4,431 of 4,431 random edits get the same verdict as a second rule-based checker (1,052 valid, 3,379 invalid) |
 | Parallel approvals never over-reserve stock | me | DONE in tests (8 parallel approvals, two competing plans); to be cited from the evidence file |
 | Real approver roles and reason codes | you / an FPO | NEEDS-YOU; the paper states them as demo policy |
 
