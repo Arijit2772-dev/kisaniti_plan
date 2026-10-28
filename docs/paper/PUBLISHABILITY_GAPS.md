@@ -50,7 +50,7 @@
 | Need | Who | Status |
 |---|---|---|
 | Exact rendering of every text in three languages | me | DONE in tests (hand-written expected strings) |
-| Native-speaker review of the Punjabi and Hindi texts | you | DONE 28 Oct by the authors (native speakers); an independent reviewer is still absent, the paper says so |
+| Native-speaker review of the Punjabi and Hindi texts | you | DONE 28 Oct: English, Punjabi and Hindi reviewed by independent reviewers (names to be recorded for the acknowledgments) |
 | One real message to the authors' own phone; screenshots for the paper | you | NEEDS-YOU (phone, Meta account for the official channel; the manager's own-WhatsApp link needs none) |
 | Comprehension or usability study | you | NEEDS-YOU: ethics approval first; not claimed in the paper |
 | Planned-against-actual loop on real sales | an FPO | not possible before a pilot; the paper says so |
