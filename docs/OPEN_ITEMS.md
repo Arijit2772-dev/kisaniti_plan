@@ -119,7 +119,7 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O71 | Parts not received; terminal-board and box fit, pull-ups on terminals, probe address (0x44 expected) and wire labels unverified (CHAT-50) | YOU (get parts, send photos), then AI | open |
 | O72 | The broker and `kn-ingest` are not in `compose.yaml`, so the one-command stack cannot receive a real node yet (work item HW-S1) | AI | open |
 | O73 | The 28 Oct AGMARKNET edits and reports were reviewed and committed on 2 Nov with their status corrected. Left local on purpose: `kisaniti_rp_v2_revised.docx` (byte-identical to the copy already tracked in research `paper/revisions/2026-10-24/`) and the root copy of the completion report (byte-identical to the one in `docs/handoff/`). Both can be deleted by the owner | YOU, optional | done |
-| O74 | All three GitHub repos are public, although earlier documents call them private. Decide whether that is intended; the hand-check notes and hardware guide contain no secrets | YOU | open |
+| O74 | All three GitHub repos stay public by your decision of 2 Nov 2026 (CHAT-51). Nothing to change on GitHub; treat every push as public | YOU | done |
 
 ## F. Not started
 

@@ -80,7 +80,7 @@ Goal: the real node's readings appear on the website and feed the plan-to-sale c
 4. **Contract first:** a change in behaviour, messages or schemas needs a decision and a frozen contract before code. Missing or UNKNOWN behaviour is reported, not guessed.
 5. **Before an item is ticked:** its tests, the existing suites it touches, and `python3 scripts/chain.py` pass; CI is green after the push. A step that needs hardware counts only with real output saved in `firmware/records/`, never from a simulator.
 6. **End of a chat:** commit only that chat's files (never `git add -A`), push, tick the item here with its evidence, and put new findings in OPEN_ITEMS and bugs in BUGS.md.
-7. **All three GitHub repos are public** (checked 2 Nov 2026), so anything pushed can be read by anyone. **Never commit** `secrets.h`, `passwd`, `certs/`, `.env` or personal data, and never paste passwords in chat. Fictional farmers only.
+7. **All three GitHub repos are public by decision** (CHAT-51, 2 Nov 2026), so anything pushed can be read by anyone. **Never commit** `secrets.h`, `passwd`, `certs/`, `.env` or personal data, and never paste passwords in chat. Fictional farmers only.
 8. **Integration gates:** after Part A (HW-S5 passes), after Part B (HW-F has real records) and before the demo (P-4). If a gate fails, fix it before going on.
 
 Message to paste into a new chat:

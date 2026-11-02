@@ -50,7 +50,7 @@ A feature is "done" only when all four that apply have evidence. Status words ar
 
 | Practice | Rule |
 |---|---|
-| Version control | Small commits with clear messages. One work package per branch; merge to `main` only after checks pass. Both repos on GitHub (private). |
+| Version control | Small commits with clear messages. One work package per branch; merge to `main` only after checks pass. All three repos on GitHub (public, CHAT-51). |
 | Continuous integration | GitHub Actions on every push: formatting, lint, type check, unit/property/contract tests, schema validation of `contracts/` examples. Database tests run against a real PostgreSQL service container. |
 | Static checks | Python: type hints checked (e.g. mypy/pyright) and lint (e.g. ruff). TypeScript strict mode. Pin tool versions (OI-11). |
 | Test types | Unit (exact arithmetic, validators, transport math, storage rule) → property/randomised (inventory never negative, no double reservation, fairness invariants) → contract (C01–C15, L4C, L5C) → integration (real DB) → end-to-end scenarios. |
