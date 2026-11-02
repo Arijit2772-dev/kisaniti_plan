@@ -1,5 +1,7 @@
 # Hardware build specification — what to build, and how it connects
 
+> **31 Oct 2026:** the step-by-step build, connection and demo sheet is now [HARDWARE_FINAL_GUIDE.md](HARDWARE_FINAL_GUIDE.md) (re-verified against the code; BUG-009 broker certificate fixed).
+
 26 October 2026 • You build the node; I integrate it. This is the single sheet to follow. It collects what the repository already specifies ([HARDWARE_CURRENT.md](HARDWARE_CURRENT.md), `kisaniti_implementation/firmware/BUILD_GUIDE.md`, contract L3B v1) and adds the integration steps. Nothing here is a tested-assembly or availability guarantee: no real node has been built yet. Items I could not verify are marked **UNVERIFIED**.
 
 ## 1. What a node is

@@ -1,5 +1,7 @@
 # Current hardware and automatic integration
 
+> **2 Nov 2026 (CHAT-50):** the parts list below is superseded by [HARDWARE_FINAL_GUIDE.md](HARDWARE_FINAL_GUIDE.md) §2 (screw-terminal board in a closed box for the final unit, one spare ESP32). The board, probe and wiring are unchanged.
+
 Latest conversation selection: one ESP32-WROOM-32 development board (38-pin, USB-C, soldered headers, built-in antenna) plus one protected SHT30 I2C probe (PROBOTS PRO6111 reference, nominal 50 cm cable). This supersedes older DHT22/DS18B20/manual moisture-meter and Feather/SHT40 kits.
 
 | Buy/assemble for one demonstration node | Quantity |

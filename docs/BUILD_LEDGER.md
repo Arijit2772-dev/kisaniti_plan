@@ -44,6 +44,49 @@ The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.m
 
 Blocked on the owner: 56-row hand check (O1; also gates the price dataset's VALIDATED status, O43), protocol approval (O2), sub-yard rule (O9), account/hosting (O34), Meta steps (O35), kit purchase, Punjabi text review, Playwright decision.
 
+## 2b. Hardware and final product: work order (2 Nov 2026)
+
+Goal: the real node's readings appear on the website and feed the plan-to-sale chain, and the demo runs from the repos. Parts and architecture: [HARDWARE_FINAL_GUIDE.md](HARDWARE_FINAL_GUIDE.md), decision CHAT-50. Take the first unchecked item whose "needs" is met. **Part A does not wait for the parts.**
+
+### A. Software, no parts needed (AI)
+
+- [ ] **HW-S1** add Mosquitto and `kn-ingest` (`KN_REGISTRY=db`) to `compose.yaml` under a `hardware` profile, without changing the normal stack. Done when: the software node over MQTT and TLS reaches the website on the running stack, and a CI check covers it
+- [ ] **HW-S2** provisioning script: creates the broker user and writes the git-ignored `secrets.h` from the certificate, so no value is hand-edited (Wi-Fi password is typed by the owner, never in chat). Done when: a firmware build with a generated file succeeds and the certificate check passes
+- [ ] **HW-S3** `kn-ingest` reconnects if PostgreSQL restarts (known gap). Done when: a test restarts the database and no reading is lost
+- [ ] **HW-S4** `scripts/hw_preflight.sh`: one command that checks the stack, broker, worker, certificate host against the current IP, device registration and the newest reading, printing PASS or FAIL per line
+- [ ] **HW-S5** full rehearsal from a fresh clone with the software node: stack up → register → readings → assessment → lot shows the category → plan → approval → handover → sale. Record the result
+
+### B. With the parts (BOTH: owner assembles, AI guides and connects)
+
+- [ ] **HW-A** parts check: photo of everything and the probe wire label; AI confirms against CHAT-50 before power-on
+- [ ] **HW-B** breadboard bench check (guide 5.1), then the same on the terminal board
+- [ ] **HW-C** flash the real profile and connect (5.2–5.6): acks arrive and the reading is on the website
+- [ ] **HW-D** contract check with `kn-conformance` (5.7): no FAIL; close BUG-009 on the real board
+- [ ] **HW-E** salt calibration, settling time, outage tests (BUILD_GUIDE H4–H5), records in `firmware/records/`
+- [ ] **HW-F** close the box, link to a lot, then the week run in grain (H6)
+
+### C. Rest of the product and the final demo
+
+- [ ] **P-1** hold-or-sell advice (not built; contract first, needs its parameter decisions)
+- [ ] **P-2** hosting (needs the owner's account, O34) and the public-certificate check on the ESP32; then optionally Meta WhatsApp (O35, O60)
+- [ ] **P-3** UI restyle with the owner's ideas
+- [ ] **P-4** final demo rehearsal, at least twice on different days: node in grain at least 30 h earlier, guide §6 script, fallback ready. Any paper revision with what was really measured starts from the files of 2 Nov on branch `paper/submission-2026-11-02`, because `main` holds older text; `previous_versions/` stays local because that repo is public
+
+### How chats work together
+
+1. **Open each new chat in `~/Documents/kisaniti`**, not `sem_7/kisaniti`, and give the three repos access. GitHub is the shared memory: a chat knows only what is pushed or in these files.
+2. **One item per chat.** Run two chats at the same time only if they touch different repos or different files.
+3. **Start of a chat:** `git pull --rebase --autostash` in all three repos, read this ledger, state the item, its contract and its exclusions (`docs/blueprint/06_IMPLEMENTATION_TASK_TEMPLATE.md`).
+4. **Contract first:** a change in behaviour, messages or schemas needs a decision and a frozen contract before code. Missing or UNKNOWN behaviour is reported, not guessed.
+5. **Before an item is ticked:** its tests, the existing suites it touches, and `python3 scripts/chain.py` pass; CI is green after the push. A step that needs hardware counts only with real output saved in `firmware/records/`, never from a simulator.
+6. **End of a chat:** commit only that chat's files (never `git add -A`), push, tick the item here with its evidence, and put new findings in OPEN_ITEMS and bugs in BUGS.md.
+7. **Never commit** `secrets.h`, `passwd`, `certs/` or `.env`, and never paste passwords in chat. Fictional farmers only.
+8. **Integration gates:** after Part A (HW-S5 passes), after Part B (HW-F has real records) and before the demo (P-4). If a gate fails, fix it before going on.
+
+Message to paste into a new chat:
+
+> Continue KisanNiti. The three repos are side by side in ~/Documents: kisaniti, kisaniti_implementation, kisaniti_research_paper. Pull all three, then read kisaniti/AGENTS.md and kisaniti/docs/BUILD_LEDGER.md, including section 2b. Do item [ID] only, following its rules. Tell me first in five lines what the item needs. Verify with real output, never invent results, and tell me when something needs me. At the end, commit only your files, push, check CI and update the ledger.
+
 ## 3. Rules learned the hard way (do not rediscover)
 
 - Contract first: a layer's code starts only after its slice is frozen (decision register, CHAT-28). Changes after a consumer exists are a new slice version.
