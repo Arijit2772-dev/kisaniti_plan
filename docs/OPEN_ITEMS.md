@@ -118,7 +118,8 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O70 | Evaluation kit built (research repo, `layers/L3a_forecasting/evalkit.py`); eight open choices in `EVALKIT_ASSUMPTIONS.md` need your confirmation before the C.0 freeze, and the draft protocol's pair counts (§4) ignore its own eligibility rule (Basmati 1509 has 57 and 51 test pairs at 7 and 14 days, not 60 or more). Decide how §4 is corrected | YOU | open |
 | O71 | Parts not received; terminal-board and box fit, pull-ups on terminals, probe address (0x44 expected) and wire labels unverified (CHAT-50) | YOU (get parts, send photos), then AI | open |
 | O72 | The broker and `kn-ingest` are not in `compose.yaml`, so the one-command stack cannot receive a real node yet (work item HW-S1) | AI | open |
-| O73 | Not on GitHub, not committed by the hardware chat because they are not its work, so new chats cannot see them: planning repo AGMARKNET edits and reports of 28 Oct (README, CLAUDE.md, NEW_CHAT_START, PROJECT_TRACKER, START_HERE, 04_CONFLICT_REGISTER, `docs/handoff/2026-10-28_*`, a root copy of the report, `kisaniti_rp_v2_revised.docx`) | YOU decide which to keep, then AI commits | open |
+| O73 | The 28 Oct AGMARKNET edits and reports were reviewed and committed on 2 Nov with their status corrected. Left local on purpose: `kisaniti_rp_v2_revised.docx` (byte-identical to the copy already tracked in research `paper/revisions/2026-10-24/`) and the root copy of the completion report (byte-identical to the one in `docs/handoff/`). Both can be deleted by the owner | YOU, optional | done |
+| O74 | All three GitHub repos are public, although earlier documents call them private. Decide whether that is intended; the hand-check notes and hardware guide contain no secrets | YOU | open |
 
 ## F. Not started
 

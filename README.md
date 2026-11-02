@@ -1,5 +1,7 @@
 # KisanNiti — project handoff
 
+> **AGMARKNET checkpoint — 28 Oct 2026:** all **56/56 selected rows inspected** and signed off by the owner the same day; the dataset is VALIDATED in the product database. Evidence: research `results/L2_cleaning/hand_check_signoff.json` and `results/audit/AUDIT_2026-10-28.md`; history: [the Claude completion report](docs/handoff/2026-10-28_Claude_AGMARKNET_Completion_Report.md). Still open: the B.2b second-source check. The meaning of exported arrivals is UNKNOWN, so arrivals are not used.
+
 > **Research paper first (CHAT-27, 21 Oct 2026):** current work happens in [`../kisaniti_research_paper`](../kisaniti_research_paper/RESEARCH_PLAN.md) (research prototypes, experiments, paper). This folder stays the design source of truth.
 
 > **Planning folder only.** This folder describes *how KisanNiti should be* (design, decisions, research plan, paper). Product code, contracts-as-files and product test evidence live in [`../kisaniti_implementation`](../kisaniti_implementation/README.md); research prototypes, experiments and the paper live in [`../kisaniti_research_paper`](../kisaniti_research_paper/README.md) (CHAT-27). Do not put code here.

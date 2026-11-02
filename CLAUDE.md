@@ -1,8 +1,10 @@
 # Claude — start here for KisanNiti
 
+> **AGMARKNET checkpoint — 28 Oct 2026:** all **56/56 selected rows inspected** and signed off by the owner the same day; the dataset is VALIDATED in the product database. Evidence: research `results/L2_cleaning/hand_check_signoff.json` and `results/audit/AUDIT_2026-10-28.md`; history: [the Claude completion report](docs/handoff/2026-10-28_Claude_AGMARKNET_Completion_Report.md). Still open: the B.2b second-source check. The meaning of exported arrivals is UNKNOWN, so arrivals are not used.
+
 > **New chat? Read [docs/NEW_CHAT_START.md](docs/NEW_CHAT_START.md) first.** Next steps live in [docs/PROJECT_TRACKER.md](docs/PROJECT_TRACKER.md)** (phased checklist, updated 24 Oct 2026).
 
-> **Latest continuation checkpoint (22 Oct 2026):** resume AGMARKNET acquisition from [the Claude continuation handoff](docs/handoff/2026-10-22_Claude_Continuation.md). It lists 11 verified CSV exports still in Downloads pending research import, the exact working report URL, browser recovery notes, and January 2025 as the next missing month. Inspect current files/browser state before resuming; this checkpoint does not change architecture or contract authority.
+> **Historical acquisition checkpoint (22 Oct 2026; superseded for current progress by the 28 Oct report above):** earlier AGMARKNET acquisition from [the Claude continuation handoff](docs/handoff/2026-10-22_Claude_Continuation.md). It lists 11 verified CSV exports still in Downloads pending research import, the exact working report URL, browser recovery notes, and January 2025 as the next missing month. Inspect current files/browser state before resuming; this checkpoint does not change architecture or contract authority.
 
 > **Research paper first (CHAT-27, 21 Oct 2026):** current work happens in [`../kisaniti_research_paper`](../kisaniti_research_paper/RESEARCH_PLAN.md) (research prototypes, experiments, paper). This folder stays the design source of truth.
 

@@ -1,5 +1,7 @@
 # Reading guide and source precedence
 
+> **AGMARKNET checkpoint — 28 Oct 2026:** all **56/56 selected rows inspected** and signed off by the owner the same day; the dataset is VALIDATED in the product database. Evidence: research `results/L2_cleaning/hand_check_signoff.json` and `results/audit/AUDIT_2026-10-28.md`; history: [the Claude completion report](handoff/2026-10-28_Claude_AGMARKNET_Completion_Report.md). Still open: the B.2b second-source check. The meaning of exported arrivals is UNKNOWN, so arrivals are not used.
+
 Prepared 15 October 2026. The current workspace is this folder, not the old absolute paths inside the historical conversation snapshots.
 
 ## Reading order

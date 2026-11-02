@@ -1,5 +1,7 @@
 # KisanNiti project tracker — phases and steps
 
+> **AGMARKNET checkpoint — 28 Oct 2026:** all **56/56 selected rows inspected** and signed off by the owner the same day; the dataset is VALIDATED in the product database. Evidence: research `results/L2_cleaning/hand_check_signoff.json` and `results/audit/AUDIT_2026-10-28.md`; history: [the Claude completion report](handoff/2026-10-28_Claude_AGMARKNET_Completion_Report.md). Still open: the B.2b second-source check. The meaning of exported arrivals is UNKNOWN, so arrivals are not used.
+
 24 October 2026 • The single checklist for what to do next. Tick `[x]` when done and add the date and the evidence link. Details of each milestone are in the [master plan](MASTER_PLAN.md); this file is the order of work. **Who:** `AI` = an agent can do it; `YOU` = only the project owner can; `BOTH` = the owner enters a CAPTCHA, signs off or supplies a fact while an agent works.
 
 How to use it: finish the steps of a phase in order; steps in different phases marked ∥ can run at the same time in separate sessions (one session per folder).
@@ -74,7 +76,7 @@ Done when: ≥ 4 full basmati seasons are filed ✅, the coverage table exists �
 Why the data is considered enough for Paper 1, and what it cannot support: research `layers/L1_data/DATA_ADEQUACY.md`.
 
 - [x] B.1 (24 Oct, research commit ee9de51: parser, 9 tests, 50-row sheet; outlier screens deferred to B.3; **market map B.1d not built yet**, see OPEN_ITEMS O9) Tidy parser, **blank-date rule** (580 rows that are probably real second-variety prices), variety map, market map, rule checks, outlier flags — `AI`
-- [ ] B.2 **Hand check ~50 rows against the AGMARKNET website**, which also confirms or rejects the blank-date rule; the checker is recorded — `YOU` (an agent prepares the sheet)
+- [x] B.2 **Hand check ~50 rows against the AGMARKNET website** — 28 Oct: all 56 selected rows inspected by Codex after human CAPTCHA; 20 arrivals discrepancies, 4 missing/zero bound differences (HC36 overlaps), 33 numeric matches. Date continuation does not prove merged cells. [Reconciliation and next task contract](handoff/2026-10-28_AGMARKNET_Reconciliation.md). Transferred to the research sheet and signed off by the owner the same day (research `results/L2_cleaning/hand_check_signoff.json`); no population error rate is claimed — `BOTH`
 - [ ] B.2b **Independent spot check:** compare one month with a second source (eNAM, Punjab Mandi Board portal or published price reports) — `BOTH`
 - [ ] B.3 Compare cleaning options (raw only, + blank-date rule, + outlier exclusions; MAD vs Hampel vs IQR) by precision/recall and by effect on forecast error — `AI`
 - [~] B.4 (24 Oct: built both ways, `build_index.py`; primary variant waits for the B.2 hand check) Build the **variety-level daily index** (1121 and 1509; at least 3 mandis per day; no forward-fill shown as observed) — `AI`

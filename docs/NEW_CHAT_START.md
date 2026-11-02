@@ -1,5 +1,7 @@
 # Start here in a new chat — the final plan
 
+> **AGMARKNET checkpoint — 28 Oct 2026:** all **56/56 selected rows inspected** and signed off by the owner the same day; the dataset is VALIDATED in the product database. Evidence: research `results/L2_cleaning/hand_check_signoff.json` and `results/audit/AUDIT_2026-10-28.md`; history: [the Claude completion report](handoff/2026-10-28_Claude_AGMARKNET_Completion_Report.md). Still open: the B.2b second-source check. The meaning of exported arrivals is UNKNOWN, so arrivals are not used.
+
 24 October 2026 • Everything needed to continue without the earlier conversation. It states what "final" means, the order of work, the go/no-go gates, the risks with fallbacks, and the message to paste.
 
 ## 1. Message to paste into the new chat
@@ -8,7 +10,7 @@
 
 ## 1b. State of the files when this chat ended (24 Oct 2026, nothing is uncommitted)
 
-- All three repos are pushed and in sync with GitHub (`Arijit2772-dev/kisaniti_plan`, `kisaniti_implementation`, `kisaniti_research_paper`, all private). The product repo's CI was green on its last runs.
+- All three repos are pushed and in sync with GitHub (`Arijit2772-dev/kisaniti_plan`, `kisaniti_implementation`, `kisaniti_research_paper`; all three were found to be **public** on 2 Nov 2026). The product repo's CI was green on its last runs.
 - **Done:** design and decisions (CHAT-01…34); literature review and 57 verified references; v2 reproduced exactly; 29 basmati months filed with checksums plus coverage and power checks; storage rule, firmware, Wokwi twin, simulations; allocation core with brute-force oracle and validator; LaTeX paper base with figure drafts; guides for writing and figures.
 - **Work in progress, not finished:** allocation experiments (scripts exist, never run, no results yet; tracker E); paper editorial redo and the elaborate illustrated figures (tracker H.1–H.2; the other AI agent's revised files were lost, so redo them); cleaning has not started (tracker B).
 - **Not started:** forecasting, hold-or-sell, manager-approval and WhatsApp screens, integration run.

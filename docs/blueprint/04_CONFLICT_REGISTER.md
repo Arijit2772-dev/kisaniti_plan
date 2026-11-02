@@ -6,6 +6,20 @@ New real-world evidence that conflicts with the architecture handoff must be rec
 
 No conflicts have been recorded during Phase 0.
 
+## DATA-B2-2026-10-28 — export arrivals and merged-cell hypothesis
+
+**Date:** 28 October 2026. **Status:** hand check CLOSED by owner sign-off on 28 October and corrected in research `layers/L2_cleaning/CLEANING_EVIDENCE.md` §6. OPEN only for the meaning of exported arrivals (UNKNOWN, not used) and the B.2b second-source check. The text below is the original record.
+
+**Statement under review:** research L2 cleaning plan explains blank-date rows as likely merged cells and carries the dated anchor's arrivals as shared. This is a research hypothesis, not a protected production invariant.
+
+**Evidence:** [56-row reconciliation](../handoff/2026-10-28_AGMARKNET_Reconciliation.md), backed by [dated source observations](../handoff/2026-10-28_AGMARKNET_Hand_Check.md). Twenty selected rows differ in arrivals between exported/parser values and the live report. Bariwala HC43/HC44 shows unequal 250 and 2720 tonne entries summing to the exported 2970. Recorded empty date cells have no rowspan; HC55 is explicitly dated on the page but inferred in the export/parser representation. Four rows have missing export bounds displayed as zero online.
+
+**Affected:** B.1b arrivals interpretation, B.2 instructions/labels, B.3 validation, B.4 primary-variant selection, B.5 release claims. **Severity:** research data semantics; no production architecture change.
+
+**Safe independent work:** provenance consolidation, preserving both index variants, documentation and contract preparation. Preserve raw data and distinct duplicate-key rows. Do not recover per-variety arrivals by universal equal division, turn missing prices into zero, infer all 580 date continuations validated, or use source equality as economic ground truth.
+
+**Resolution:** merged-cell explanation is unsupported by the recorded markup; date-context continuation is separately observed. Arrivals semantics remain UNKNOWN. Agent ledger transfer requires the research folder as a writable workspace. Owner sign-off and independent-source comparison remain pending. Original research plans and architecture are preserved; a dated research amendment is required before dependent changes.
+
 ## Conflict entry template
 
 ```text
