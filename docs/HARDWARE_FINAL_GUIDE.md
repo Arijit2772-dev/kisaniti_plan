@@ -105,13 +105,14 @@ cd ~/Documents/kisaniti_implementation/firmware
 
 ```bash
 cd ~/Documents/kisaniti_implementation/backend/ingestion/broker
-./gen_certs.sh <laptop-ip>                 # writes certs/ca.crt, server.crt, server.key
+rm -rf certs                               # only when the laptop's address changed; a node then needs reflashing with the new CA
+./setup_stack.sh <laptop-ip>               # certificates if absent, the ingestion broker user, ingestion.password
 ./check_esp32_tls.sh <laptop-ip>           # must print PASS (BUG-009 check; needs Docker)
+./add_user.sh kn-node-001                  # prompts for the node's broker password; keep it out of the repository and chat
+chmod 644 passwd
 ```
 
-**Pass:** `PASS: the ESP32 will accept this certificate for <laptop-ip>`.
-
-Create the broker passwords for two users, `ingestion` and `kn-node-001`, with `mosquitto_passwd` inside the broker image (`broker/add_user.sh <name>`). Keep both passwords out of the repository and out of chat.
+**Pass:** `PASS: the ESP32 will accept this certificate for <laptop-ip>`. Certificates made before 4 Nov 2026 lack the name `broker`, and `setup_stack.sh` refuses them: regenerate. HW-S2 will replace the manual `add_user.sh` step.
 
 ### 5.4 Register the node on the website
 
@@ -125,19 +126,17 @@ The server, not the device, decides which FPO and lot the readings belong to.
 
 ### 5.5 Start the broker and the ingestion worker (registry from the database)
 
-These manual commands work today. Work item HW-S1 (BUILD_LEDGER §2b) moves the broker and worker into the one-command stack; use its commands once that is done.
-
 ```bash
-cd ~/Documents/kisaniti_implementation/backend/ingestion
-docker run -d --name kn-broker -p 8883:8883 -v "$PWD/broker":/mosquitto/config eclipse-mosquitto:2.0.20
-KN_REGISTRY=db KN_STORE=postgresql://kisaniti:kisaniti-local-only@localhost:5433/kisaniti \
-KN_MQTT_HOST=localhost KN_MQTT_PORT=8883 KN_MQTT_TLS_CA=broker/certs/ca.crt KN_MQTT_USER=ingestion KN_MQTT_PASSWORD=<ingestion password> \
-PYTHONPATH=src:../../core/src:$(ls -d ../.venv/lib/python3*/site-packages) .venv/bin/python -m kisaniti_ingestion.worker
+cd ~/Documents/kisaniti_implementation
+docker compose --profile hardware up --build -d --wait
+docker compose --profile hardware kill -s HUP broker     # makes a running broker read users added since it started
+docker compose --profile hardware logs ingest | tail     # must show: subscribing kisaniti/v1/devices/+/telemetry
+scripts/hw_stack_check.sh                                # all PASS (software node over MQTT and TLS through to the website)
 ```
 
-The extra `PYTHONPATH` entry supplies `psycopg` from the backend environment, because `uv` is not installed on this Mac. This is the path tested on 31 Oct (section 8).
+Stop with `docker compose --profile hardware down`; without the profile, the broker and worker keep running.
 
-**Before flashing, rehearse with the software node.** Register a second device `kn-sim-001` as SIMULATOR and give it its own broker user. Run `python -m kisaniti_ingestion.simulator --scenario humid_rise --steps 12 --device-id kn-sim-001 --host localhost --port 8883 --ca broker/certs/ca.crt --user kn-sim-001 --password …`. **Pass:** `acks: {"ACCEPTED": 12}`, and the readings appear on the Storage sensors page.
+**Before flashing, rehearse with the software node.** The last command above does this: it creates its own fictional FPOs and simulated device and removes its broker user afterwards. **Pass:** `ALL PASS`. To see readings on the Storage sensors page, run `scripts/demo_storage.sh`.
 
 ### 5.6 Flash the real profile
 

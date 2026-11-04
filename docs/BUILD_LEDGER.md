@@ -50,7 +50,7 @@ Goal: the real node's readings appear on the website and feed the plan-to-sale c
 
 ### A. Software, no parts needed (AI)
 
-- [ ] **HW-S1** add Mosquitto and `kn-ingest` (`KN_REGISTRY=db`) to `compose.yaml` under a `hardware` profile, without changing the normal stack. Done when: the software node over MQTT and TLS reaches the website on the running stack, and a CI check covers it
+- [x] **HW-S1** Mosquitto and `kn-ingest` (`KN_REGISTRY=db`) in `compose.yaml` under a `hardware` profile; normal stack unchanged. `backend/ingestion/broker/setup_stack.sh <address>`, then `docker compose --profile hardware up --build -d --wait`; check `scripts/hw_stack_check.sh`, a CI step (commit `ff082fd`, CI run 41875209951 green; report `…_HW-S1_hardware_profile.md`). Page not opened in a browser and real node not tested: the check goes through the website's API proxy
 - [ ] **HW-S2** provisioning script: creates the broker user and writes the git-ignored `secrets.h` from the certificate, so no value is hand-edited (Wi-Fi password is typed by the owner, never in chat). Done when: a firmware build with a generated file succeeds and the certificate check passes
 - [ ] **HW-S3** `kn-ingest` reconnects if PostgreSQL restarts (known gap). Done when: a test restarts the database and no reading is lost
 - [ ] **HW-S4** `scripts/hw_preflight.sh`: one command that checks the stack, broker, worker, certificate host against the current IP, device registration and the newest reading, printing PASS or FAIL per line
@@ -120,6 +120,9 @@ cd ~/Documents/kisaniti_implementation && core/.venv/bin/python -m pytest contra
 cd frontend && npm run lint && npm run typecheck && npm run i18n:check && npm run build
 # whole stack and smoke
 docker compose up --build -d --wait ; scripts/smoke_access.sh ; scripts/smoke_access.sh http://localhost:3000
+# stack with the broker and worker (real or simulated nodes), and its check
+backend/ingestion/broker/setup_stack.sh <address the node uses> ; docker compose --profile hardware up --build -d --wait ; scripts/hw_stack_check.sh
+# stop it with the profile, or broker and ingest keep running: docker compose --profile hardware down
 # import the cleaned prices and the MSP table into a running stack (real data; the release is git-ignored)
 cd backend && DATABASE_URL=postgresql+psycopg://kisaniti:kisaniti-local-only@localhost:5433/kisaniti PYTHONPATH=src:ingestion/src:../core/src \
   .venv/bin/python -m kisaniti_api.market.import_release import-release --dir ~/Documents/kisaniti_research_paper/data/processed/basmati/release/basmati_punjab_release1
