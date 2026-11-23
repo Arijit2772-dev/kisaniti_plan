@@ -44,6 +44,10 @@ The complete step list with owners is [ROADMAP_ALL_STEPS.md](ROADMAP_ALL_STEPS.m
 
 Blocked on the owner (2 Nov): sub-yard rule (O9), account/hosting (O34), Meta steps (O35), getting the parts (O71), Playwright decision. Done since this list was written: hand check and VALIDATED status (O1, O43), forecasting protocol frozen and run, message-text review.
 
+## 2a. Full product to a public URL (23 Nov 2026, CHAT-53)
+
+The five-phase plan is [FULL_PRODUCT_PLAN.md](FULL_PRODUCT_PLAN.md): Phase 1 software (HW-S3 next), Phase 2 real node, Phase 3 approvals and hold-or-sell, Phase 4 hosting + domain + real WhatsApp (required since CHAT-53), Phase 5 owner's UI designs and the demo. Items below keep their IDs.
+
 ## 2b. Hardware and final product: work order (2 Nov 2026)
 
 Goal: the real node's readings appear on the website and feed the plan-to-sale chain, and the demo runs from the repos. Parts and architecture: [HARDWARE_FINAL_GUIDE.md](HARDWARE_FINAL_GUIDE.md), decision CHAT-50. Take the first unchecked item whose "needs" is met. **Part A does not wait for the parts.**
@@ -51,7 +55,8 @@ Goal: the real node's readings appear on the website and feed the plan-to-sale c
 ### A. Software, no parts needed (AI)
 
 - [x] **HW-S1** Mosquitto and `kn-ingest` (`KN_REGISTRY=db`) in `compose.yaml` under a `hardware` profile; normal stack unchanged. `backend/ingestion/broker/setup_stack.sh <address>`, then `docker compose --profile hardware up --build -d --wait`; check `scripts/hw_stack_check.sh`, a CI step (commit `ff082fd`, CI run 41875209951 green; report `…_HW-S1_hardware_profile.md`). Page not opened in a browser and real node not tested: the check goes through the website's API proxy
-- [ ] **HW-S2** provisioning script: creates the broker user and writes the git-ignored `secrets.h` from the certificate, so no value is hand-edited (Wi-Fi password is typed by the owner, never in chat). Done when: a firmware build with a generated file succeeds and the certificate check passes
+- [x] **HW-S0 (23 Nov, CHAT-52)** DHT11 stop-gap: firmware env `esp32dev_dht11` (DATA on GPIO 4, VCC 3V3, no extra resistors), `dht11_codec.h` + 3 host tests (16/16 pass), all three envs build. **Committed 23 Nov as `9a35f07`** (report `…_HW-S0_dht11_stopgap.md`); was uncommitted when written (firmware/include/config.h, platformio.ini, src/main.cpp, test/test_native/test_main.cpp, lib/kn_core/src/dht11_codec.h). Real board not tested. Note: `scripts/provision_node.py`, `backend/tests/test_provision_node.py` and an edit to `scripts/hw_stack_check.sh` were already uncommitted before this (HW-S2 work in progress from another chat); check them before redoing HW-S2
+- [x] **HW-S2 (23 Nov)** provisioning script `scripts/provision_node.py`: certificate check, broker user with a generated password, git-ignored owner-only `secrets.h`; Wi-Fi password typed at a prompt only; `hw_stack_check.sh` uses it (commit `cefeb03`; HW-S0 committed as `9a35f07`). Evidence: 44 tests, `hw_stack_check.sh` ALL PASS, `esp32dev_dht11` builds with a generated file; report `…_HW-S2_provisioning.md`. Firmware builds are not in CI
 - [ ] **HW-S3** `kn-ingest` reconnects if PostgreSQL restarts (known gap). Done when: a test restarts the database and no reading is lost
 - [ ] **HW-S4** `scripts/hw_preflight.sh`: one command that checks the stack, broker, worker, certificate host against the current IP, device registration and the newest reading, printing PASS or FAIL per line
 - [ ] **HW-S5** full rehearsal from a fresh clone with the software node: stack up → register → readings → assessment → lot shows the category → plan → approval → handover → sale. Record the result

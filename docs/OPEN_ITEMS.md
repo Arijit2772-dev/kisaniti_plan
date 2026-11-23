@@ -119,6 +119,8 @@ Plan: [HOSTING_WHATSAPP_HARDWARE_PLAN.md](HOSTING_WHATSAPP_HARDWARE_PLAN.md).
 | O71 | Parts not received; terminal-board and box fit, pull-ups on terminals, probe address (0x44 expected) and wire labels unverified (CHAT-50) | YOU (get parts, send photos), then AI | open |
 | O72 | The broker and `kn-ingest` are in `compose.yaml` under the `hardware` profile (HW-S1, 4 Nov 2026, commit `ff082fd`). Earlier certificates must be regenerated because the worker needs the name `broker`; none had been flashed | AI | done |
 | O73 | The 28 Oct AGMARKNET edits and reports were reviewed and committed on 2 Nov with their status corrected. Left local on purpose: `kisaniti_rp_v2_revised.docx` (byte-identical to the copy already tracked in research `paper/revisions/2026-10-24/`) and the root copy of the completion report (byte-identical to the one in `docs/handoff/`). Both can be deleted by the owner | YOU, optional | done |
+| O75 | SHT30 order (Fiftronics, amazon.in) arrived as a DHT11 (23 Nov). Return it as wrong item, order the replacement SHT30 module, and decide whether demo readings from the DHT11 stop-gap (CHAT-52) may be shown; paper results only from the SHT30 | YOU | open |
+| O76 | CHAT-53: real WhatsApp and a public domain are required. Owner buys the server, domain and Meta setup (FULL_PRODUCT_PLAN Phase 4 list) and adds friends' numbers as Meta test recipients with their agreement; numbers only in the hosted database and the Meta dashboard. Supersedes "optional" in O35/O60; O34 remains the account step | YOU (buy, accounts), then AI | open |
 | O74 | All three GitHub repos stay public by your decision of 2 Nov 2026 (CHAT-51). Nothing to change on GitHub; treat every push as public | YOU | done |
 
 ## F. Not started
