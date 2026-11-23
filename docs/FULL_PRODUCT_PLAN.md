@@ -2,7 +2,7 @@
 
 > **Decision CHAT-53 (23 Nov):** real WhatsApp (Meta Cloud API) and a public domain are required. The owner buys the domain, hosting and Meta setup. Real sends go only to friends' numbers who agree, attached to fictional farmers; numbers never go into git or chat.
 
-**Progress:** 1.1 done (`9a35f07` DHT11 firmware, `cefeb03` HW-S2). Next: 1.3 (HW-S3).
+**Progress:** 1.1 done (`9a35f07` DHT11 firmware, `cefeb03` HW-S2); 1.3 done (`acf6372` HW-S3). Next: 1.4 (HW-S4 preflight).
 
 Goal: anyone with the URL can use KisanNiti on a phone or a laptop; the owner's DHT11 node (CHAT-52) sends real readings into the hosted system; every workflow (sign-in → members/lots → sensor → storage category → plan → approval → handover → sale → report) runs, is recorded in the database, and is tested. The owner supplies (1) the hardware build, guided by the agent, and (2) one design sheet per page. Everything else is the agent's work, item by item, under `BUILD_LEDGER.md` rules (contract first, tests, report, ledger tick, commit only own files).
 
@@ -14,7 +14,7 @@ Decisions used: up to CHAT-53. Items marked **NEEDS OWNER** stop until the owner
 |---|---|---|
 | 1.1 | Review the uncommitted HW-S2 files (`scripts/provision_node.py`, `backend/tests/test_provision_node.py`, `scripts/hw_stack_check.sh` edit), then commit the DHT11 firmware (HW-S0) on its own | 3 envs build, native tests pass, CI green |
 | 1.2 ✅ | HW-S2 provisioning: broker user + generated git-ignored `secrets.h`; Wi-Fi password typed by the owner only | build with a generated file succeeds; certificate check passes |
-| 1.3 | HW-S3 `kn-ingest` survives a PostgreSQL restart | test restarts the DB, zero readings lost |
+| 1.3 ✅ | HW-S3 `kn-ingest` survives a PostgreSQL restart | test restarts the DB, zero readings lost |
 | 1.4 | HW-S4 `scripts/hw_preflight.sh` | PASS/FAIL per line for stack, broker, worker, cert host vs IP, device, newest reading |
 | 1.5 | Logging and build identity: JSON logs, request ID end to end, commit hash in `/api/v1/meta` and the footer | a request ID is traceable from browser to DB log line |
 | 1.6 | Browser tests (K.8): Playwright on a phone size (375 px) and a laptop size, through every workflow; **NEEDS OWNER: yes/no to adding Playwright as a dev dependency** | suite green locally and in CI |
