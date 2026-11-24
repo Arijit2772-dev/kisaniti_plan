@@ -6,7 +6,7 @@
 
 **Who does what.** Agent: everything below except what is marked **OWNER**. Owner: buys the few items in §4, builds the node with the agent's guidance, gives one design sheet per page, answers the approvals in §3.
 
-**Progress:** HW-S0 `9a35f07`, HW-S2 `cefeb03`, HW-S3 `acf6372` done (CI green). Server and domain ready (CHAT-54): `kisaniti-vm` 172.128.33.73 in India South Central, `kisaniti.in`. Next: DNS records (owner), then Phase 3 setup; HW-S4 meanwhile.
+**Progress:** HW-S0 `9a35f07`, HW-S2 `cefeb03`, HW-S3 `acf6372` done (CI green). Server and domain ready (CHAT-54): `kisaniti-vm` 172.128.33.73 in India South Central, `kisaniti.in`. Server set up (P3-0 `6b0333d`); production stack, image publishing, deploy and rollback by commit tested locally (P3-1 `de54129`). Next: DNS records (owner), then first deploy and broker certificate (P3-2); HW-S4 meanwhile.
 
 ## 1. Where each layer stands (checked 23 Nov in the repos, not assumed)
 
