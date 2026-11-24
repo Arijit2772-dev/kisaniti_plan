@@ -2,7 +2,7 @@
 
 **Basis:** CHAT-53 (real WhatsApp required; real sends only to friends' numbers who agreed, on fictional farmers), FULL_PRODUCT_PLAN Phase 4, and L5_MESSAGING_CONTRACT_v1 §4 and §5. That contract already fixes the attempt statuses, the never-backwards rule, the rule that delivery is never evidence of a sale or a consent, and the rule that a real channel refuses an unreviewed template variant. This amendment adds only what those rules leave open.
 
-Parts: **A1.1 and A1.2 are built.** A1.3 is decided (D3) and is the next item. The owner decided D1, D3 and the sending number on 24 Nov 2026 (§4).
+Parts: **A1.1, A1.2 and A1.3 are built.** The owner decided D1, D3 and the sending number on 24 Nov 2026 (§4).
 
 ## A1.1 Status webhook (built; settled by v1 §5)
 - `GET /api/v1/webhooks/whatsapp` is Meta's verification. It answers `hub.challenge` as plain text only when `hub.mode=subscribe` and `hub.verify_token` equals the server's `KN_WA_VERIFY_TOKEN`; otherwise it returns 403.
@@ -65,8 +65,32 @@ Without the first three, or with a malformed value, the channel is unavailable.
 - The number goes only to Meta. It is never logged.
 - Known limit: if the database write fails after Meta has accepted, the message has gone without an attempt row. The log line with the attempt and provider IDs is then the only trace.
 
-## A1.3 Farmers' replies (decided: D3 = (a); next item)
-Inbound `messages[]` events become `replies` rows with `source = WEBHOOK`. A reply is shown only and never read as agreement (v1 §4).
+## A1.3 Farmers' replies (built 24 Nov 2026; D3 = (a))
+Each inbound `messages[]` item in a signed webhook body gets one outcome.
+
+**Matching.** The sender must be a number that one of our WhatsApp messages went to: a `WHATSAPP` attempt with a provider message ID, whose contact version has that number.
+- With Meta's reply context (`context.id`) naming one of those messages, the reply belongs to that message's instruction.
+- Without a context, it belongs to the newest WhatsApp message sent to that number.
+- If messages to that number exist in more than one FPO, a reply without context is `REPLY_AMBIGUOUS` and is not stored (ENGINEERING LEAN: never guess the FPO).
+- A context alone never makes an unknown number a farmer.
+
+**Stored.** Only a text of 1 to 500 characters is stored, as a `replies` row:
+- `source = WEBHOOK`;
+- no user;
+- Meta's message ID (unique, so a webhook Meta delivers twice stores the reply once);
+- the request ID.
+
+The sender's number is not stored, because the instruction knows its member. A reply is shown only and is never read as agreement (v1 §4).
+
+**Outcomes** (counted in the response, nothing about them logged):
+- `REPLY_RECORDED`;
+- `REPLY_DUPLICATE`;
+- `REPLY_UNMATCHED` (D3: a number we never sent to; only counted, the number goes nowhere);
+- `REPLY_AMBIGUOUS`;
+- `REPLY_UNSUPPORTED` (not text, empty, or malformed);
+- `REPLY_TOO_LONG` (over 500 characters; not stored, known limit).
+
+**Enforced by the database** (migration 0015): a webhook reply has Meta's ID and no user; a staff reply has no Meta ID.
 
 ## 4. Decisions (owner, 24 Nov 2026)
 - **D1. Message form.**
