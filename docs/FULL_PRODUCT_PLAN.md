@@ -6,7 +6,7 @@
 
 **Who does what.** Agent: everything below except what is marked **OWNER**. Owner: buys the few items in §4, builds the node with the agent's guidance, gives one design sheet per page, answers the approvals in §3.
 
-**Progress:** HW-S0 `9a35f07`, HW-S2 `cefeb03`, HW-S3 `acf6372` done (CI green). Server and domain ready (CHAT-54): `kisaniti-vm` 172.128.33.73 in India South Central, `kisaniti.in`. Server set up (P3-0 `6b0333d`); production stack, image publishing, deploy and rollback by commit tested locally (P3-1 `de54129`). Next: DNS records (owner), then first deploy and broker certificate (P3-2); HW-S4 meanwhile.
+**Progress (24 Nov):** HW-S0 `9a35f07`, HW-S2 `cefeb03`, HW-S3 `acf6372`, HW-S4 `a37592f`. Phase 1: logging and build identity `edaf378`, forecast models page `d21584a`, browser tests at 375/1280 px `8431196`. Phase 3: server setup `6b0333d`, production stack and deploy/rollback `de54129`, nightly backup with proven restore `fc7976e` (leak fix `af7f01b`), trial on the real server: smoke PASS, about 500 MB RAM free. Waiting on: domain DNS (owner, YesDomain ticket), approvals A1-A3, Meta WhatsApp setup, page designs, the DHT11 node.
 
 ## 1. Where each layer stands (checked 23 Nov in the repos, not assumed)
 
