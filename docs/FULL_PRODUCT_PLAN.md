@@ -6,7 +6,7 @@
 
 **Who does what.** Agent: everything below except what is marked **OWNER**. Owner: buys the few items in §4, builds the node with the agent's guidance, gives one design sheet per page, answers the approvals in §3.
 
-**Progress (24 Nov):** HW-S0 `9a35f07`, HW-S2 `cefeb03`, HW-S3 `acf6372`, HW-S4 `a37592f`. Phase 1: logging and build identity `edaf378`, forecast models page `d21584a`, browser tests at 375/1280 px `8431196`. Phase 3: server setup `6b0333d`, production stack and deploy/rollback `de54129`, nightly backup with proven restore `fc7976e` (leak fix `af7f01b`), trial on the real server: smoke PASS, about 500 MB RAM free. Waiting on: domain DNS (owner, YesDomain ticket), approvals A1-A3, Meta WhatsApp setup, page designs, the DHT11 node.
+**Progress (24 Nov):** HW-S0 `9a35f07`, HW-S2 `cefeb03`, HW-S3 `acf6372`, HW-S4 `a37592f`. Phase 1: logging and build identity `edaf378`, forecast models page `d21584a`, browser tests at 375/1280 px `8431196`. Phase 3: server setup `6b0333d`, production stack and deploy/rollback `de54129`, nightly backup with proven restore `fc7976e` (leak fix `af7f01b`), trial on the real server: smoke PASS, about 500 MB RAM free. HW-S5 rehearsal from a fresh clone PASS `90db262` (**Gate 1 met**). Phase 4 ahead of Meta: status webhook `46e1c0a` (amendment A1.1). UI brief: `docs/UI_DESIGN_BRIEF.md`. Waiting on: domain DNS (owner, YesDomain ticket), approvals A1-A3, decisions D1/D3 (WhatsApp) and A4 (demo reset), Meta WhatsApp setup, page designs, the DHT11 node.
 
 ## 1. Where each layer stands (checked 23 Nov in the repos, not assumed)
 
