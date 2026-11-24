@@ -63,7 +63,7 @@ You send one design sheet per page (list in §5); I build each without changing 
 | WhatsApp | Meta Business (https://business.facebook.com/) + developer app with WhatsApp (https://developers.facebook.com/apps/). The test number needs no payment method for template messages (Meta docs). Recipient limit for the test number: check the API Setup page | free for testing |
 | Hardware | nothing more; DHT11 + ESP32 + breadboard you have | 0 |
 
-## 5. What each page must show (for your design sheets)
+## 5. What each page must show (for your design sheets; full brief: `docs/UI_DESIGN_BRIEF.md`)
 
 Every page: Punjabi/English switch, signed-in user and FPO, sign-out, build version in the footer, loading/empty/error states, works at 375 px.
 
