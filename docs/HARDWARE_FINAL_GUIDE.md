@@ -2,6 +2,8 @@
 
 2 November 2026 • The one sheet to follow to get the parts for, build, flash, connect and demonstrate the KisanNiti storage node. The parts list and packaging are decision CHAT-50. The work order across chats is in [BUILD_LEDGER.md](BUILD_LEDGER.md) §2b. It is based on the existing design ([HARDWARE_BUILD_SPEC.md](HARDWARE_BUILD_SPEC.md), [HARDWARE_CURRENT.md](HARDWARE_CURRENT.md), product `firmware/BUILD_GUIDE.md`, contract L3B v1) and was re-checked against the code on 31 Oct (section 8). The electronics, firmware and message contract did not change. One bug was fixed (BUG-009, broker certificate). Calibration, outage and week-run details stay in `firmware/BUILD_GUIDE.md` H4–H6.
 
+> **25 Nov 2026 (CHAT-56):** the node now uses a **DHT22 / AM2302 module** (no SHT30 locally). Build with `pio run -e esp32dev_dht22`: DHT22 **+** → 3V3, **out** → GPIO 4 (D4), **−** → GND; no extra resistors. Everything after the sensor is the same as below. State the DHT22's accuracy with any result.
+>
 > **23 Nov 2026 (CHAT-52):** the SHT30 probe was unavailable and the module ordered arrived as a DHT11. Until the SHT30 arrives, build with `pio run -e esp32dev_dht11`: DHT11 VCC → 3V3, GND → GND, DATA → GPIO 4 (no extra resistors with a 3-pin module, which has its own pull-up). Everything after the sensor is the same as below. Show it as the data-flow demo, not as measured results.
 
 ## 1. What the node is and is not
