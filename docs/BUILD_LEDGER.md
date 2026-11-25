@@ -68,7 +68,7 @@ Goal: the real node's readings appear on the website and feed the plan-to-sale c
 - [x] **HW-B** (25 Nov, DHT22 sensor read on the real board; terminal board not used) breadboard bench check (guide 5.1), then the same on the terminal board
 - [x] **HW-C** (25 Nov, DHT22 node `kn-node-001` on the phone hotspot: Wi-Fi, NTP, MQTT over TLS, reading acked and stored, `hw_preflight.sh` PREFLIGHT PASS; registered AMBIENT until it goes in grain; record `firmware/records/HW-C_dht22_first_connected_run_2026-11-25.txt`) flash the real profile and connect (5.2–5.6): acks arrive and the reading is on the website
 - [x] **HW-D** (25 Nov, real DHT22 node: publisher conformance 6 messages, 0 fail, 0 warn, two withheld acks resent; BUG-009 confirmed on the real board; record `firmware/records/HW-D_dht22_conformance_2026-11-25.txt`, commit `a20c469`) contract check with `kn-conformance` (5.7): no FAIL; close BUG-009 on the real board
-- [ ] **HW-E** salt calibration, settling time, outage tests (BUILD_GUIDE H4–H5), records in `firmware/records/`
+- [ ] **HW-E** (25 Nov partial: broker outage buffering shown, recovery not run because the Mac left the hotspot; record `firmware/records/HW-E_partial_broker_outage_2026-11-25.txt`. Node linked to a fictional 1 kg demo lot, assessment UNKNOWN while AMBIENT) salt calibration, settling time, outage tests (BUILD_GUIDE H4–H5), records in `firmware/records/`
 - [ ] **HW-F** close the box, link to a lot, then the week run in grain (H6)
 
 ### C. Rest of the product and the final demo
