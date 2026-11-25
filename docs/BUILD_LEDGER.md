@@ -66,7 +66,7 @@ Goal: the real node's readings appear on the website and feed the plan-to-sale c
 
 - [ ] **HW-A** parts check: photo of everything and the probe wire label; AI confirms against CHAT-50 before power-on
 - [x] **HW-B** (25 Nov, DHT22 sensor read on the real board; terminal board not used) breadboard bench check (guide 5.1), then the same on the terminal board
-- [ ] **HW-C** flash the real profile and connect (5.2–5.6): acks arrive and the reading is on the website
+- [x] **HW-C** (25 Nov, DHT22 node `kn-node-001` on the phone hotspot: Wi-Fi, NTP, MQTT over TLS, reading acked and stored, `hw_preflight.sh` PREFLIGHT PASS; registered AMBIENT until it goes in grain; record `firmware/records/HW-C_dht22_first_connected_run_2026-11-25.txt`) flash the real profile and connect (5.2–5.6): acks arrive and the reading is on the website
 - [ ] **HW-D** contract check with `kn-conformance` (5.7): no FAIL; close BUG-009 on the real board
 - [ ] **HW-E** salt calibration, settling time, outage tests (BUILD_GUIDE H4–H5), records in `firmware/records/`
 - [ ] **HW-F** close the box, link to a lot, then the week run in grain (H6)
