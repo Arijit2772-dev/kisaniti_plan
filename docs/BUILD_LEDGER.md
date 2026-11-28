@@ -74,7 +74,7 @@ Goal: the real node's readings appear on the website and feed the plan-to-sale c
 ### C. Rest of the product and the final demo
 
 - [ ] **P-1** hold-or-sell advice (not built; contract first, needs its parameter decisions)
-- [ ] **P-2** (28 Nov: DNS live; website deployed, `a20c469` at https://app.kisaniti.in, Let's Encrypt, report `kisaniti_implementation/docs/reports/2026-11-28_P3-first_deploy.md`; next P3-2 broker on mqtt.kisaniti.in, demo FPO after A4) hosting (needs the owner's account, O34) and the public-certificate check on the ESP32; then optionally Meta WhatsApp (O35, O60)
+- [ ] **P-2** (28 Nov: DNS live; website deployed, `a20c469` at https://app.kisaniti.in, Let's Encrypt, report `kisaniti_implementation/docs/reports/2026-11-28_P3-first_deploy.md`; P3-2 broker live 28 Nov: `b6e74c0`, mqtt.kisaniti.in:8883 Let's Encrypt, ESP32 chain check PASS, ingest subscribed, renewal cron; BUG-011 found and fixed; next: reprovision the node to it, demo FPO after A4) hosting (needs the owner's account, O34) and the public-certificate check on the ESP32; then optionally Meta WhatsApp (O35, O60)
 - [ ] **P-3** UI restyle with the owner's ideas
 - [ ] **P-4** final demo rehearsal, at least twice on different days: node in grain at least 30 h earlier, guide §6 script, fallback ready. Any paper revision with what was really measured starts from the files of 2 Nov on branch `paper/submission-2026-11-02`, because `main` holds older text; `previous_versions/` stays local because that repo is public
 
