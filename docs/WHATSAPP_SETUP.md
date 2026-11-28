@@ -7,6 +7,8 @@ The product side is built and tested:
 
 Decisions: CHAT-55. What is left are the steps only you can do in your accounts. **Never paste a token, secret or friend's number into chat, git or a report.**
 
+> **29 Nov 2026 progress:** Meta developer account (workspace2772), business portfolio "KisanNiti" (unverified), app "KisanNiti" with the WhatsApp use case and Meta's test number. All six templates submitted (Utility; English, Punjabi and Hindi were all offered and accepted for review, which settles the language-code UNKNOWN for submission; approval still pending). Each body was compared character by character with the texts below before submitting. The server `.env` has the phone number ID, API version and template mapping; token, app secret and verify token are still to be added by the owner. Version 2 texts are still UNREVIEWED in the product, so nothing can be sent until §1 is done.
+
 ## 1. Get the version 2 texts reviewed (needed before anything is sent)
 Meta allows no line break inside a value, so the two message texts have a version 2. It has the same words as version 1; only the sale lines are joined with ` ; `.
 - Send the six texts below (2 kinds × English, Punjabi, Hindi) to the reviewers who checked version 1 on 28 Oct.
